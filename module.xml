@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Module name="Timer" id="79D44F65-B747-4C57-A321-779897F312E7" version="1.0.0">
-    <ConfigRoot path="module.py"/>
+    <ConfigRoot path="config/module.py"/>
 </Module>
