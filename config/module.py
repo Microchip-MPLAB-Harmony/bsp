@@ -1,0 +1,2 @@
+def loadModule():
+	print("BSP")
