@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Module name="Timer" id="79D44F65-B747-4C57-A321-779897F312E7" version="1.0.0">
-    <ConfigRoot path="config/module.py"/>
+<Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0">
+	<ConfigRoot path="config/module.py"/>
+	<AutoLoad>
+		<ID>bsp_default</ID>
+	</AutoLoad>
+	<Boards>
+		<Board name="SAM E70 Xplained Pro">
+			<processor>PIC32CZ2038CA70144</processor>
+			<config>e70xp.py</config>
+		</Board>
+		<Board name="SAM E70 Xplained Ultra">
+			<processor>PIC32CZ2038CA70144</processor>
+			<config>e70xu.py</config>
+		</Board>
+	</Boards>
 </Module>
