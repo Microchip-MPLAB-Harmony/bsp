@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0">
+<Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0" type="bsp">
 	<ConfigRoot path="config/module.py"/>
 	<AutoLoad>
 		<ID>bsp_default</ID>
