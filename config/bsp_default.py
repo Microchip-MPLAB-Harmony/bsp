@@ -1,5 +1,9 @@
 def instantiateComponent(bspComponent):
 
+	coreSymbol = Database.getSymbolByID("core", "BSP_PIN_CONFIG")
+	print(coreSymbol.getID())
+	coreComponent = coreSymbol.setEnabled(True)
+
 	bspMenu = bspComponent.createMenuSymbol(None, None)
 	bspMenu.setLabel("BSP Pin Types")
 	bspMenu.setDescription("Type of PIO Pins")
