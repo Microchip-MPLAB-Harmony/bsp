@@ -3,13 +3,16 @@ def loadModule():
 
 	configName = Variables.get("__CONFIGURATION_NAME")
 
-	bspDefault = Module.CreateComponent("bsp_default", configName + " Board (BSP)", "/Board Support Packages (BSPs)/", "config/bsp_default.py")
+	bspDefault = Module.CreateComponent("BSP_default", configName + " Board (BSP)", "/Board Support Packages (BSPs)/", "config/bsp_default.py")
 	bspDefault.addCapability("BSP")
 
-	bspE70XP = Module.CreateComponent("bsp_e70xp", "SAM E70 Xplained Pro BSP", "/Board Support Packages (BSPs)/", "config/e70xp.py")
-	bspE70XP.addCapability("BSP")
-
-	bspE70XU = Module.CreateComponent("bsp_e70xu", "SAM E70 Xplained Ultra BSP", "/Board Support Packages (BSPs)/", "config/e70xu.py")
-	bspE70XU.addCapability("BSP")
-
-
+	import xml.etree.ElementTree as ET
+	bspFile = open(Variables.get("__BSP_DIR") + "/module.xml", "r")
+	bspContent = ET.fromstring(bspFile.read())
+	for Board in bspContent.iter("Board"):
+		if Board.attrib['processor'] == Variables.get("__PROCESSOR"):
+			print("BSP: Load " + Board.attrib['name'])
+			Id = Board.attrib['name'].replace(" ", "_")
+			bspComponent = Module.CreateComponent("BSP_" + Id, Board.attrib['name'] + " BSP", "/Board Support Packages (BSPs)/", "config/" + Board.attrib['config'])
+			bspComponent.addCapability("BSP")
+	
