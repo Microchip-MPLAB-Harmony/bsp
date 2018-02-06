@@ -1,5 +1,8 @@
-coreSymbol = Database.getSymbolByID("core", "BSP_PIN_CONFIG")
-coreSymbol.setEnabled(True)
+bspSysConfFile = bspComponent.createFileSymbol(None, None)
+bspSysConfFile.setType("STRING")
+bspSysConfFile.setOutputName("core.LIST_SYSTEM_CONFIG_H_APPLICATION_CONFIGURATION")
+bspSysConfFile.setSourcePath("templates/system_config.h.ftl")
+bspSysConfFile.setMarkup(True)
 
 bspMenu = bspComponent.createMenuSymbol(None, None)
 bspMenu.setLabel("BSP Pin Types")
