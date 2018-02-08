@@ -1,8 +1,3 @@
-bspSysConfFile = bspComponent.createFileSymbol(None, None)
-bspSysConfFile.setType("STRING")
-bspSysConfFile.setOutputName("core.LIST_SYSTEM_CONFIG_H_APPLICATION_CONFIGURATION")
-bspSysConfFile.setSourcePath("templates/system_config.h.ftl")
-bspSysConfFile.setMarkup(True)
 
 bspMenu = bspComponent.createMenuSymbol(None, None)
 bspMenu.setLabel("BSP Pin Types")
@@ -25,3 +20,33 @@ for enumeratedPinType in enumeratedPinTypes:
 
 Symbol = bspComponent.createIntegerSymbol("BSP_TYPE_SIZE", bspMenu)
 Symbol.setDefaultValue(len(pinTypes))
+
+bspSysConfFile = bspComponent.createFileSymbol(None, None)
+bspSysConfFile.setType("STRING")
+bspSysConfFile.setOutputName("core.LIST_SYSTEM_CONFIG_H_APPLICATION_CONFIGURATION")
+bspSysConfFile.setSourcePath("templates/system_config.h.ftl")
+bspSysConfFile.setMarkup(True)
+
+bspSysConfInclude = bspComponent.createListEntrySymbol(None, None)
+bspSysConfInclude.setTarget("core.LIST_SYSTEM_CONFIG_H_GLOBAL_INCLUDES")
+bspSysConfInclude.addValue("#include \"bsp/bsp.h\"")
+
+configName = Variables.get("__CONFIGURATION_NAME")
+
+bspSourceFile = bspComponent.createFileSymbol(None, None)
+bspSourceFile.setSourcePath("templates/bsp.c.ftl")
+bspSourceFile.setOutputName("bsp.c")
+bspSourceFile.setMarkup(True)
+bspSourceFile.setOverwrite(True)
+bspSourceFile.setDestPath("bsp/")
+bspSourceFile.setProjectPath("config/" + configName + "/bsp/")
+bspSourceFile.setType("SOURCE")
+
+bspHeaderFile = bspComponent.createFileSymbol(None, None)
+bspHeaderFile.setSourcePath("templates/bsp.h.ftl")
+bspHeaderFile.setOutputName("bsp.h")
+bspHeaderFile.setMarkup(True)
+bspHeaderFile.setOverwrite(True)
+bspHeaderFile.setDestPath("bsp/")
+bspHeaderFile.setProjectPath("config/" + configName + "/bsp/")
+bspHeaderFile.setType("HEADER")
