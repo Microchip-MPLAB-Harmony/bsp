@@ -1,6 +1,6 @@
 def instantiateComponent(bspComponent):
 
-	BSP_NAME = "default"
+	BSP_NAME = "sam_e70_xpro"
 
 	pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
 		{"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
@@ -12,10 +12,14 @@ def instantiateComponent(bspComponent):
 		{"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"},
 		{"attrib":"int", "symbol":"BSP_CUSTOM_PIO_INTERRUPT", "label":"PIO Interrupt"}]
 
-	pinTypes = [{"type":"GPIO_OUT", "mode":"DIGITAL", "dir":"OUT"},
+	pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"SWITCH", "mode":"DIGITAL", "pu":"TRUE"},
+			{"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"GPIO_OUT", "mode":"DIGITAL", "dir":"OUT"},
 			{"type":"GPIO_IN", "mode":"DIGITAL"},
 			{"type":"GPIO_CN", "mode":"DIGITAL", "cn":"TRUE", "int":"Both Edge"},
 			{"type":"GPIO", "mode":"DIGITAL"}]
 
-	execfile(Variables.get("__BSP_DIR") + "/config/bsp_common.py")
-
+	execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")

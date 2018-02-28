@@ -6,7 +6,7 @@ def loadModule():
 	bspDefault = Module.CreateComponent("BSP_default", configName + " Board (BSP)", "/Board Support Packages (BSPs)/", "default/config/bsp.py")
 
 	import xml.etree.ElementTree as ET
-	bspFile = open(Variables.get("__BSP_DIR") + "/module.xml", "r")
+	bspFile = open(Variables.get("__BSP_DIR") + "/boards/module.xml", "r")
 	bspContent = ET.fromstring(bspFile.read())
 	for Board in bspContent.iter("Board"):
 		if Board.attrib['processor'] == Variables.get("__PROCESSOR"):

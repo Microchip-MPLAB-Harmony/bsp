@@ -22,4 +22,4 @@ def instantiateComponent(bspComponent):
 			{"type":"GPIO_CN", "mode":"DIGITAL", "cn":"TRUE", "int":"Both Edge"},
 			{"type":"GPIO", "mode":"DIGITAL"}]
 
-	execfile(Variables.get("__BSP_DIR") + "/config/bsp_common.py")
+	execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
