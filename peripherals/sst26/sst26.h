@@ -50,6 +50,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 
+#include <stdio.h>
 #include <stdbool.h>
 
 // DOM-IGNORE-BEGIN
@@ -122,86 +123,46 @@ typedef struct
 
 // *****************************************************************************
 /* Function:
-    bool SST26_ResetFlash(void);
-
+    void SST26_Initialize( void );
+    
   Summary:
-    Resets the flash device.
+    Initializes the SST26 Flash device
 
   Description:
-    This function schedules a blocking operation to reset the flash device.
-
-    The request is sent in SINGLE_BIT_SPI_MODE to flash device.
+    This routine initializes the SST26 device making it ready for clients to use.
+    - Resets the Flash Device
+    - Puts it on QUAD IO Mode
 
   Precondition:
-    None
-
+    None.
+  
   Parameters:
     None
-
+  
   Returns:
-    false
-    - if Reset flash command itself fails
-
-    true
-    - if the Reset is successfully completed
-
+    None
+  
   Example:
     <code>
+    // This code snippet shows an example of initializing the SST26 peripheral.
 
-    if(true != SST26_ResetFlash())
+    if (true != SST26_Initialize())
     {
-        // Error handling here
+        // Handle Error
     }
 
     </code>
 
   Remarks:
-    This routine will block wait for transfer to complete.
+    This routine must be called before any other SST26 routine is called.
+    
+    This routine should only be called once during system initialization.
+    
+    This routine will block for hardware access.
+    
 */
 
-bool SST26_ResetFlash(void);
-
-// *****************************************************************************
-/* Function:
-    bool SST26_EnableQuadIO(void);
-
-  Summary:
-    Enable Quad IO mode for flash device.
-
-  Description:
-    This function schedules a blocking operation to put the flash device into
-    Quad IO mode.
-
-    The request is sent in SINGLE_BIT_SPI_MODE to flash device.
-
-  Precondition:
-    None
-
-  Parameters:
-    None
-
-  Returns:
-    false
-    - if Enable Quad IO command itself fails
-
-    true
-    - if the Enable Quad IO is successfully completed
-
-  Example:
-    <code>
-
-    if(true != SST26_EnableQuadIO())
-    {
-        // Error handling here
-    }
-
-    </code>
-
-  Remarks:
-    This routine will block wait for transfer to complete.
-*/
-
-bool SST26_EnableQuadIO(void);
+void SST26_Initialize( void );
 
 // *****************************************************************************
 /* Function:
@@ -245,7 +206,7 @@ bool SST26_EnableQuadIO(void);
     This routine will block wait for transfer to complete.
 */
 
-bool SST26_UnlockFlash(void);
+bool SST26_UnlockFlash( void );
 
 // *****************************************************************************
 /* Function:
@@ -290,7 +251,7 @@ bool SST26_UnlockFlash(void);
     This routine will block wait for transfer to complete.
 */
 
-bool SST26_ReadJedecId(uint32_t *jedec_id);
+bool SST26_ReadJedecId( uint32_t *jedec_id );
 
 // **************************************************************************
 /* Function:
@@ -344,7 +305,7 @@ bool SST26_ReadJedecId(uint32_t *jedec_id);
     Client should wait until erase is complete to send next transfer request.
 */
 
-bool SST26_SectorErase(uint32_t address);
+bool SST26_SectorErase( uint32_t address );
 
 // **************************************************************************
 /* Function:
@@ -398,7 +359,7 @@ bool SST26_SectorErase(uint32_t address);
     Client should wait until erase is complete to send next transfer request.
 */
 
-bool SST26_BulkErase(uint32_t address);
+bool SST26_BulkErase( uint32_t address );
 
 // **************************************************************************
 /* Function:
@@ -450,7 +411,7 @@ bool SST26_BulkErase(uint32_t address);
     Client should wait until erase is complete to send next transfer request.
 */
 
-bool SST26_ChipErase(void);
+bool SST26_ChipErase( void );
 
 // *****************************************************************************
 /* Function:

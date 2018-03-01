@@ -1,0 +1,1 @@
+    SST26_Initialize();

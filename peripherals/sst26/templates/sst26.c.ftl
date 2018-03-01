@@ -48,7 +48,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include <string.h>
-#include "external_peripheral/sst26/sst26.h"
+#include "sst26.h"
 #include "peripheral/qspi/plib_${SST26_PLIB?lower_case}.h"
 
 // *****************************************************************************
@@ -155,7 +155,7 @@ static uint32_t SST26_GetFlashSize( uint8_t deviceId )
     return 0;
 }
 
-bool SST26_ResetFlash(void)
+static bool SST26_ResetFlash(void)
 {
     bool status = false;
 
@@ -177,7 +177,7 @@ bool SST26_ResetFlash(void)
     return status;
 }
 
-bool SST26_EnableQuadIO(void)
+static bool SST26_EnableQuadIO(void)
 {
     bool status = false;
 
@@ -380,4 +380,19 @@ bool SST26_GeometryGet(SST26_GEOMETRY *geometry)
     geometry->numEraseRegions = 1;
 
     return true;
+}
+
+void SST26_Initialize( void )
+{
+    /* Reset SST26 Flash device */
+    if (true != SST26_ResetFlash())
+    {
+        return;
+    }
+
+    /* Put SST26 Flash device on QUAD IO Mode */
+    if (true != SST26_EnableQuadIO())
+    {
+        return;
+    }
 }

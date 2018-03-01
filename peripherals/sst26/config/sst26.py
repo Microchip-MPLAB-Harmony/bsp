@@ -1,24 +1,25 @@
-def instantiateComponent(sst26Component, index):
-    global plib
+################################################################################
+#### Component ####
+################################################################################
 
-    sst26Index = sst26Component.createIntegerSymbol("INDEX", None)
-    sst26Index.setVisible(False)
-    sst26Index.setDefaultValue(index)
-
+def instantiateComponent(sst26Component):
     sst26PLIB = sst26Component.createStringSymbol("SST26_PLIB", None)
     sst26PLIB.setLabel("PLIB Used")
     sst26PLIB.setReadOnly(True)
 
+    ############################################################################
+    #### Code Generation ####
+    ############################################################################
+
     configName = Variables.get("__CONFIGURATION_NAME")
 
     sst26HeaderFile = sst26Component.createFileSymbol(None, None)
-    sst26HeaderFile.setSourcePath("sst26/templates/sst26.h.ftl")
+    sst26HeaderFile.setSourcePath("sst26/sst26.h")
     sst26HeaderFile.setOutputName("sst26.h")
     sst26HeaderFile.setDestPath("external_peripheral/sst26/")
     sst26HeaderFile.setProjectPath("config/" + configName + "/external_peripheral/sst26/")
     sst26HeaderFile.setType("HEADER")
     sst26HeaderFile.setOverwrite(True)
-    sst26HeaderFile.setMarkup(True)
 
     sst26SourceFile = sst26Component.createFileSymbol(None, None)
     sst26SourceFile.setSourcePath("sst26/templates/sst26.c.ftl")
@@ -35,8 +36,14 @@ def instantiateComponent(sst26Component, index):
     sst26SystemDefFile.setSourcePath("sst26/templates/system/system_definitions.h.ftl")
     sst26SystemDefFile.setMarkup(True)
 
+    sst26SystemInitFile = sst26Component.createFileSymbol(None, None)
+    sst26SystemInitFile.setType("STRING")
+    sst26SystemInitFile.setOutputName("core.LIST_SYSTEM_INIT_C_SYS_INITIALIZE_DRIVERS")
+    sst26SystemInitFile.setSourcePath("sst26/templates/system/system_initialize.c.ftl")
+    sst26SystemInitFile.setMarkup(True)
+
 def onDependentComponentAdded(sst26Component, id, remoteComponent):
-    if id == "sst26_dependency" :
+    if id == "sst26_QSPI_dependency" :
         plibUsed = sst26Component.getSymbolByID("SST26_PLIB")
         plibUsed.clearValue()
         plibUsed.setValue(remoteComponent.getID().upper(), 2)
