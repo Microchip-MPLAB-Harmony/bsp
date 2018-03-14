@@ -13,7 +13,7 @@ def loadModule():
             if peripheralComponent['type'] == "peripheral":
                 print("create component: " + Name.upper() + " External Peripheral")
                 Component = Module.CreateComponent(Name, Name.upper() + " Peripheral", "/External Peripherals/", Name + "/config/" + Name + ".py")
-                Component.addCapability(Name, Name)
+                Component.addCapability(Name, "memory_dev")
                 if "dependency" in peripheralComponent:
                     for item in peripheralComponent['dependency']:
                         Component.addDependency(Name + "_" + item + "_dependency", item)

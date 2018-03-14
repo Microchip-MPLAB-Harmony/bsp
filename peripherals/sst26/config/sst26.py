@@ -2,10 +2,47 @@
 #### Component ####
 ################################################################################
 
+def sst26SetMemoryDependency(symbol, event):
+    if (event["value"] == True):
+        symbol.setVisible(True)
+    else:
+        symbol.setVisible(False)
+
 def instantiateComponent(sst26Component):
     sst26PLIB = sst26Component.createStringSymbol("SST26_PLIB", None)
     sst26PLIB.setLabel("PLIB Used")
     sst26PLIB.setReadOnly(True)
+
+    sst26InterruptEnable = sst26Component.createBooleanSymbol("INTERRUPT_ENABLE", None)
+    sst26InterruptEnable.setLabel("Enable Interrupt")
+    sst26InterruptEnable.setVisible(False)
+    sst26InterruptEnable.setDefaultValue(False)
+
+    sst26InterruptSource = sst26Component.createStringSymbol("INTERRUPT_SOURCE", None)
+    sst26InterruptSource.setLabel("SST26 Interrupt Source")
+    sst26InterruptSource.setVisible(False)
+    sst26InterruptSource.setDependencies(sst26SetMemoryDependency, ["INTERRUPT_ENABLE"])
+
+    sst26MemoryDriver = sst26Component.createBooleanSymbol("DRV_MEMORY_CONNECTED", None)
+    sst26MemoryDriver.setLabel("Memory Driver Connected")
+    sst26MemoryDriver.setVisible(False)
+    sst26MemoryDriver.setDefaultValue(False)
+
+    sst26MemoryStartAddr = sst26Component.createHexSymbol("START_ADDRESS", None)
+    sst26MemoryStartAddr.setLabel("SST26 Start Address")
+    sst26MemoryStartAddr.setVisible(True)
+    sst26MemoryStartAddr.setDefaultValue(0x0000000)
+
+    sst26MemoryEraseBufferSize = sst26Component.createIntegerSymbol("ERASE_BUFFER_SIZE", None)
+    sst26MemoryEraseBufferSize.setLabel("SST26 Erase Buffer Size")
+    sst26MemoryEraseBufferSize.setVisible(False)
+    sst26MemoryEraseBufferSize.setDefaultValue(4096)
+    sst26MemoryEraseBufferSize.setDependencies(sst26SetMemoryDependency, ["DRV_MEMORY_CONNECTED"])
+
+    sst26MemoryEraseComment = sst26Component.createCommentSymbol("ERASE_COMMENT", None)
+    sst26MemoryEraseComment.setVisible(False)
+    sst26MemoryEraseComment.setLabel("*** Should be equal to Sector Erase Size ***")
+    sst26MemoryEraseComment.setDependencies(sst26SetMemoryDependency, ["DRV_MEMORY_CONNECTED"])
 
     ############################################################################
     #### Code Generation ####
