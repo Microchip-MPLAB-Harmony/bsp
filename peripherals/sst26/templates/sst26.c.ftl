@@ -379,6 +379,8 @@ bool SST26_GeometryGet(SST26_GEOMETRY *geometry)
     geometry->numWriteRegions = 1;
     geometry->numEraseRegions = 1;
 
+    geometry->blockStartAddress = 0x${START_ADDRESS};
+
     return true;
 }
 
@@ -392,6 +394,12 @@ void SST26_Initialize( void )
 
     /* Put SST26 Flash device on QUAD IO Mode */
     if (true != SST26_EnableQuadIO())
+    {
+        return;
+    }
+
+    /* Unlock the Flash */
+    if (true != SST26_UnlockFlash())
     {
         return;
     }

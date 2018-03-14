@@ -113,6 +113,8 @@ typedef struct
     uint32_t erase_blockSize;
     uint32_t erase_numBlocks;
     uint32_t numEraseRegions;
+
+    uint32_t blockStartAddress;
 } SST26_GEOMETRY;
 
 // *****************************************************************************
