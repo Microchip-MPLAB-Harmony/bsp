@@ -8,7 +8,7 @@ enumeratedPinTypes = enumerate(pinTypes)
 for enumeratedPinType in enumeratedPinTypes:
 	pinTypeIndex, pinType = enumeratedPinType
 
-	Menu = bspComponent.createMenuSymbol("BSP_SUBMENU", bspMenu)
+	Menu = bspComponent.createMenuSymbol("BSP_SUBMENU"+str(pinTypeIndex), bspMenu)
 	Menu.setLabel("Type " + str(pinTypeIndex))
 
 	for pinAttribute in pinAttributes:
