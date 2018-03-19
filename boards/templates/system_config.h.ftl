@@ -127,95 +127,11 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 </#list>
 </#macro>
 <#--  =====================
-      MACRO mhc_process_gpio_out
-      ===================== -->
-<#macro mhc_process_gpio_out>
-<#assign GPIO_OUT_Name_List = []>
-<#assign GPIO_OUT_PortPin_List = []>
-<#assign GPIO_OUT_PortChannel_List = []>
-<#list 1..350 as i>
-<#assign functype = "core.PIN_" + i + "_FUNCTION_TYPE">
-<#if .vars[functype]?has_content>
-<#if .vars[functype] == "GPIO_OUT">
-<#assign funcname = "core.PIN_" + i + "_FUNCTION_NAME">
-<#if .vars[funcname]?has_content>
-<#assign pinport = "core.PIN_" + i + "_PIO_PIN">
-<#if .vars[pinport]?has_content>
-<#assign pinchannel = "core.PIN_" + i + "_PIO_CHANNEL">
-<#if .vars[pinchannel]?has_content>
-<#assign GPIO_OUT_Name_List = GPIO_OUT_Name_List + [.vars[funcname]]>
-<#assign GPIO_OUT_PortPin_List = GPIO_OUT_PortPin_List + [.vars[pinport]]>
-<#assign GPIO_OUT_PortChannel_List = GPIO_OUT_PortChannel_List + [.vars[pinchannel]]>
-</#if>
-</#if>
-</#if>
-</#if>
-</#if>
-</#list>
-</#macro>
-<#--  =====================
-      MACRO mhc_process_gpio_in
-      ===================== -->
-<#macro mhc_process_gpio_in>
-<#assign GPIO_IN_Name_List = []>
-<#assign GPIO_IN_PortPin_List = []>
-<#assign GPIO_IN_PortChannel_List = []>
-<#list 1..350 as i>
-<#assign functype = "core.PIN_" + i + "_FUNCTION_TYPE">
-<#if .vars[functype]?has_content>
-<#if .vars[functype] == "GPIO_IN">
-<#assign funcname = "core.PIN_" + i + "_FUNCTION_NAME">
-<#if .vars[funcname]?has_content>
-<#assign pinport = "core.PIN_" + i + "_PIO_PIN">
-<#if .vars[pinport]?has_content>
-<#assign pinchannel = "core.PIN_" + i + "_PIO_CHANNEL">
-<#if .vars[pinchannel]?has_content>
-<#assign GPIO_IN_Name_List = GPIO_IN_Name_List + [.vars[funcname]]>
-<#assign GPIO_IN_PortPin_List = GPIO_IN_PortPin_List + [.vars[pinport]]>
-<#assign GPIO_IN_PortChannel_List = GPIO_IN_PortChannel_List + [.vars[pinchannel]]>
-</#if>
-</#if>
-</#if>
-</#if>
-</#if>
-</#list>
-</#macro>
-<#--  =====================
-      MACRO mhc_process_gpio
-      ===================== -->
-<#macro mhc_process_gpio>
-<#assign GPIO_Name_List = []>
-<#assign GPIO_PortPin_List = []>
-<#assign GPIO_PortChannel_List = []>
-<#list 1..350 as i>
-<#assign functype = "core.PIN_" + i + "_FUNCTION_TYPE">
-<#if .vars[functype]?has_content>
-<#if .vars[functype] == "GPIO">
-<#assign funcname = "core.PIN_" + i + "_FUNCTION_NAME">
-<#if .vars[funcname]?has_content>
-<#assign pinport = "core.PIN_" + i + "_PIO_PIN">
-<#if .vars[pinport]?has_content>
-<#assign pinchannel = "core.PIN_" + i + "_PIO_CHANNEL">
-<#if .vars[pinchannel]?has_content>
-<#assign GPIO_Name_List = GPIO_Name_List + [.vars[funcname]]>
-<#assign GPIO_PortPin_List = GPIO_PortPin_List + [.vars[pinport]]>
-<#assign GPIO_PortChannel_List = GPIO_PortChannel_List + [.vars[pinchannel]]>
-</#if>
-</#if>
-</#if>
-</#if>
-</#if>
-</#list>
-</#macro>
-<#--  =====================
       MACRO execution
       ===================== -->
 <@mhc_process_leds/>
 <@mhc_process_switches/>
 <@mhc_process_vbus/>
-<@mhc_process_gpio_out/>
-<@mhc_process_gpio_in/>
-<@mhc_process_gpio/>
 
 /*** Application Defined Pins ***/
 <#if (LED_Name_List?size > 0)>
@@ -250,51 +166,6 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
 
 /*** Functions for ${SwitchName} pin ***/
 #define ${SwitchName}StateGet() (PIO_PortRead(PIO_PORT_${SwitchChannel}) & (0x1<<${SwitchPinPos}))
-</#if></#if>
-</#list>
-</#list>
-</#list>
-</#if>
-<#if (GPIO_OUT_Name_List?size > 0)>
-<#list GPIO_OUT_Name_List as gpio_outName>
-<#list GPIO_OUT_PortChannel_List as gpio_outChannel>
-<#list GPIO_OUT_PortPin_List as gpio_outPinPos>
-<#if gpio_outName?counter == gpio_outChannel?counter><#if gpio_outName?counter == gpio_outPinPos?counter>
-
-/*** Functions for ${gpio_outName} pin ***/
-#define ${gpio_outName}Toggle() PIO_PortToggle(PIO_PORT_${gpio_outChannel}, 0x1<<${gpio_outPinPos})
-#define ${gpio_outName}On() PIO_PortSet(PIO_PORT_${gpio_outChannel}, 0x1<<${gpio_outPinPos})
-#define ${gpio_outName}Off() PIO_PortClear(PIO_PORT_${gpio_outChannel}, 0x1<<${gpio_outPinPos})
-#define ${gpio_outName}StateGet() (PIO_PortRead(PIO_PORT_${gpio_outChannel}) & (0x1<<${gpio_outPinPos}))
-#define ${gpio_outName}StateSet(Value) PIO_PinWrite(PIO_PIN_P${gpio_outChannel}${gpio_outPinPos}, Value)
-</#if></#if>
-</#list>
-</#list>
-</#list>
-</#if>
-<#if (GPIO_IN_Name_List?size > 0)>
-<#list GPIO_IN_Name_List as gpio_inName>
-<#list GPIO_IN_PortChannel_List as  gpio_inChannel>
-<#list GPIO_IN_PortPin_List as  gpio_inPinPos>
-<#if  gpio_inName?counter ==  gpio_inChannel?counter><#if  gpio_inName?counter ==  gpio_inPinPos?counter>
-
-/*** Functions for ${ gpio_inName} pin ***/
-#define ${gpio_inName}StateGet() (PIO_PortRead(PIO_PORT_${gpio_inChannel}) & (0x1<<${gpio_inPinPos}))
-</#if></#if>
-</#list>
-</#list>
-</#list>
-</#if>
-<#if (GPIO_Name_List?size > 0)>
-<#list GPIO_Name_List as gpioName>
-<#list GPIO_PortChannel_List as  gpioChannel>
-<#list GPIO_PortPin_List as  gpioPinPos>
-<#if  gpioName?counter ==  gpioChannel?counter><#if  gpioName?counter ==  gpioPinPos?counter>
-
-/*** Functions for ${ gpioName} pin ***/
-#define ${gpioName}_PORT PIO_PORT_${gpioChannel}
-#define ${gpioName}_PIN ${gpioPinPos}
-#define ${gpioName}_PIN_MASK (0x1 << ${gpioPinPos})
 </#if></#if>
 </#list>
 </#list>
