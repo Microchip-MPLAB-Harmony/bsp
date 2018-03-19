@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0" type="bsp">
 	<ConfigRoot path="config/module.py"/>
-	<AutoLoad>
-		<ID>BSP_default</ID>
-	</AutoLoad>
 	<Boards>
 		<Board name="SAM E70 Xplained Pro" processor="PIC32CZ2038CA70144" config="sam_e70_xpro"/>
 		<Board name="SAM E70 Xplained Ultra" processor="PIC32CZ2038CA70144" config="sam_e70_xult"/>
