@@ -2,7 +2,7 @@
 <Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0" type="bsp">
 	<ConfigRoot path="config/module.py"/>
 	<Boards>
-		<Board name="SAM E70 Xplained Pro" processor="PIC32CZ2038CA70144" config="sam_e70_xpro"/>
-		<Board name="SAM E70 Xplained Ultra" processor="PIC32CZ2038CA70144" config="sam_e70_xult"/>
+		<Board name="SAM E70 Xplained Pro" processor="ATSAME70Q21B" config="sam_e70_xpro"/>
+		<Board name="SAM E70 Xplained Ultra" processor="ATSAME70Q21B" config="sam_e70_xult"/>
 	</Boards>
 </Module>
