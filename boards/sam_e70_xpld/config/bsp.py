@@ -1,6 +1,6 @@
 def instantiateComponent(bspComponent):
 
-	BSP_NAME = "sam_e70_xpro"
+	BSP_NAME = "sam_e70_xpld"
 
 	pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
 		{"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
