@@ -1,23 +1,22 @@
 /*******************************************************************************
-  Board Support Package Header File.
+  Board Support Package Implementation
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    bsp.h
+    bsp.c
 
   Summary:
-    Board Support Package Header File 
+    Board Support Package implementation.
 
   Description:
-    This file contains constants, macros, type definitions and function
-    declarations 
+    This file contains routines that implement the board support package
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-Copyright (c) 2014 released Microchip Technology Inc.  All rights reserved.
+Copyright (c) 2012 released Microchip Technology Inc.  All rights reserved.
 
 Microchip licenses to you the right to use, modify, copy and distribute
 Software only when embedded on a Microchip microcontroller or digital signal
@@ -27,7 +26,7 @@ controller that is integrated into your product or third party product
 You should refer to the license agreement accompanying this Software for
 additional information regarding your rights and obligations.
 
-SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+SOFTWARE AND DOCUMENTATION ARE PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND,
 EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF
 MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
 IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER
@@ -40,21 +39,15 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 *******************************************************************************/
 // DOM-IGNORE-END
 
-#ifndef _BSP_H
-#define _BSP_H
-
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include "peripheral/pio/plib_pio.h"
+#include "bsp.h"
 
+// *****************************************************************************
 // *****************************************************************************
 // *****************************************************************************
 // Section: Interface Routines
@@ -69,32 +62,18 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
     Performs the necessary actions to initialize a board
 
   Description:
-    This function initializes the LED and Switch ports on the board.  This
-    function must be called by the user before using any APIs present on this
-    BSP.
-
-  Precondition:
-    None.
-
-  Parameters:
-    None
-
-  Returns:
-    None.
-
-  Example:
-    <code>
-    //Initialize the BSP
-    BSP_Initialize();
-    </code>
+    This function initializes the LED, Switch and other ports on the board.
+    This function must be called by the user before using any APIs present in
+    this BSP.
 
   Remarks:
-    None
+    Refer to bsp.h for usage information.
 */
 
-void BSP_Initialize(void);
-
-#endif // _BSP_H
+void BSP_Initialize(void )
+{
+${core.LIST_BSP_INITIALIZATION}
+}
 
 /*******************************************************************************
  End of File

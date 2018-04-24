@@ -12,10 +12,13 @@ def instantiateComponent(bspComponent):
 		{"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"},
 		{"attrib":"int", "symbol":"BSP_CUSTOM_PIO_INTERRUPT", "label":"PIO Interrupt"}]
 
-	pinTypes = [{"type":"GPIO_OUT", "mode":"DIGITAL", "dir":"OUT"},
-			{"type":"GPIO_IN", "mode":"DIGITAL"},
-			{"type":"GPIO_CN", "mode":"DIGITAL", "cn":"TRUE", "int":"Both Edge"},
-			{"type":"GPIO", "mode":"DIGITAL"}]
+
+	pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"SWITCH_AH", "mode":"DIGITAL"},
+			{"type":"SWITCH_AL", "mode":"DIGITAL"},
+			{"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+			{"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"}]
 
 	execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
 
