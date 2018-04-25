@@ -8,24 +8,32 @@ bspMenu.setDescription("Type of PIO Pins")
 enumeratedPinTypes = enumerate(pinTypes)
 
 for enumeratedPinType in enumeratedPinTypes:
-	pinTypeIndex, pinType = enumeratedPinType
+    pinTypeIndex, pinType = enumeratedPinType
 
-	Menu = bspComponent.createMenuSymbol("BSP_SUBMENU"+str(pinTypeIndex), bspMenu)
-	Menu.setLabel("Type " + str(pinTypeIndex))
+    Menu = bspComponent.createMenuSymbol("BSP_SUBMENU"+str(pinTypeIndex), bspMenu)
+    Menu.setLabel("Type " + str(pinTypeIndex))
 
-	for pinAttribute in pinAttributes:
-		pinAttribute['symbol']
-		Symbol = bspComponent.createStringSymbol(pinAttribute['symbol'] + str(pinTypeIndex), Menu)
-		Symbol.setLabel(pinAttribute['label'])
-		if pinAttribute['attrib'] in pinType:
-			Symbol.setDefaultValue(pinType[pinAttribute['attrib']])
+    for pinAttribute in pinAttributes:
+        pinAttribute['symbol']
+        Symbol = bspComponent.createStringSymbol(pinAttribute['symbol'] + str(pinTypeIndex), Menu)
+        Symbol.setLabel(pinAttribute['label'])
+        if pinAttribute['attrib'] in pinType:
+            Symbol.setDefaultValue(pinType[pinAttribute['attrib']])
 
 Symbol = bspComponent.createIntegerSymbol("BSP_TYPE_SIZE", bspMenu)
 Symbol.setDefaultValue(len(pinTypes))
 
-bspSysConfInclude = bspComponent.createListEntrySymbol("INCLUDE_BSP_H", None)
-bspSysConfInclude.setTarget("core.LIST_SYSTEM_CONFIG_H_GLOBAL_INCLUDES")
-bspSysConfInclude.addValue("#include \"bsp/bsp.h\"")
+bspSystemInitFile = bspComponent.createFileSymbol("BSP_INIT", None)
+bspSystemInitFile.setType("STRING")
+bspSystemInitFile.setOutputName("core.LIST_SYSTEM_INIT_C_SYS_INITIALIZE_PERIPHERALS")
+bspSystemInitFile.setSourcePath("/templates/system_initialize.c.ftl")
+bspSystemInitFile.setMarkup(True)
+
+bspSystemDefFile = bspComponent.createFileSymbol("DACC_DEF", None)
+bspSystemDefFile.setType("STRING")
+bspSystemDefFile.setOutputName("core.LIST_SYSTEM_DEFINITIONS_H_INCLUDES")
+bspSystemDefFile.setSourcePath("/templates/system_definitions.h.ftl")
+bspSystemDefFile.setMarkup(True)
 
 configName = Variables.get("__CONFIGURATION_NAME")
 
