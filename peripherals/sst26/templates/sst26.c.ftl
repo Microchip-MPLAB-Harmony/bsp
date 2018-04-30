@@ -111,8 +111,8 @@ typedef enum
     /* Command to perform Bulk erase */
     SST26_CMD_BULK_ERASE_64K     = 0xD8,
 
-    /* Command to perform Bulk erase */
-    SST26_CMD_CHIP_ERASE         = 0xD8,
+    /* Command to perform Chip erase */
+    SST26_CMD_CHIP_ERASE         = 0xC7,
 
     /* Command to unlock the flash device. */
     SST26_CMD_UNPROTECT_GLOBAL   = 0x98
