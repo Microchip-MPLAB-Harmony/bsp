@@ -4,6 +4,7 @@
     <Boards>
         <Board name="SAM E70 Xplained" processor="ATSAME70Q21B" config="sam_e70_xpld"/>
         <Board name="SAM E70 Xplained Ultra" processor="ATSAME70Q21B" config="sam_e70_xult"/>
+        <Board name="SAM E70 Xplained Ultra WM8904" processor="ATSAME70Q21B" config="sam_e70_xult_wm8904"/>
         <Board name="SAM V71 Xplained Ultra" processor="ATSAMV71Q21B" config="sam_v71_xult"/>       
     </Boards>
 </Module>
