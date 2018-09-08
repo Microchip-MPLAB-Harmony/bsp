@@ -1,23 +1,17 @@
 def instantiateComponent(bspComponent):
-    # LED
-    Database.clearSymbolValue("core", "PIN_82_FUNCTION_NAME")
-    Database.clearSymbolValue("core", "PIN_82_FUNCTION_TYPE")
-    Database.clearSymbolValue("core", "PIN_82_LAT")
-
+    # LED: PC8
     Database.setSymbolValue("core", "PIN_82_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_82_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_82_DIR", "Out")
     Database.setSymbolValue("core", "PIN_82_LAT", "High")
 
-    #Switch
-    Database.clearSymbolValue("core", "PIN_64_FUNCTION_NAME")
-    Database.clearSymbolValue("core", "PIN_64_FUNCTION_TYPE")
-    Database.clearSymbolValue("core", "PIN_64_PU")
-
+    #Switch: PA11
     Database.setSymbolValue("core", "PIN_64_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_64_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_64_PU", "True")
+    Database.setSymbolValue("core", "PIN_64_DIR", "")
 
-    #pin defintions for WM8904 codec in X32 socket
+    #pin definitions for WM8904 codec in X32 socket
     Database.setSymbolValue("core", "PIN_91_FUNCTION_NAME", "TWIHS0_TWD0")      # PA3
     Database.setSymbolValue("core", "PIN_91_FUNCTION_TYPE", "TWIHS0_TWD0")
 
