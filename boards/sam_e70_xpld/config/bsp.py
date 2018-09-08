@@ -1,23 +1,17 @@
 def instantiateComponent(bspComponent):
 
     # LED: PC8
-    Database.clearSymbolValue("core", "PIN_82_FUNCTION_NAME")
-    Database.clearSymbolValue("core", "PIN_82_FUNCTION_TYPE")
-    Database.clearSymbolValue("core", "PIN_82_LAT")
-
     Database.setSymbolValue("core", "PIN_82_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_82_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_82_DIR", "Out")
     Database.setSymbolValue("core", "PIN_82_LAT", "High")
-    
-   #Switch 1: PA11
-    Database.clearSymbolValue("core", "PIN_64_FUNCTION_NAME")
-    Database.clearSymbolValue("core", "PIN_64_FUNCTION_TYPE")
-    Database.clearSymbolValue("core", "PIN_64_PU")
 
+    #Switch: PA11
     Database.setSymbolValue("core", "PIN_64_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_64_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_64_PU", "True")
-    
+    Database.setSymbolValue("core", "PIN_64_DIR", "")
+
     BSP_NAME = "sam_e70_xpld"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
