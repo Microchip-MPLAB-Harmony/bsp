@@ -1,37 +1,37 @@
 def instantiateComponent(bspComponent):
     # LED: PC8
-    Database.setSymbolValue("core", "PIN_82_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_82_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_82_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_82_DIR", "Out")
     Database.setSymbolValue("core", "PIN_82_LAT", "High")
 
     #Switch: PA11
-    Database.setSymbolValue("core", "PIN_64_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_64_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_64_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_64_PU", "True")
     Database.setSymbolValue("core", "PIN_64_DIR", "")
 
     #pin definitions for WM8904 codec in X32 socket
-    Database.setSymbolValue("core", "PIN_91_FUNCTION_NAME", "TWIHS0_TWD0")      # PA3
     Database.setSymbolValue("core", "PIN_91_FUNCTION_TYPE", "TWIHS0_TWD0")
+    Database.setSymbolValue("core", "PIN_91_FUNCTION_NAME", "TWIHS0_TWD0")      # PA3
 
-    Database.setSymbolValue("core", "PIN_77_FUNCTION_NAME", "TWIHS0_TWCK0")     # PA4
     Database.setSymbolValue("core", "PIN_77_FUNCTION_TYPE", "TWIHS0_TWCK0")
+    Database.setSymbolValue("core", "PIN_77_FUNCTION_NAME", "TWIHS0_TWCK0")     # PA4
 
-    Database.setSymbolValue("core", "PIN_66_FUNCTION_NAME", "SSC_RD")           # PA10
     Database.setSymbolValue("core", "PIN_66_FUNCTION_TYPE", "SSC_RD")
+    Database.setSymbolValue("core", "PIN_66_FUNCTION_NAME", "SSC_RD")           # PA10
 
-    Database.setSymbolValue("core", "PIN_24_FUNCTION_NAME", "PMC_PCK2")         # PA18
     Database.setSymbolValue("core", "PIN_24_FUNCTION_TYPE", "PMC_PCK2")
+    Database.setSymbolValue("core", "PIN_24_FUNCTION_NAME", "PMC_PCK2")         # PA18
 
-    Database.setSymbolValue("core", "PIN_21_FUNCTION_NAME", "SSC_TF")           # PB0
     Database.setSymbolValue("core", "PIN_21_FUNCTION_TYPE", "SSC_TF")
+    Database.setSymbolValue("core", "PIN_21_FUNCTION_NAME", "SSC_TF")           # PB0
 
-    Database.setSymbolValue("core", "PIN_20_FUNCTION_NAME", "SSC_TK")           # PB1
     Database.setSymbolValue("core", "PIN_20_FUNCTION_TYPE", "SSC_TK")
+    Database.setSymbolValue("core", "PIN_20_FUNCTION_NAME", "SSC_TK")           # PB1
 
-    Database.setSymbolValue("core", "PIN_53_FUNCTION_NAME", "SSC_TD")           # PD26
     Database.setSymbolValue("core", "PIN_53_FUNCTION_TYPE", "SSC_TD")
+    Database.setSymbolValue("core", "PIN_53_FUNCTION_NAME", "SSC_TD")           # PD26
 
     BSP_NAME = "sam_e70_xult_wm8904"
 

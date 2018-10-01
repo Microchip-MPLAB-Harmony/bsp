@@ -1,21 +1,13 @@
 def instantiateComponent(bspComponent):
 
     #LED
-    Database.clearSymbolValue("core", "PIN_21_FUNCTION_NAME")
-    Database.clearSymbolValue("core", "PIN_21_FUNCTION_TYPE")
-    Database.clearSymbolValue("core", "PIN_21_LAT")
-
-    Database.setSymbolValue("core", "PIN_21_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_21_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_21_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_21_LAT", "High")
 
     #Switch
-    Database.clearSymbolValue("core", "PIN_67_FUNCTION_NAME")
-    Database.clearSymbolValue("core", "PIN_67_FUNCTION_TYPE")
-    Database.clearSymbolValue("core", "PIN_67_PULLEN")
-
-    Database.setSymbolValue("core", "PIN_67_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_67_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_67_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_67_PULLEN", "True")
 
     BSP_NAME = "sam_c21_xpld"

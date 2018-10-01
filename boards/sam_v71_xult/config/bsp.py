@@ -1,31 +1,31 @@
 def instantiateComponent(bspComponent):
     # LED 0
-    Database.setSymbolValue("core", "PIN_46_FUNCTION_NAME", "LED0")
     Database.setSymbolValue("core", "PIN_46_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_46_FUNCTION_NAME", "LED0")
     Database.setSymbolValue("core", "PIN_46_DIR", "Out")
     Database.setSymbolValue("core", "PIN_46_LAT", "High")
 
     # LED 1
-    Database.setSymbolValue("core", "PIN_86_FUNCTION_NAME", "LED1")
-    Database.setSymbolValue("core", "PIN_86_FUNCTION_TYPE", "LED_AL")
+     Database.setSymbolValue("core", "PIN_86_FUNCTION_TYPE", "LED_AL")
+   Database.setSymbolValue("core", "PIN_86_FUNCTION_NAME", "LED1")
     Database.setSymbolValue("core", "PIN_86_DIR", "Out")
     Database.setSymbolValue("core", "PIN_86_LAT", "High")
 
     #Switch 1
-    Database.setSymbolValue("core", "PIN_75_FUNCTION_NAME", "SWITCH1")
     Database.setSymbolValue("core", "PIN_75_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_75_FUNCTION_NAME", "SWITCH1")
     Database.setSymbolValue("core", "PIN_75_PU", "True")
     Database.setSymbolValue("core", "PIN_75_DIR", "")
 
     #Switch 2
-    Database.setSymbolValue("core", "PIN_87_FUNCTION_NAME", "SWITCH2")
     Database.setSymbolValue("core", "PIN_87_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_87_FUNCTION_NAME", "SWITCH2")
     Database.setSymbolValue("core", "PIN_87_PU", "True")
     Database.setSymbolValue("core", "PIN_87_DIR", "")
 
     # VBUS
-    Database.setSymbolValue("core", "PIN_100_FUNCTION_NAME", "VBUS_HOST_EN")
     Database.setSymbolValue("core", "PIN_100_FUNCTION_TYPE", "VBUS_AL")
+    Database.setSymbolValue("core", "PIN_100_FUNCTION_NAME", "VBUS_HOST_EN")
     Database.setSymbolValue("core", "PIN_100_DIR", "Out")
 
     BSP_NAME = "sam_v71_xult"
