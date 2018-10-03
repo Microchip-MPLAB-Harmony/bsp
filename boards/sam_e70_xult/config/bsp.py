@@ -24,22 +24,22 @@
 
 def instantiateComponent(bspComponent):
     # LED1: PA05
-    Database.setSymbolValue("core", "PIN_18_FUNCTION_TYPE", "LED_AL")
-    Database.setSymbolValue("core", "PIN_18_FUNCTION_NAME", "LED1")
-    Database.setSymbolValue("core", "PIN_18_DIR", "Out")
-    Database.setSymbolValue("core", "PIN_18_LAT", "High")
+    Database.setSymbolValue("core", "PIN_73_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_73_FUNCTION_NAME", "LED1")
+    Database.setSymbolValue("core", "PIN_73_DIR", "Out")
+    Database.setSymbolValue("core", "PIN_73_LAT", "High")
 
     # LED2: PB08
-    Database.setSymbolValue("core", "PIN_15_FUNCTION_TYPE", "LED_AL")
-    Database.setSymbolValue("core", "PIN_15_FUNCTION_NAME", "LED2")
-    Database.setSymbolValue("core", "PIN_15_DIR", "Out")
-    Database.setSymbolValue("core", "PIN_15_LAT", "High")
+    Database.setSymbolValue("core", "PIN_141_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_141_FUNCTION_NAME", "LED2")
+    Database.setSymbolValue("core", "PIN_141_DIR", "Out")
+    Database.setSymbolValue("core", "PIN_141_LAT", "High")
 
     #Switch: PA11
-    Database.setSymbolValue("core", "PIN_29_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "PIN_29_FUNCTION_NAME", "SWITCH")
-    Database.setSymbolValue("core", "PIN_29_PU", "True")
-    Database.setSymbolValue("core", "PIN_29_DIR", "")
+    Database.setSymbolValue("core", "PIN_64_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_64_FUNCTION_NAME", "SWITCH")
+    Database.setSymbolValue("core", "PIN_64_PU", "True")
+    Database.setSymbolValue("core", "PIN_64_DIR", "")
 
     BSP_NAME = "sam_e70_xult"
 
