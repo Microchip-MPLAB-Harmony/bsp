@@ -41,11 +41,6 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_64_PU", "True")
     Database.setSymbolValue("core", "PIN_64_DIR", "")
 
-    # Clock configuration: Enable Bypass, Select Main Crystal clock, Disable RC Oscillator,
-    Database.setSymbolValue("core", "PMC_CKGR_MOR_MOSCXTBY", True)
-    Database.setSymbolValue("core", "PMC_CKGR_MOR_MOSCSEL", True)
-    Database.setSymbolValue("core", "PMC_CKGR_MOR_MOSCRCEN", False)
-
     BSP_NAME = "sam_e70_xult"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
