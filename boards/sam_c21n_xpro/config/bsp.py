@@ -33,6 +33,9 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_67_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_67_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_67_PULLEN", "True")
+    Database.setSymbolValue("core", "PIN_67_LAT", "High")
+    Database.setSymbolValue("core", "PIN_67_INEN", "True")
+
 
     BSP_NAME = "sam_c21_xpld"
 
