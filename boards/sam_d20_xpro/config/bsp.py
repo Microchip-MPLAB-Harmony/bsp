@@ -24,19 +24,19 @@
 
 def instantiateComponent(bspComponent):
 
-    #LED
-    Database.setSymbolValue("core", "PIN_59_FUNCTION_TYPE", "LED_AL")
-    Database.setSymbolValue("core", "PIN_59_FUNCTION_NAME", "LED")
-    Database.setSymbolValue("core", "PIN_59_LAT", "High")
+    #LED: PA14
+    Database.setSymbolValue("core", "PIN_31_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_31_FUNCTION_NAME", "LED")
+    Database.setSymbolValue("core", "PIN_31_LAT", "High")
 
-    #Switch
+    #Switch: PA15
     Database.setSymbolValue("core", "PIN_32_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_32_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_32_PULLEN", "True")
     Database.setSymbolValue("core", "PIN_32_LAT", "High")
     Database.setSymbolValue("core", "PIN_32_INEN", "True")
-
-    BSP_NAME = "sam_d21_xpld"
+    
+    BSP_NAME = "sam_d20_xpld"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
