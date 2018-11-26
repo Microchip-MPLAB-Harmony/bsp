@@ -8,5 +8,6 @@
         <Board name="SAM C21N Xplained Pro" processor="ATSAMC21N18A" config="sam_c21_xpro"/>
         <Board name="SAM C21 Xplained Pro" processor="ATSAMC21J18A" config="sam_d21_xpro"/>
         <Board name="SAM D21 Xplained Pro" processor="ATSAMD21J18A" config="sam_d21_xpro"/>
+        <Board name="SAM D20 Xplained Pro" processor="ATSAMD20J18" config="sam_d20_xpro"/>
     </Boards>
 </Module>
