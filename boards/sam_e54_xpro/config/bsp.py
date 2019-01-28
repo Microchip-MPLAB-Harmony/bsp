@@ -4,11 +4,14 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_72_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_72_FUNCTION_TYPE", "LED_AL")
     Database.setSymbolValue("core", "PIN_72_LAT", "High")
+    Database.setSymbolValue("core", "PIN_72_DIR", "Out")
 
     #Switch
     Database.setSymbolValue("core", "PIN_122_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_122_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_122_PULLEN", "True")
+    Database.setSymbolValue("core", "PIN_122_LAT", "High")
+    Database.setSymbolValue("core", "PIN_122_INEN", "True")
 
     BSP_NAME = "sam_e54_xpro"
 
