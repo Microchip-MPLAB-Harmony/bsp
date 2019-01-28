@@ -28,6 +28,7 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_21_FUNCTION_TYPE", "LED_AL")
     Database.setSymbolValue("core", "PIN_21_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_21_LAT", "High")
+    Database.setSymbolValue("core", "PIN_21_DIR", "Out")
 
     #Switch
     Database.setSymbolValue("core", "PIN_67_FUNCTION_TYPE", "SWITCH_AL")
