@@ -23,49 +23,50 @@
 
 def instantiateComponent(bspComponent):
 
-    # LED 1: RH0
-    Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_TYPE", "LED_AH")
-    Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_NAME", "LED1")
-    Database.setSymbolValue("core", "BSP_PIN_151_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_151_DIR", "Out")
-    Database.setSymbolValue("core", "BSP_PIN_151_LAT", "")
+    if ("PIC32MZ2064DAS169" in Variables.get("__PROCESSOR")):
+        # LED 1: RH0
+        Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_TYPE", "LED_AH")
+        Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_NAME", "LED1")
+        Database.setSymbolValue("core", "BSP_PIN_151_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_151_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_151_LAT", "")
 
-    # LED 2: RH2
-    Database.setSymbolValue("core", "BSP_PIN_103_FUNCTION_TYPE", "LED_AH")
-    Database.setSymbolValue("core", "BSP_PIN_103_FUNCTION_NAME", "LED2")
-    Database.setSymbolValue("core", "BSP_PIN_103_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_103_DIR", "Out")
-    Database.setSymbolValue("core", "BSP_PIN_103_LAT", "")
+        # LED 2: RH2
+        Database.setSymbolValue("core", "BSP_PIN_103_FUNCTION_TYPE", "LED_AH")
+        Database.setSymbolValue("core", "BSP_PIN_103_FUNCTION_NAME", "LED2")
+        Database.setSymbolValue("core", "BSP_PIN_103_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_103_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_103_LAT", "")
 
-    # LED 3: RH1
-    Database.setSymbolValue("core", "BSP_PIN_150_FUNCTION_TYPE", "LED_AH")
-    Database.setSymbolValue("core", "BSP_PIN_150_FUNCTION_NAME", "LED3")
-    Database.setSymbolValue("core", "BSP_PIN_150_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_150_DIR", "Out")
-    Database.setSymbolValue("core", "BSP_PIN_150_LAT", "")
+        # LED 3: RH1
+        Database.setSymbolValue("core", "BSP_PIN_150_FUNCTION_TYPE", "LED_AH")
+        Database.setSymbolValue("core", "BSP_PIN_150_FUNCTION_NAME", "LED3")
+        Database.setSymbolValue("core", "BSP_PIN_150_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_150_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_150_LAT", "")
 
-    #Switch 1: RB13
-    Database.setSymbolValue("core", "BSP_PIN_72_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "BSP_PIN_72_FUNCTION_NAME", "SWITCH1")
-    Database.setSymbolValue("core", "BSP_PIN_72_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_72_PU", "True")
-    Database.setSymbolValue("core", "BSP_PIN_72_DIR", "")
+        #Switch 1: RB13
+        Database.setSymbolValue("core", "BSP_PIN_72_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_72_FUNCTION_NAME", "SWITCH1")
+        Database.setSymbolValue("core", "BSP_PIN_72_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_72_PU", "True")
+        Database.setSymbolValue("core", "BSP_PIN_72_DIR", "")
 
-    # Switch 2: RB12
-    Database.setSymbolValue("core", "BSP_PIN_26_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "BSP_PIN_26_FUNCTION_NAME", "SWITCH2")
-    Database.setSymbolValue("core", "BSP_PIN_26_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_26_PU", "True")
-    Database.setSymbolValue("core", "BSP_PIN_26_DIR", "")
+        # Switch 2: RB12
+        Database.setSymbolValue("core", "BSP_PIN_26_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_26_FUNCTION_NAME", "SWITCH2")
+        Database.setSymbolValue("core", "BSP_PIN_26_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_26_PU", "True")
+        Database.setSymbolValue("core", "BSP_PIN_26_DIR", "")
 
-    # Switch 3: RB14
-    Database.setSymbolValue("core", "BSP_PIN_62_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "BSP_PIN_62_FUNCTION_NAME", "SWITCH3")
-    Database.setSymbolValue("core", "BSP_PIN_62_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_62_PU", "True")
-    Database.setSymbolValue("core", "BSP_PIN_62_DIR", "")
+        # Switch 3: RB14
+        Database.setSymbolValue("core", "BSP_PIN_62_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_62_FUNCTION_NAME", "SWITCH3")
+        Database.setSymbolValue("core", "BSP_PIN_62_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_62_PU", "True")
+        Database.setSymbolValue("core", "BSP_PIN_62_DIR", "")
 
-    BSP_NAME = "pic32mz_das_sk"
+    BSP_NAME = "pic32mz_da_sk"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
