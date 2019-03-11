@@ -2,6 +2,7 @@
 <Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0" type="bsp">
     <ConfigRoot path="config/module.py"/>
     <Boards>
+        <Board name="PIC32MK GP Development Kit" processor="PIC32MK1024GPE100" config="pic32mk_gp_db"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAS169" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFH144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFM144" config="pic32mz_ef_sk"/>
