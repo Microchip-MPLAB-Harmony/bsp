@@ -1,4 +1,12 @@
 # Microchip MPLAB Harmony 3 Release Notes
+## BSP Release v3.2.1
+### New features
+Added support for [PIC32MK GP Development Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320106)
+
+### Known issues
+
+There are no known issues
+
 ## BSP Release v3.2.0
 ### New features
 
@@ -8,7 +16,6 @@ Added support for the following development kits:
  1. [SAMA5D2 Xplained Ultra Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATSAMA5D2C-XULT)
  1. [PIC32MZ Embedded Graphics with Stacked DRAM (DA) Starter Kit (Crypto)](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320010-C)
  1. [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320007)
- 1. [PIC32MK GP Development Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320106)
 
 ### Known issues
 
@@ -40,4 +47,3 @@ Added support for the following development kits:
 ### Known issues
 
 There are no known issues
-
