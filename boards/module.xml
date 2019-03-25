@@ -15,6 +15,7 @@
         <Board name="SAM E54 Xplained Pro" processor="ATSAME54P20A" config="sam_e54_xpro"/>
         <Board name="SAM E70 Xplained" processor="ATSAME70Q21B" config="sam_e70_xpld"/>
         <Board name="SAM E70 Xplained Ultra" processor="ATSAME70Q21B" config="sam_e70_xult"/>
+        <Board name="SAM L21 Xplained Pro" processor="ATSAML21J18B" config="sam_l21_xpro"/>
         <Board name="SAM V71 Xplained Ultra" processor="ATSAMV71Q21B" config="sam_v71_xult"/>
     </Boards>
 </Module>
