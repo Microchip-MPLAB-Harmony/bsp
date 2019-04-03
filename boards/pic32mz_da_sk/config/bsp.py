@@ -23,7 +23,12 @@
 
 def instantiateComponent(bspComponent):
 
-    if ("PIC32MZ2064DAS169" in Variables.get("__PROCESSOR")):
+    supportedPartsList = ["PIC32MZ2064DAS169",
+                          "PIC32MZ2064DAR169",
+                          "PIC32MZ2064DAA288",
+                          "PIC32MZ2064DAB288"]
+
+    if (Variables.get("__PROCESSOR") in supportedPartsList):
         # LED 1: RH0
         Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_TYPE", "LED_AH")
         Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_NAME", "LED1")
