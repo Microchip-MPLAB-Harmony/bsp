@@ -4,7 +4,10 @@
     <Boards>
         <Board name="PIC32MX USB Starter Kit III" processor="PIC32MX450F256L" config="pic32mx_usb_sk3"/>
         <Board name="PIC32MK GP Development Kit" processor="PIC32MK1024GPE100" config="pic32mk_gp_db"/>
+        <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAR169" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAS169" config="pic32mz_da_sk"/>
+        <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAA288" config="pic32mz_da_sk"/>
+        <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAB288" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFH144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFM144" config="pic32mz_ef_sk"/>
         <Board name="SAM 9X60 Evaluation Kit" processor="SAM9X60" config="sam_9x60_ek"/>
