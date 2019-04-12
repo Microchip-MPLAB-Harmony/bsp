@@ -23,6 +23,7 @@
         <Board name="SAM D20 Xplained Pro" processor="ATSAMD20J18" config="sam_d20_xpro"/>
         <Board name="SAM D21 Xplained Pro" processor="ATSAMD21J18A" config="sam_d21_xpro"/>
         <Board name="SAM E54 Xplained Pro" processor="ATSAME54P20A" config="sam_e54_xpro"/>
+        <Board name="SAM E54 Curiosity Ultra" processor="ATSAME54P20A" config="sam_e54_cult"/>
         <Board name="SAM E70 Xplained" processor="ATSAME70Q21B" config="sam_e70_xpld"/>
         <Board name="SAM E70 Xplained Ultra" processor="ATSAME70Q21B" config="sam_e70_xult"/>
         <Board name="SAM L21 Xplained Pro" processor="ATSAML21J18B" config="sam_l21_xpro"/>
