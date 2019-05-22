@@ -2,6 +2,27 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.3.0
+### New features
+
+Added support for the following development kits:
+
+1. [MPLAB Starter Kit for PIC32MX1XX/2XX](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320013)
+2. [PIC32MX1/2/5 Starter Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320100)
+3. [PIC32MX274 XLP Starter Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/DM320105)
+4. [SAM E54 Curiosity Ultra Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320210)
+5. [Curiosity PIC32MX470 Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320103)
+6. [Curiosity PIC32MZEF Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320209)
+7. [PIC32MZ Embedded Graphics with External DRAM (DA) Starter Kit (Crypto)](https://www.microchip.com/Developmenttools/ProductDetails/DM320008-C)
+8. [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATSAML21-XPRO-B)
+9. [SAM L22 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATSAML22-XPRO-B)
+10. [PIC32 USB Starter Kit III](https://www.microchip.com/Developmenttools/ProductDetails/DM320003-3)
+11. [SAM 9x60 Evaluation Kit](https://www.microchip.com/design-centers/32-bit-mpus)
+
+### Known issues
+
+There are no known issues
+
 ## BSP Release v3.2.1
 ### New features
 
