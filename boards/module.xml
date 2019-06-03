@@ -6,6 +6,9 @@
         <Board name="PIC32MX1/2/5 Starter Kit" processor="PIC32MX570F512L" config="pic32mx_125_sk"/>
         <Board name="PIC32MX1XX/2XX Starter Kit" processor="PIC32MX250F128D" config="pic32mx_12_sk"/>
         <Board name="PIC32MX USB Starter Kit III" processor="PIC32MX450F256L" config="pic32mx_usb_sk3"/>
+        <Board name="PIC32MX Bluetooth Audio Development Kit" processor="PIC32MX270F512L" config="pic32mx_btadk"/>
+        <Board name="PIC32MX Bluetooth Audio Development Kit" processor="PIC32MX470F512L" config="pic32mx_btadk"/>
+        <Board name="PIC32MZ EF Bluetooth Audio Development Kit" processor="PIC32MZ2048EFH144" config="pic32mz_ef_btadk"/>
         <Board name="PIC32MK GP Development Kit" processor="PIC32MK1024GPE100" config="pic32mk_gp_db"/>
         <Board name="PIC32MX470 Curiosity Development Board" processor="PIC32MX470F512H" config="pic32mx470_curiosity"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAR169" config="pic32mz_da_sk"/>
