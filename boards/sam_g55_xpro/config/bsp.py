@@ -32,7 +32,7 @@ def instantiateComponent(bspComponent):
     #Switch: PA02
     Database.setSymbolValue("core", "PIN_61_FUNCTION_NAME", "SWITCH")
     Database.setSymbolValue("core", "PIN_61_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "PIN_61_PULLEN", "True")
+    Database.setSymbolValue("core", "PIN_61_PU", "True")
     Database.setSymbolValue("core", "PIN_61_LAT", "High")
     Database.setSymbolValue("core", "PIN_61_INEN", "True")
 
