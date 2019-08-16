@@ -63,6 +63,9 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_72_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "BSP_PIN_72_FUNCTION_NAME", "SWITCH4")
 
+    # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
+    Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
+
     BSP_NAME = "pic32mz_ef_c2"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
