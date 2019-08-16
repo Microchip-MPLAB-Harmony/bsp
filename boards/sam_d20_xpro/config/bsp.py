@@ -37,7 +37,7 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_32_LAT", "High")
     Database.setSymbolValue("core", "PIN_32_INEN", "True")
 
-    BSP_NAME = "sam_d20_xpld"
+    BSP_NAME = "sam_d20_xpro"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
