@@ -37,13 +37,16 @@ def instantiateComponent(bspComponent):
         Database.setSymbolValue("core", "BSP_PIN_64_MODE", "DIGITAL")
         Database.setSymbolValue("core", "BSP_PIN_64_DIR", "Out")
         Database.setSymbolValue("core", "BSP_PIN_64_LAT", "")
-       
+
         #Switch 1: RE13
         Database.setSymbolValue("core", "BSP_PIN_28_FUNCTION_TYPE", "SWITCH_AL")
         Database.setSymbolValue("core", "BSP_PIN_28_FUNCTION_NAME", "SWITCH")
         Database.setSymbolValue("core", "BSP_PIN_28_MODE", "DIGITAL")
         Database.setSymbolValue("core", "BSP_PIN_28_PU", "False")
-        Database.setSymbolValue("core", "BSP_PIN_28_DIR", "")        
+        Database.setSymbolValue("core", "BSP_PIN_28_DIR", "")
+
+    # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
+    Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
 
     BSP_NAME = "pic32mk_mcj_curiosity_pro"
 

@@ -50,7 +50,7 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_54_MODE", "DIGITAL")
     Database.setSymbolValue("core", "BSP_PIN_54_PU", "True")
     Database.setSymbolValue("core", "BSP_PIN_54_DIR", "")
-    
+
      # LED 1: RB10
     Database.setSymbolValue("core", "BSP_PIN_23_FUNCTION_TYPE", "LED_AL")
     Database.setSymbolValue("core", "BSP_PIN_23_FUNCTION_NAME", "RGB_LED_RED")
@@ -72,6 +72,8 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_14_DIR", "Out")
     Database.setSymbolValue("core", "BSP_PIN_14_LAT", "")
 
+    # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
+    Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
 
     BSP_NAME = "pic32mx470_curiosity"
 
