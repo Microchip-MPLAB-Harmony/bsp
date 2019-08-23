@@ -23,12 +23,15 @@
 
 def instantiateComponent(bspComponent):
 
-    supportedPartsList = ["PIC32MZ2064DAS169",
-                          "PIC32MZ2064DAR169",
-                          "PIC32MZ2064DAA288",
-                          "PIC32MZ2064DAB288"]
+    internalDDRPartsList = ["PIC32MZ2064DAH169",
+                            "PIC32MZ2064DAG169",
+                            "PIC32MZ2064DAR169",
+                            "PIC32MZ2064DAS169"]
 
-    if (Variables.get("__PROCESSOR") in supportedPartsList):
+    externalDDRPartsList = ["PIC32MZ2064DAA288",
+                            "PIC32MZ2064DAB288"]
+
+    if (Variables.get("__PROCESSOR") in internalDDRPartsList):
         # LED 1: RH0
         Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_TYPE", "LED_AH")
         Database.setSymbolValue("core", "BSP_PIN_151_FUNCTION_NAME", "LED1")
@@ -70,6 +73,49 @@ def instantiateComponent(bspComponent):
         Database.setSymbolValue("core", "BSP_PIN_62_MODE", "DIGITAL")
         Database.setSymbolValue("core", "BSP_PIN_62_PU", "True")
         Database.setSymbolValue("core", "BSP_PIN_62_DIR", "")
+
+    elif (Variables.get("__PROCESSOR") in externalDDRPartsList):
+        # LED 1: RH0
+        Database.setSymbolValue("core", "BSP_PIN_283_FUNCTION_TYPE", "LED_AH")
+        Database.setSymbolValue("core", "BSP_PIN_283_FUNCTION_NAME", "LED1")
+        Database.setSymbolValue("core", "BSP_PIN_283_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_283_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_283_LAT", "")
+
+        # LED 2: RH1
+        Database.setSymbolValue("core", "BSP_PIN_246_FUNCTION_TYPE", "LED_AH")
+        Database.setSymbolValue("core", "BSP_PIN_246_FUNCTION_NAME", "LED2")
+        Database.setSymbolValue("core", "BSP_PIN_246_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_246_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_246_LAT", "")
+
+        # LED 3: RH2
+        Database.setSymbolValue("core", "BSP_PIN_206_FUNCTION_TYPE", "LED_AH")
+        Database.setSymbolValue("core", "BSP_PIN_206_FUNCTION_NAME", "LED3")
+        Database.setSymbolValue("core", "BSP_PIN_206_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_206_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_206_LAT", "")
+
+        #Switch 1: RB12
+        Database.setSymbolValue("core", "BSP_PIN_33_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_33_FUNCTION_NAME", "SWITCH1")
+        Database.setSymbolValue("core", "BSP_PIN_33_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_33_PU", "True")
+        Database.setSymbolValue("core", "BSP_PIN_33_DIR", "")
+
+        # Switch 2: RB13
+        Database.setSymbolValue("core", "BSP_PIN_54_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_54_FUNCTION_NAME", "SWITCH2")
+        Database.setSymbolValue("core", "BSP_PIN_54_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_54_PU", "True")
+        Database.setSymbolValue("core", "BSP_PIN_54_DIR", "")
+
+        # Switch 3: RB14
+        Database.setSymbolValue("core", "BSP_PIN_143_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_143_FUNCTION_NAME", "SWITCH3")
+        Database.setSymbolValue("core", "BSP_PIN_143_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_143_PU", "True")
+        Database.setSymbolValue("core", "BSP_PIN_143_DIR", "")
 
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
     Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
