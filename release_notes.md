@@ -2,6 +2,29 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+
+## BSP Release v3.5.0
+### New features
+
+Added support for the following development kits:
+
+1. [SAM DA1 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMDA1-XPRO)
+2. [SAM D11 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd11-xpro)
+3. [SAM D10 Xplained Mini Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMD10-XMINI)
+4. [PIC32MX Ethernet Starter Kit II](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320004-2)
+5. [PIC32MZ Embedded Graphics with Stacked DRAM (DA) Starter Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320010)
+6. [PIC32MZ Embedded Graphics with Stacked DRAM (DA) Starter Kit (Crypto)](https://www.microchip.com/Developmenttools/ProductDetails/DM320010-C)
+7. [PIC32MZ Embedded Graphics with External DRAM (DA) Starter Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320008)
+8. [PIC32MZ Embedded Graphics with External DRAM (DA) Starter Kit (Crypto)](https://www.microchip.com/Developmenttools/ProductDetails/DM320008-C)
+9. PIC32MK MCJ Curiosity Pro Board
+10. PIC32MK GPL Curiosity Pro Board
+11. SAM RH71 Evaluation Kit
+
+### Known issues
+
+There are no known issues
+
+
 ## BSP Release v3.4.0
 ### New features
 
