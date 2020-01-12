@@ -3,6 +3,18 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.6.0
+### New features
+
+Added support for the following development kits:
+1. [SAM HA1G16A Xplained Pro](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/ATSAMHA1G16A-XPRO)
+2. PIC32MZ W1 Curiosity Board
+3. PIC32MK MCM Curiosity Pro
+
+### Known issues
+
+There are no known issues
+
 ## BSP Release v3.5.0
 ### New features
 
