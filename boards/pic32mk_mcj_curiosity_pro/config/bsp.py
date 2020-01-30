@@ -24,12 +24,12 @@
 def instantiateComponent(bspComponent):
 
     if ("PIC32MK0512MCJ064" in Variables.get("__PROCESSOR")):
-        # LED 1: RB8
-        Database.setSymbolValue("core", "BSP_PIN_48_FUNCTION_TYPE", "LED_AL")
-        Database.setSymbolValue("core", "BSP_PIN_48_FUNCTION_NAME", "LED1")
-        Database.setSymbolValue("core", "BSP_PIN_48_MODE", "DIGITAL")
-        Database.setSymbolValue("core", "BSP_PIN_48_DIR", "Out")
-        Database.setSymbolValue("core", "BSP_PIN_48_LAT", "")
+        # LED 1: RE13
+        Database.setSymbolValue("core", "BSP_PIN_28_FUNCTION_TYPE", "LED_AL")
+        Database.setSymbolValue("core", "BSP_PIN_28_FUNCTION_NAME", "LED1")
+        Database.setSymbolValue("core", "BSP_PIN_28_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_28_DIR", "Out")
+        Database.setSymbolValue("core", "BSP_PIN_28_LAT", "")
 
         # LED 2: RA10
         Database.setSymbolValue("core", "BSP_PIN_64_FUNCTION_TYPE", "LED_AL")
@@ -38,12 +38,12 @@ def instantiateComponent(bspComponent):
         Database.setSymbolValue("core", "BSP_PIN_64_DIR", "Out")
         Database.setSymbolValue("core", "BSP_PIN_64_LAT", "")
 
-        #Switch 1: RE13
-        Database.setSymbolValue("core", "BSP_PIN_28_FUNCTION_TYPE", "SWITCH_AL")
-        Database.setSymbolValue("core", "BSP_PIN_28_FUNCTION_NAME", "SWITCH")
-        Database.setSymbolValue("core", "BSP_PIN_28_MODE", "DIGITAL")
-        Database.setSymbolValue("core", "BSP_PIN_28_PU", "False")
-        Database.setSymbolValue("core", "BSP_PIN_28_DIR", "")
+        #Switch 1: RB8
+        Database.setSymbolValue("core", "BSP_PIN_48_FUNCTION_TYPE", "SWITCH_AL")
+        Database.setSymbolValue("core", "BSP_PIN_48_FUNCTION_NAME", "SWITCH")
+        Database.setSymbolValue("core", "BSP_PIN_48_MODE", "DIGITAL")
+        Database.setSymbolValue("core", "BSP_PIN_48_PU", "False")
+        Database.setSymbolValue("core", "BSP_PIN_48_DIR", "")
 
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
     Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
