@@ -3,6 +3,14 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.6.1
+### New Features
+- Updated PIC32MK MCJ BSP 
+
+### Known Issues
+
+There are no known issues 
+
 ## BSP Release v3.6.0
 ### New features
 
