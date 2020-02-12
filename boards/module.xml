@@ -20,6 +20,7 @@
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAS169" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAA288" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAB288" config="pic32mz_da_sk"/>
+        <Board name="PIC32MZ DA Curiosity" processor="PIC32MZ2064DAR176" config="pic32mz_da_curiosity"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFH144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFM144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Curiosity 2.0" processor="PIC32MZ2048EFM144" config="pic32mz_ef_curiosity_v2"/>
@@ -32,6 +33,7 @@
         <Board name="SAM D11 Xplained Pro" processor="ATSAMD11D14AM" config="sam_d11_xpro"/>
         <Board name="SAM D20 Xplained Pro" processor="ATSAMD20J18" config="sam_d20_xpro"/>
         <Board name="SAM D21 Xplained Pro" processor="ATSAMD21J18A" config="sam_d21_xpro"/>
+        <Board name="SAM D21 Curiosity Nano" processor="ATSAMD21G17D" config="sam_d21_cnano"/>
         <Board name="SAM DA1 Xplained Pro" processor="ATSAMDA1J16B" config="sam_da1_xpro"/>
         <Board name="SAM L10 Xplained Pro" processor="ATSAML10E16A" config="sam_l10_xpro"/>
         <Board name="SAM E54 Xplained Pro" processor="ATSAME54P20A" config="sam_e54_xpro"/>
