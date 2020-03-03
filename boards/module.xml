@@ -9,6 +9,8 @@
         <Board name="PIC32MX Ethernet Starter Kit II" processor="PIC32MX795F512L" config="pic32mx_eth_sk2"/>
         <Board name="PIC32MX Bluetooth Audio Development Kit" processor="PIC32MX270F512L" config="pic32mx_btadk"/>
         <Board name="PIC32MX Bluetooth Audio Development Kit" processor="PIC32MX470F512L" config="pic32mx_btadk"/>
+        <Board name="PIC32MX BM83 Bluetooth Audio Development Board" processor="PIC32MX270F512L" config="pic32mx_bm83_evb"/>
+        <Board name="PIC32MX BM83 Bluetooth Audio Development Board" processor="PIC32MX450F256L" config="pic32mx_bm83_evb"/>
         <Board name="PIC32MZ EF Bluetooth Audio Development Kit" processor="PIC32MZ2048EFH144" config="pic32mz_ef_btadk"/>
         <Board name="PIC32MK GP Development Kit" processor="PIC32MK1024GPE100" config="pic32mk_gp_db"/>
         <Board name="PIC32MK MCJ Curiosity Pro" processor="PIC32MK0512MCJ064" config="pic32mk_mcj_curiosity_pro"/>
