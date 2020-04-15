@@ -29,6 +29,8 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_8_FUNCTION_NAME", "LED")
     Database.setSymbolValue("core", "PIN_8_LAT", "High")
     Database.setSymbolValue("core", "PIN_8_DIR", "Out")
+    if Variables.get("__TRUSTZONE_ENABLED") != None and Variables.get("__TRUSTZONE_ENABLED") == "true":
+        Database.setSymbolValue("core", "PIN_8_IS_NON_SECURE", 1)
 
     #Switch
     Database.setSymbolValue("core", "PIN_25_FUNCTION_TYPE", "SWITCH_AL")
@@ -36,7 +38,8 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_25_PULLEN", "True")
     Database.setSymbolValue("core", "PIN_25_LAT", "High")
     Database.setSymbolValue("core", "PIN_25_INEN", "True")
-
+    if Variables.get("__TRUSTZONE_ENABLED") != None and Variables.get("__TRUSTZONE_ENABLED") == "true":
+        Database.setSymbolValue("core", "PIN_25_IS_NON_SECURE", 1)
 
     BSP_NAME = "sam_l11_xpro"
 
