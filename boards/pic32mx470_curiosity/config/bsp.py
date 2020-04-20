@@ -74,6 +74,9 @@ def instantiateComponent(bspComponent):
 
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
     Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
+    
+    # Clock setting
+    Database.setSymbolValue("core", "CONFIG_SYS_CLK_CONFIG_PRIMARY_XTAL", 20000000)
 
     BSP_NAME = "pic32mx470_curiosity"
 
