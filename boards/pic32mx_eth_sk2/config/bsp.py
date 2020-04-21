@@ -48,21 +48,21 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_83_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "BSP_PIN_83_FUNCTION_NAME", "SWITCH1")
     Database.setSymbolValue("core", "BSP_PIN_83_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_83_PU", "True")
+    Database.setSymbolValue("core", "BSP_PIN_15_PU", "True")
     Database.setSymbolValue("core", "BSP_PIN_83_DIR", "")
 
     # Switch 2: RD7
     Database.setSymbolValue("core", "BSP_PIN_84_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "BSP_PIN_84_FUNCTION_NAME", "SWITCH2")
     Database.setSymbolValue("core", "BSP_PIN_84_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_84_PU", "True")
+    Database.setSymbolValue("core", "BSP_PIN_16_PU", "True")
     Database.setSymbolValue("core", "BSP_PIN_84_DIR", "")
 
     # Switch 3: RD13
     Database.setSymbolValue("core", "BSP_PIN_80_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "BSP_PIN_80_FUNCTION_NAME", "SWITCH3")
     Database.setSymbolValue("core", "BSP_PIN_80_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_80_PU", "True")
+    Database.setSymbolValue("core", "BSP_PIN_19_PU", "True")
     Database.setSymbolValue("core", "BSP_PIN_80_DIR", "")
 
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
