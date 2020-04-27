@@ -34,6 +34,7 @@ def instantiateComponent(bspComponent):
     #Switch 1: RA10 (B39)
     Database.setSymbolValue("core", "BSP_PIN_111_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "BSP_PIN_111_FUNCTION_NAME", "SWITCH1")    
+    Database.setSymbolValue("core", "BSP_PIN_111_MODE", "DIGITAL")    
 
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
     Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
