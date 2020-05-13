@@ -2,6 +2,19 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.7.0
+### New features
+
+Added support for the following development kits:
+1. [SAML11 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320205)
+2. [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/DM320119)
+3. [BM83 Bluetooth Audio Development Board](https://www.microchip.com/developmenttools/ProductDetails/DM164152)
+4. PIC32MZ DA Curiosity
+
+### Known issues
+
+There are no known issues
+
 
 ## BSP Release v3.6.1
 ### New Features
