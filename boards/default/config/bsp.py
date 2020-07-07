@@ -24,25 +24,62 @@
 
 def instantiateComponent(bspComponent):
 
-	BSP_NAME = "default"
+    BSP_NAME = "default"
 
-	pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
-		{"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
-		{"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
-		{"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
-		{"attrib":"od", "symbol":"BSP_CUSTOM_OD", "label":"Open Drain"},
-		{"attrib":"cn", "symbol":"BSP_CUSTOM_CN", "label":"Change Notice"},
-		{"attrib":"pu", "symbol":"BSP_CUSTOM_PU", "label":"Pull Up"},
-		{"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"},
-		{"attrib":"int", "symbol":"BSP_CUSTOM_PIO_INTERRUPT", "label":"PIO Interrupt"}]
+    if "PIC32M" in Variables.get("__PROCESSOR"):
+        pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
+            {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
+            {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
+            {"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
+            {"attrib":"od", "symbol":"BSP_CUSTOM_OD", "label":"Open Drain"},
+            {"attrib":"cn", "symbol":"BSP_CUSTOM_CN", "label":"Change Notice"},
+            {"attrib":"pu", "symbol":"BSP_CUSTOM_PU", "label":"Pull Up"},
+            {"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"}]
 
+        pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
+            {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
+            {"type":"SWITCH_AH", "mode":"DIGITAL"},
+            {"type":"SWITCH_AL", "mode":"DIGITAL"},
+            {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+            {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT","lat":"High"}]
+    else:
+        peripheralNode = ATDF.getNode("/avr-tools-device-file/devices/device/peripherals")
+        for index in range (0, len(peripheralNode.getChildren())):
+            if ((peripheralNode.getChildren()[index].getAttribute("name") == "PIO") and
+               ((peripheralNode.getChildren()[index].getAttribute("id") == "11264") or
+                (peripheralNode.getChildren()[index].getAttribute("id") == "11004"))):
 
-	pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
-			{"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT"},
-			{"type":"SWITCH_AH", "mode":"DIGITAL"},
-			{"type":"SWITCH_AL", "mode":"DIGITAL"},
-			{"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
-			{"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"}]
+                pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
+                    {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
+                    {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
+                    {"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
+                    {"attrib":"od", "symbol":"BSP_CUSTOM_OD", "label":"Open Drain"},
+                    {"attrib":"cn", "symbol":"BSP_CUSTOM_CN", "label":"Change Notice"},
+                    {"attrib":"pu", "symbol":"BSP_CUSTOM_PU", "label":"Pull Up"},
+                    {"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"},
+                    {"attrib":"int", "symbol":"BSP_CUSTOM_PIO_INTERRUPT", "label":"PIO Interrupt"}]
 
-	execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
+                pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
+                    {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT"},
+                    {"type":"SWITCH_AH", "mode":"DIGITAL"},
+                    {"type":"SWITCH_AL", "mode":"DIGITAL"},
+                    {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+                    {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"}]
+                break
+            elif ((peripheralNode.getChildren()[index].getAttribute("name") == "PORT") and
+                  (peripheralNode.getChildren()[index].getAttribute("id").upper() == "U2210")):
+                pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
+                    {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
+                    {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
+                    {"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
+                    {"attrib":"pe", "symbol":"BSP_CUSTOM_PE", "label":"Pull Enable"},
+                    {"attrib":"ie", "symbol":"BSP_CUSTOM_IE", "label":"Input Enable"}]
+
+                pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
+                    {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
+                    {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
+                    {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"}]
+                break
+
+    execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
 
