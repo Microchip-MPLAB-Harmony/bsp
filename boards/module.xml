@@ -3,6 +3,7 @@
     <ConfigRoot path="config/module.py"/>
     <Boards>
         <Board name="PIC32CM LE00 Curiosity Pro" processor="PIC32CM5164LE00100" config="pic32cm_le00_curiosity_pro"/>
+        <Board name="PIC32CM LS00 Curiosity Pro" processor="PIC32CM5164LS00100" config="pic32cm_ls00_curiosity_pro"/>
         <Board name="PIC32CM MC Curiosity Pro" processor="PIC32CM1216MC00048" config="pic32cm_mc00_curiosity_pro"/>
         <Board name="PIC32MX274 XLP Starter Kit" processor="PIC32MX274F256D" config="pic32mx_xlp_sk"/>
         <Board name="PIC32MX1/2/5 Starter Kit" processor="PIC32MX570F512L" config="pic32mx_125_sk"/>
