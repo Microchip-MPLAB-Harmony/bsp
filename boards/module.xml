@@ -2,7 +2,8 @@
 <Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0" type="bsp">
     <ConfigRoot path="config/module.py"/>
     <Boards>
-		<Board name="PIC32CM MC Curiosity Pro" processor="PIC32CM1216MC00048" config="pic32cm_mc00_curiosity_pro"/>
+        <Board name="PIC32CM LE00 Curiosity Pro" processor="PIC32CM5164LE00100" config="pic32cm_le00_curiosity_pro"/>
+        <Board name="PIC32CM MC Curiosity Pro" processor="PIC32CM1216MC00048" config="pic32cm_mc00_curiosity_pro"/>
         <Board name="PIC32MX274 XLP Starter Kit" processor="PIC32MX274F256D" config="pic32mx_xlp_sk"/>
         <Board name="PIC32MX1/2/5 Starter Kit" processor="PIC32MX570F512L" config="pic32mx_125_sk"/>
         <Board name="PIC32MX1XX/2XX Starter Kit" processor="PIC32MX250F128D" config="pic32mx_12_sk"/>
