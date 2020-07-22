@@ -25,6 +25,8 @@ def instantiateComponent(bspComponent):
     pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
             {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
             {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
-            {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"}]
+            {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"},
+            {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+            {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
 
     execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")

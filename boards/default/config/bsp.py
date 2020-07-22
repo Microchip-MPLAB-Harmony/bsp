@@ -25,6 +25,7 @@
 def instantiateComponent(bspComponent):
 
     BSP_NAME = "default"
+    peripheralNode = ATDF.getNode("/avr-tools-device-file/devices/device/peripherals")
 
     if "PIC32M" in Variables.get("__PROCESSOR"):
         pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
@@ -39,11 +40,12 @@ def instantiateComponent(bspComponent):
         pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
             {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
             {"type":"SWITCH_AH", "mode":"DIGITAL"},
-            {"type":"SWITCH_AL", "mode":"DIGITAL"},
-            {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
-            {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT","lat":"High"}]
+            {"type":"SWITCH_AL", "mode":"DIGITAL"}]
+        for index in range (0, len(peripheralNode.getChildren())):
+            if (peripheralNode.getChildren()[index].getAttribute("name") == "USB" and any(id in peripheralNode.getChildren()[index].getAttribute("id") for id in ["01195", "02813", "00124"])):
+                pinTypes.append({"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"})
+                pinTypes.append({"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"})
     else:
-        peripheralNode = ATDF.getNode("/avr-tools-device-file/devices/device/peripherals")
         for index in range (0, len(peripheralNode.getChildren())):
             if ((peripheralNode.getChildren()[index].getAttribute("name") == "PIO") and
                ((peripheralNode.getChildren()[index].getAttribute("id") == "11264") or
@@ -58,13 +60,14 @@ def instantiateComponent(bspComponent):
                     {"attrib":"pu", "symbol":"BSP_CUSTOM_PU", "label":"Pull Up"},
                     {"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"},
                     {"attrib":"int", "symbol":"BSP_CUSTOM_PIO_INTERRUPT", "label":"PIO Interrupt"}]
-
                 pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
                     {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT"},
                     {"type":"SWITCH_AH", "mode":"DIGITAL"},
-                    {"type":"SWITCH_AL", "mode":"DIGITAL"},
-                    {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
-                    {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"}]
+                    {"type":"SWITCH_AL", "mode":"DIGITAL"}]
+                for index in range (0, len(peripheralNode.getChildren())):
+                    if (any(name in peripheralNode.getChildren()[index].getAttribute("name") for name in ["USBHS", "UHP", "UDPHS"]) and any(id in peripheralNode.getChildren()[index].getAttribute("id") for id in ["11292", "6127", "6227"])):
+                        pinTypes.append({"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"})
+                        pinTypes.append({"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"})
                 break
             elif ((peripheralNode.getChildren()[index].getAttribute("name") == "PORT") and
                   (peripheralNode.getChildren()[index].getAttribute("id").upper() == "U2210")):
@@ -79,6 +82,11 @@ def instantiateComponent(bspComponent):
                     {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
                     {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
                     {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"}]
+                if not any(x in Variables.get("__PROCESSOR") for x in ["SAML22", "SAMD11"]):
+                    for index in range (0, len(peripheralNode.getChildren())):
+                        if (peripheralNode.getChildren()[index].getAttribute("name") == "USB" and peripheralNode.getChildren()[index].getAttribute("id").upper() == "U2222"):
+                            pinTypes.append({"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"})
+                            pinTypes.append({"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"})
                 break
 
     execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
