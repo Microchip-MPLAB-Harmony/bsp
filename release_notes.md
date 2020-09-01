@@ -2,6 +2,21 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.8.0
+### New features
+
+Added support for the following development kits:
+1. PIC32CM MC Curiosity Pro
+2. PIC32CM JH Curiosity Pro
+3. PIC32CM LE00 Curiosity Pro
+4. PIC32CM LS00 Curiosity Pro
+5. PIC32CM LS60 Curiosity Pro
+6. SAMA5D27 SOM1 Kit1
+
+### Known issues
+
+There are no known issues
+
 ## BSP Release v3.7.0
 ### New features
 

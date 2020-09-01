@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="1.0.0" type="bsp">
+<Module name="BSP" id="B588CB7D-61DC-47D2-AED3-83225E3F62C8" version="3.8.0" type="bsp">
     <ConfigRoot path="config/module.py"/>
     <Boards>
         <Board name="PIC32CM JH Curiosity Pro" processor="PIC32CM5164JH00100" config="pic32cm_jh01_curiosity_pro"/>
