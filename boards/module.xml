@@ -13,6 +13,7 @@
         <Board name="PIC32MX1XX/2XX Starter Kit" processor="PIC32MX250F128D" config="pic32mx_12_sk"/>
         <Board name="PIC32MX USB Starter Kit III" processor="PIC32MX450F256L" config="pic32mx_usb_sk3"/>
         <Board name="PIC32MX Ethernet Starter Kit II" processor="PIC32MX795F512L" config="pic32mx_eth_sk2"/>
+        <Board name="PIC32MX Starter Kit" processor="PIC32MX360F512L" config="pic32mx_sk"/>
         <Board name="PIC32MX Bluetooth Audio Development Kit" processor="PIC32MX270F512L" config="pic32mx_btadk"/>
         <Board name="PIC32MX Bluetooth Audio Development Kit" processor="PIC32MX470F512L" config="pic32mx_btadk"/>
         <Board name="PIC32MX BM83 Bluetooth Audio Development Board" processor="PIC32MX270F512L" config="pic32mx_bm83_evb"/>
