@@ -26,10 +26,12 @@ def instantiateComponent(bspComponent):
     # LED RED: RK1 (B37)
     Database.setSymbolValue("core", "BSP_PIN_109_FUNCTION_TYPE", "LED_AH")
     Database.setSymbolValue("core", "BSP_PIN_109_FUNCTION_NAME", "LED_RED")
+    Database.setSymbolValue("core", "BSP_PIN_109_MODE", "DIGITAL") 
 
     # LED GREEN: RK3 (B38)
     Database.setSymbolValue("core", "BSP_PIN_110_FUNCTION_TYPE", "LED_AH")
-    Database.setSymbolValue("core", "BSP_PIN_110_FUNCTION_NAME", "LED_GREEN")    
+    Database.setSymbolValue("core", "BSP_PIN_110_FUNCTION_NAME", "LED_GREEN")
+    Database.setSymbolValue("core", "BSP_PIN_110_MODE", "DIGITAL")  
 
     #Switch 1: RA10 (B39)
     Database.setSymbolValue("core", "BSP_PIN_111_FUNCTION_TYPE", "SWITCH_AL")
