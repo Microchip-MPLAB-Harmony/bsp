@@ -24,19 +24,31 @@
 
 def instantiateComponent(bspComponent):
 
-    #LED
+    #LED0
     Database.setSymbolValue("core", "PIN_59_FUNCTION_TYPE", "LED_AL")
-    Database.setSymbolValue("core", "PIN_59_FUNCTION_NAME", "LED")
+    Database.setSymbolValue("core", "PIN_59_FUNCTION_NAME", "LED0")
     Database.setSymbolValue("core", "PIN_59_LAT", "High")
     Database.setSymbolValue("core", "PIN_59_DIR", "Out")
 
-    #Switch
+    #LED1
+    Database.setSymbolValue("core", "PIN_85_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_85_FUNCTION_NAME", "LED1")
+    Database.setSymbolValue("core", "PIN_85_LAT", "High")
+    Database.setSymbolValue("core", "PIN_85_DIR", "Out")
+
+    #SW0
     Database.setSymbolValue("core", "PIN_60_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "PIN_60_FUNCTION_NAME", "SWITCH")
+    Database.setSymbolValue("core", "PIN_60_FUNCTION_NAME", "SW0")
     Database.setSymbolValue("core", "PIN_60_PULLEN", "True")
     Database.setSymbolValue("core", "PIN_60_LAT", "High")
     Database.setSymbolValue("core", "PIN_60_INEN", "True")
 
+    #SW1
+    Database.setSymbolValue("core", "PIN_86_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_86_FUNCTION_NAME", "SW1")
+    Database.setSymbolValue("core", "PIN_86_PULLEN", "True")
+    Database.setSymbolValue("core", "PIN_86_LAT", "High")
+    Database.setSymbolValue("core", "PIN_86_INEN", "True")
 
     BSP_NAME = "pic32cm_le00_curiosity_pro"
 
