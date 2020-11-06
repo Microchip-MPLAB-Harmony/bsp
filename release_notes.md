@@ -2,6 +2,15 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+
+## BSP Release v3.8.2
+### New Features
+- Minor updates to BSP
+
+### Known Issues
+
+There are no known issues 
+
 ## BSP Release v3.8.1
 ### New Features
 - Updated supported product families 
