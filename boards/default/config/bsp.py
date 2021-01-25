@@ -27,7 +27,7 @@ def instantiateComponent(bspComponent):
     BSP_NAME = "default"
     peripheralNode = ATDF.getNode("/avr-tools-device-file/devices/device/peripherals")
 
-    if "PIC32M" in Variables.get("__PROCESSOR"):
+    if ("PIC32M" in Variables.get("__PROCESSOR")) or (("PIC32CX" in Variables.get("__PROCESSOR")) and ("BZ" in Variables.get("__PROCESSOR"))):
         pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
             {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
             {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
