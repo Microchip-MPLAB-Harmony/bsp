@@ -3,6 +3,17 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.9.0
+### New features
+
+Added support for the following development kits:
+1. [PIC32MX Starter Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320001)
+2. [SAMA5D2 WLSOM1 EK1](https://www.microchip.com/Developmenttools/ProductDetails/DM320117)
+
+### Known issues
+
+There are no known issues
+
 ## BSP Release v3.8.2
 ### New Features
 - Minor updates to BSP
