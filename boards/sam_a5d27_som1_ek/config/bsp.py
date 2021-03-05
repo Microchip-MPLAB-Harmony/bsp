@@ -29,7 +29,7 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_248_DIR", "Out")
     Database.setSymbolValue("core", "PIN_248_LAT", "Low")
 
-    # LED_BLUE: PB0
+    # LED_GREEN: PB1
     Database.setSymbolValue("core", "PIN_42_FUNCTION_TYPE", "LED_AH")
     Database.setSymbolValue("core", "PIN_42_FUNCTION_NAME", "LED_GREEN")
     Database.setSymbolValue("core", "PIN_42_DIR", "Out")
