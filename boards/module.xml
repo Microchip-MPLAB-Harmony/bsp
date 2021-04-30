@@ -34,6 +34,7 @@
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFM144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Curiosity 2.0" processor="PIC32MZ2048EFM144" config="pic32mz_ef_curiosity_v2"/>
         <Board name="PIC32MZ W1 Curiosity" processor="PIC32MZ1025W104132" config="pic32mz_w1_curiosity"/>
+        <Board name="WFI Curiosity" processor="WFI32E01" config="wfi_curiosity"/>
         <Board name="PIC32MZ W1 WFI32IoT" processor="PIC32MZ1025W104132" config="pic32mz_w1_wfiiot"/>
         <Board name="SAM 9X60 Evaluation Kit" processor="SAM9X60" config="sam_9x60_ek"/>
         <Board name="SAM A5D2 Xplained Ultra" processor="ATSAMA5D27" config="sam_a5d2_xult"/>
