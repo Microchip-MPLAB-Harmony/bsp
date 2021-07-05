@@ -64,5 +64,6 @@
         <Board name="SAM RH71 Evaluation Kit" processor="ATSAMRH71F20C" config="sam_rh71_ek"/>
         <Board name="SAM V71 Xplained Ultra" processor="ATSAMV71Q21B" config="sam_v71_xult"/>
         <Board name="SAM R34 Xplained Pro" processor="ATSAMR34J18B" config="sam_r34_xpro"/>
+        <Board name="WLR089 Xplained Pro" processor="WLR089U0" config="wlr089_xpro"/>
     </Boards>
 </Module>
