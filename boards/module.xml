@@ -68,5 +68,7 @@
         <Board name="SAM R34 Xplained Pro" processor="ATSAMR34J18B" config="sam_r34_xpro"/>
         <Board name="WLR089 Xplained Pro" processor="WLR089U0" config="wlr089_xpro"/>
         <Board name="SAM E51 Curiosity Nano" processor="ATSAME51J20A" config="sam_e51_cnano"/>
+        <Board name="SAM-IoT WG Development Board" processor="ATSAMD21G18A" config="sam_d21_iot"/>
+        <Board name="PIC32CM MC00 Curiosity Nano" processor="PIC32CM1216MC00032" config="pic32cm_mc00_cnano"/>
     </Boards>
 </Module>
