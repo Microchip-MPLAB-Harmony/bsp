@@ -74,5 +74,6 @@
         <Board name="SAM-IoT WG Development Board" processor="ATSAMD21G18A" config="sam_d21_iot"/>
         <Board name="PIC32CM MC00 Curiosity Nano" processor="PIC32CM1216MC00032" config="pic32cm_mc00_cnano"/>
         <Board name="PL360G55CB Evaluation Kit" processor="ATSAMG55J19" config="pl360g55cb_ek"/>
+        <Board name="PL485 Evaluation kit" processor="ATSAMG55J19" config="pl485_ek"/>
     </Boards>
 </Module>
