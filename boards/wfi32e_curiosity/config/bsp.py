@@ -41,7 +41,7 @@ def instantiateComponent(bspComponent):
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
     Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
 
-    BSP_NAME = "wfi_curiosity"
+    BSP_NAME = "wfi32e_curiosity"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
