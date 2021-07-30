@@ -35,6 +35,7 @@
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAA288" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAB288" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ DA Curiosity" processor="PIC32MZ2064DAR176" config="pic32mz_da_curiosity"/>
+        <Board name="PIC32MZ DA Radial Board" processor="PIC32MZ2064DAS176" config="pic32mz_da_radial_board"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFH144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Starter Kit" processor="PIC32MZ2048EFM144" config="pic32mz_ef_sk"/>
         <Board name="PIC32MZ EF Curiosity 2.0" processor="PIC32MZ2048EFM144" config="pic32mz_ef_curiosity_v2"/>
