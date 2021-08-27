@@ -59,6 +59,119 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_15_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "BSP_PIN_15_FUNCTION_NAME", "SWITCH_CCW")
 
+    # Display CSX: RB12
+    Database.setSymbolValue("core", "BSP_PIN_171_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_171_FUNCTION_NAME", "CSX")
+    Database.setSymbolValue("core", "BSP_PIN_171_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_171_DIR", "Out")
+    Database.setSymbolValue("core", "BSP_PIN_171_PU", "True")
+
+    # Display SCK: RB14
+    Database.setSymbolValue("core", "BSP_PIN_159_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_159_FUNCTION_NAME", "SCK")
+    Database.setSymbolValue("core", "BSP_PIN_159_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_159_DIR", "Out")
+
+    # Display SDO: RD14
+    Database.setSymbolValue("core", "BSP_PIN_158_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_158_FUNCTION_NAME", "SDO")
+    Database.setSymbolValue("core", "BSP_PIN_158_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_158_DIR", "Out")
+    Database.setSymbolValue("core", "BSP_PIN_158_PU", "True")
+
+    # Display RESX: RD10
+    Database.setSymbolValue("core", "BSP_PIN_77_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_77_FUNCTION_NAME", "RESX")
+    Database.setSymbolValue("core", "BSP_PIN_77_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_77_DIR", "Out")
+    Database.setSymbolValue("core", "BSP_PIN_77_PU", "True")
+
+    # maXTouch IRQ: RH14
+    Database.setSymbolValue("core", "BSP_PIN_42_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_42_FUNCTION_NAME", "BSP_MAXTOUCH_CHG")
+    Database.setSymbolValue("core", "BSP_PIN_42_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_42_PU", "True")
+    Database.setSymbolValue("core", "BSP_PIN_42_DIR", "")
+
+    # Display Enable: RK1
+    Database.setSymbolValue("core", "BSP_PIN_136_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_136_FUNCTION_NAME", "DISPLAY_ENABLE")
+    Database.setSymbolValue("core", "BSP_PIN_136_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_136_PU", "True")
+    Database.setSymbolValue("core", "BSP_PIN_136_DIR", "Out")
+
+    # Display Backlight Type 1: RD0
+    Database.setSymbolValue("core", "BSP_PIN_79_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_79_FUNCTION_NAME", "BACKLIGHT_TYPE_1")
+    Database.setSymbolValue("core", "BSP_PIN_79_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_79_DIR", "Out")
+
+    # Display Backlight Type 2: RD7
+    Database.setSymbolValue("core", "BSP_PIN_120_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_120_FUNCTION_NAME", "BACKLIGHT_TYPE_2")
+    Database.setSymbolValue("core", "BSP_PIN_120_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_120_DIR", "Out")
+
+    # UART4_TX : RF12
+    Database.setSymbolValue("core", "BSP_PIN_27_FUNCTION_TYPE", "U4TX")
+    Database.setSymbolValue("core", "BSP_PIN_27_FUNCTION_NAME", "UART4_TX")
+    Database.setSymbolValue("core", "BSP_PIN_27_PU", "True")
+
+    # UART4_RX : RG9
+    Database.setSymbolValue("core", "BSP_PIN_33_FUNCTION_TYPE", "U4RX")
+    Database.setSymbolValue("core", "BSP_PIN_33_FUNCTION_NAME", "UART4_RX")
+    Database.setSymbolValue("core", "BSP_PIN_33_PU", "True")
+
+    # WDRV_WINC_RESETN : RH6
+    Database.setSymbolValue("core", "BSP_PIN_101_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_101_FUNCTION_NAME", "WDRV_WINC_RESETN")
+    Database.setSymbolValue("core", "BSP_PIN_101_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_101_DIR", "Out")
+    Database.setSymbolValue("core", "BSP_PIN_101_PU", "True")
+
+    # WDRV_WINC_CHIP_EN : RH11
+    Database.setSymbolValue("core", "BSP_PIN_138_FUNCTION_TYPE", "GPIO")
+    Database.setSymbolValue("core", "BSP_PIN_138_FUNCTION_NAME", "WDRV_WINC_CHIP_EN")
+    Database.setSymbolValue("core", "BSP_PIN_138_MODE", "DIGITAL")
+    Database.setSymbolValue("core", "BSP_PIN_138_DIR", "Out")
+
+    # SDHC Setup
+
+    # SDCD : RA0
+    Database.setSymbolValue("core", "BSP_PIN_53_FUNCTION_TYPE", "SDCD")
+    Database.setSymbolValue("core", "BSP_PIN_53_FUNCTION_NAME", "SDCD")
+    Database.setSymbolValue("core", "BSP_PIN_53_PU", "True")
+
+    # SDCK : RA6
+    Database.setSymbolValue("core", "BSP_PIN_54_FUNCTION_TYPE", "SDCK")
+    Database.setSymbolValue("core", "BSP_PIN_54_FUNCTION_NAME", "SDCK")
+    Database.setSymbolValue("core", "BSP_PIN_54_PU", "")
+
+    # SDDATA3 : RA7
+    Database.setSymbolValue("core", "BSP_PIN_55_FUNCTION_TYPE", "SDDATA3")
+    Database.setSymbolValue("core", "BSP_PIN_55_FUNCTION_NAME", "SDDATA3")
+    Database.setSymbolValue("core", "BSP_PIN_55_PU", "")
+
+    # SDDATA1 : RG12
+    Database.setSymbolValue("core", "BSP_PIN_56_FUNCTION_TYPE", "SDDATA1")
+    Database.setSymbolValue("core", "BSP_PIN_56_FUNCTION_NAME", "SDDATA1")
+    Database.setSymbolValue("core", "BSP_PIN_56_PU", "")
+
+    # SDDATA0 : RG13
+    Database.setSymbolValue("core", "BSP_PIN_64_FUNCTION_TYPE", "SDDATA0")
+    Database.setSymbolValue("core", "BSP_PIN_64_FUNCTION_NAME", "SDDATA0")
+    Database.setSymbolValue("core", "BSP_PIN_64_PU", "")
+
+    # SDDATA2 : RG14
+    Database.setSymbolValue("core", "BSP_PIN_65_FUNCTION_TYPE", "SDDATA2")
+    Database.setSymbolValue("core", "BSP_PIN_65_FUNCTION_NAME", "SDDATA2")
+    Database.setSymbolValue("core", "BSP_PIN_65_PU", "")
+
+    # SDCMD : RD4
+    Database.setSymbolValue("core", "BSP_PIN_70_FUNCTION_TYPE", "SDCMD")
+    Database.setSymbolValue("core", "BSP_PIN_70_FUNCTION_NAME", "SDCMD")
+    Database.setSymbolValue("core", "BSP_PIN_70_PU", "")
+
     # DEVCFG0<ICESEL> In-Circuit Emulator/Debugger Communication Channel Select bits
     Database.setSymbolValue("core", "CONFIG_ICESEL", "ICS_PGx2")
 
