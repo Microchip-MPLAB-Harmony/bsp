@@ -86,13 +86,6 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_77_DIR", "Out")
     Database.setSymbolValue("core", "BSP_PIN_77_PU", "True")
 
-    # maXTouch IRQ: RH14
-    Database.setSymbolValue("core", "BSP_PIN_42_FUNCTION_TYPE", "GPIO")
-    Database.setSymbolValue("core", "BSP_PIN_42_FUNCTION_NAME", "BSP_MAXTOUCH_CHG")
-    Database.setSymbolValue("core", "BSP_PIN_42_MODE", "DIGITAL")
-    Database.setSymbolValue("core", "BSP_PIN_42_PU", "True")
-    Database.setSymbolValue("core", "BSP_PIN_42_DIR", "")
-
     # Display Enable: RK1
     Database.setSymbolValue("core", "BSP_PIN_136_FUNCTION_TYPE", "GPIO")
     Database.setSymbolValue("core", "BSP_PIN_136_FUNCTION_NAME", "DISPLAY_ENABLE")
