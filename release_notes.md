@@ -3,6 +3,27 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.10.0
+### New features
+
+Added support for the following development kits:
+1. [SAM E51 CURIOSITY NANO EVALUATION KIT](https://www.microchip.com/Developmenttools/ProductDetails/EV76S68A)
+2. [PIC32 WFI32E CURIOSITY BOARD](https://www.microchip.com/en-us/development-tool/EV12F11A)
+3. [WLR089 XPLAINED PRO EVALUATION KIT](https://www.microchip.com/en-us/development-tool/EV23M25A)
+4. [PIC32MM CURIOSITY DEVELOPMENT BOARD](https://www.microchip.com/en-us/development-tool/DM320101)
+5. [PIC32MM USB CURIOSITY DEVELOPMENT BOARD](https://www.microchip.com/en-us/development-tool/dm320107)
+6. [SAM-IOT WG DEVELOPMENT BOARD](https://www.microchip.com/en-us/development-tool/EV75S95A)
+7. [PIC32CM MC00 CURIOSITY NANO EVALUATION KIT](https://www.microchip.com/en-us/development-tool/EV10N93A)
+8. [PL360G55CF EVALUATION BOARD](https://www.microchip.com/en-us/development-tool/PL360G55CF-EK)
+9. [PL485 EVALUATION KIT](https://www.microchip.com/en-us/development-tool/PL485-EK)
+10. [PL360G55CB EVALUATION BOARD](https://www.microchip.com/en-us/development-tool/PL360G55CB-EK)
+11. [SAMR34 XPLAINED PRO EVALUATION KIT](https://www.microchip.com/en-us/development-tool/dm320111)
+
+
+### Known issues
+
+There are no known issues
+
 ## BSP Release v3.9.0
 ### New features
 
