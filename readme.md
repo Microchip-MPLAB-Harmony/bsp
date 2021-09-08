@@ -73,6 +73,10 @@ reference information.
 | 47 | sam_rh71_ek | [SAMRH71F20-EK Evaluation Kit](https://ww1.microchip.com/downloads/en/DeviceDoc/SAMRH71F20-EK-Evaluation-Kit-User-Guide-DS50002910A.pdf) | SAMRH71F20 |
 | 48 | sam_v71_xult | [SAM V71 Xplained Ultra Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamv71-xult) | ATSAMV71Q21B |
 | 49 | wlr089_xpro | [WLR089 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/EV23M25A) | WLR089U0 |
+| 50 | pl360g55cf_ek | [PL360G55CF Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CF-EK) | SAMG55J19 |
+| 51 | pl485_ek | [PL485 Evaluation Kit](https://www.microchip.com/en-us/development-tool/PL485-EK) | PL485 SOC |
+| 52 | pl360g55cb_ek | [PL360G55CB Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CB-EK) | SAMG55J19 |
+| 53 | sam_r34_xpro | [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/dm320111) | SAM R34 SiP |
 
 ____
 
