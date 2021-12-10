@@ -77,5 +77,6 @@
         <Board name="PL360G55CB Evaluation Kit" processor="ATSAMG55J19" config="pl360g55cb_ek"/>
         <Board name="PL485 Evaluation kit" processor="ATSAMG55J19" config="pl485_ek"/>
         <Board name="PL360G55CF Evaluation Kit" processor="ATSAMG55J19" config="pl360g55cf_ek"/>
+		<Board name="LAN9255 Evaluation Board" processor="LAN9255ZMX020" config="lan9255_evb"/>
     </Boards>
 </Module>
