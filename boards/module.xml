@@ -28,6 +28,7 @@
         <Board name="PIC32MK GP Development Kit" processor="PIC32MK1024GPE100" config="pic32mk_gp_db"/>
         <Board name="PIC32MK MCJ Curiosity Pro" processor="PIC32MK0512MCJ064" config="pic32mk_mcj_curiosity_pro"/>
         <Board name="PIC32MK MCM Curiosity Pro" processor="PIC32MK1024MCM100" config="pic32mk_mcm_curiosity_pro"/>
+        <Board name="PIC32MK MCA Curiosity Pro" processor="PIC32MK0128MCA048" config="pic32mk_mca_curiosity_pro"/>
         <Board name="PIC32MX470 Curiosity Development Board" processor="PIC32MX470F512H" config="pic32mx470_curiosity"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAG169" config="pic32mz_da_sk"/>
         <Board name="PIC32MZ DA Starter Kit" processor="PIC32MZ2064DAH169" config="pic32mz_da_sk"/>
