@@ -1,0 +1,618 @@
+<bsp>
+    <pim>   
+        <connectors>   
+            <connector name = "DBG_LED2"  index = "1">
+                <pin name = "" index = "[1]" type = "" />
+            </connector>
+
+            <connector name = "VDD"  index = "2">
+                <pin name = "" index = "[2]" type = "" />
+            </connector> 
+
+            <connector name = "PWM1H3"  index = "3">
+                <pin name = "" index = "[93]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "4" >
+                <pin name = "" index = "[6]" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "5" >
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "6" >
+                <pin name = "PWM6L" index = "[8]" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "7" >
+                <pin name = "PWM6H" index = "[9]" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "8" >
+                <pin name = "AN22" index = "[17]" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "9" >
+                <pin name = "AN21" index = "[18]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "10" >
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "11" >
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "NC"   index = "12" >
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "MCLR"  index = "13" >
+                <pin name = "MCLR   " index = "[13]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "14" >
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "VSS"  index = "15">
+                <pin name = "VSS" index = "[15]" type = "" />
+            </connector>
+
+            <connector name = "VDD"  index = "16">
+                <pin name = "VDD" index = "[16]" type = "" />
+            </connector>
+
+            <connector name = "NC "  index = "17" >
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "FAULT_MC"  index = "18">
+                <pin name = "FLT15" index = "[50]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "19">
+                <pin name = "FLT6" index = "[42]" type = "" />
+            </connector>
+
+            <connector name = "PIM_V_M3"  index = "20">
+                <pin name = "AN1/RPA1" index = "[23]" type = "" />
+            </connector>
+
+            <connector name = "PIM_V_M2"  index = "21">
+                <pin index = "[26]" type = "" />
+            </connector>
+
+            <connector name = "PIM_V_M1"  index = "22">
+                <pin index = "[34]" type = "" />
+            </connector>
+
+            <connector name = "PIM_IMOTOR_SUM"  index = "23">
+                <pin index = "[72]" type = "" />
+            </connector>
+
+            <connector name = "PIM_IMOTOR2"  index = "24">
+                <pin index = "[21]" type = "" />
+            </connector>
+
+            <connector name = "PIM_IMOTOR1"  index = "25">
+                <pin index = "[51]" type = "" />
+            </connector>
+
+            <connector name = "PGC"  index = "26">
+                <pin index = "[70]" type = "" />
+            </connector>
+
+            <connector name = "PGD"  index = "27">
+                <pin index = "[69]" type = "" />
+            </connector>
+
+            <connector name = "VREF"  index = "28">
+                <pin index = "[]" type = "" />
+            </connector>
+
+            <connector name = "PIM_REC_NEUTR"  index = "29">
+                <pin index = "[11]" type = "" />
+            </connector>
+
+            <connector name = "AVDD"  index = "30">
+                <pin index = "[30]" type = "" />
+            </connector>
+
+            <connector name = "AVSS"  index = "31">
+                <pin index = "[31]" type = "" />
+            </connector>
+
+            <connector name = "PIM_POT"  index = "32">
+                <pin index = "[44]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "33">
+                <pin index = "[35]" type = "" />
+            </connector>
+
+            <connector name = "PIM_GEN2"  index = "34">
+                <pin index = "[28]" type = "" />
+            </connector>
+
+            <connector name = "PIM_VBUS"  index = "35">
+                <pin index = "[20]" type = "" />
+            </connector>
+
+            <connector name = "VSS"  index = "36">
+                <pin index = "[36]" type = "" />
+            </connector>
+
+            <connector name = "VDD"  index = "37">
+                <pin index = "[37]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "38">
+                <pin index = "[39]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "39">
+                <pin index = "[40]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "40">
+                <pin index = "[41]" type = "" />
+            </connector>
+
+            <connector name = "PIM_MONITOR_1"  index = "41">
+                <pin index = "[14]" type = "" />
+            </connector>
+
+            <connector name = "PIM_MONITOR_2"  index = "42">
+                <pin index = "[12]" type = "" />
+            </connector>
+
+            <connector name = "PIM_MONITOR_3"  index = "43">
+                <pin index = "[53]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "44">
+                <pin index = "[47]" type = "" />
+            </connector>
+
+            <connector name = "VSS"  index = "45">
+                <pin index = "[45]" type = "" />
+            </connector>
+
+            <connector name = "VDD"  index = "46">
+                <pin index = "[46]" type = "" />
+            </connector>
+
+            <connector name = "HALLB"  index = "47">
+                <pin index = "[43]" type = "" />
+            </connector>
+
+            <connector name = "HALLC"  index = "48">
+                <pin index = "[66]" type = "" />
+            </connector>
+
+            <connector name = "RX"  index = "49">
+                <pin index = "[81]" type = "" />
+            </connector>
+
+            <connector name = "TX"  index = "50">
+                <pin index = "[76]" type = "" />
+            </connector>
+
+            <connector name = "USB_TX"  index = "51">
+                <pin index = "[3]" type = "" />
+            </connector>
+
+            <connector name = "USB_RX"  index = "52">
+                <pin index = "[67]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "53">
+                <pin index = "[58]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "54">
+                <pin index = "[59]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "55">
+                <pin index = "[60]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "56">
+                <pin index = "[77]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "57">
+                <pin index = "[71]" type = "" />
+            </connector>
+
+            <connector name = "PIM_FLT_OUT2"  index = "58">
+                <pin index = "[80]" type = "" />
+            </connector>
+
+            <connector name = "PIM_FLT_OUT1"  index = "59">
+                <pin index = "[90]" type = "" />
+            </connector>
+
+            <connector name = "DBG_LED1"  index = "60">
+                <pin index = "[61]" type = "" />
+            </connector>
+
+            <connector name = "HOME"  index = "61">
+                <pin index = "[10]" type = "" />
+            </connector>
+
+            <connector name = "VDD"  index = "62">
+                <pin index = "[62]" type = "" />
+            </connector>
+
+            <connector name = "OSC1/CLKO"  index = "63">
+                <pin index = "[63]" type = "" />
+            </connector>
+
+            <connector name = "OSC2/CLKI "  index = "64">
+                <pin index = "[64]" type = "" />
+            </connector>
+
+            <connector name = "VSS"  index = "65">
+                <pin index = "[65]" type = "" />
+            </connector>
+
+            <connector name = "PIM_IBUS+"  index = "66">
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "PIM_IBUS-"  index = "67">
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "LIN_CS"  index = "68">
+                <pin index = "[68]" type = "" />
+            </connector>
+
+            <connector name = "LIN_FAULT"  index = "69">
+                <pin index = "[79]" type = "" />
+            </connector>
+
+            <connector name = "RX"  index = "70">
+                <pin index = "[81]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "71">
+                <pin index = "[7]" type = "" />
+            </connector>
+
+            <connector name = "USB_RX"  index = "72">
+                <pin index = "[67]" type = "" />
+            </connector>
+
+            <connector name = "PIM_IB+"  index = "73">
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "PIM_IA+"  index = "74">
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "VSS"  index = "75">
+                <pin index = "[75]" type = "" />
+            </connector>
+
+            <connector name = "USB_TX"  index = "76">
+                <pin index = "[3]" type = "" />
+            </connector>
+
+            <connector name = "CAN_TX"  index = "77">
+                <pin index = "[52]" type = "" />
+            </connector>
+
+            <connector name = "CAN_RX"  index = "78">
+                <pin index = "[87]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "79">
+                <pin index = "[19]" type = "" />
+            </connector>
+
+            <connector name = "HALLA"  index = "80">
+                <pin index = "[84]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "81">
+                <pin index = "" type = "" />
+            </connector>
+
+            <connector name = "PIM_GEN1"  index = "82">
+                <pin index = "[82]" type = "" />
+            </connector>
+
+            <connector name = "BTN_1"  index = "83">
+                <pin index = "[89]" type = "" />
+            </connector>
+
+            <connector name = "BTN_2"  index = "84">
+                <pin index = "[78]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "85">
+                <pin index = "[49]" type = "" />
+            </connector>
+
+            <connector name = "VDD"  index = "86">
+                <pin index = "[86]" type = "" />
+            </connector>
+
+            <connector name = "CAN_RX"  index = "87">
+                <pin index = "[87]" type = "" />
+            </connector>
+
+            <connector name = "CAN_TX"  index = "88">
+                <pin index = "[52]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "89">
+                <pin index = "[88]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "90">
+                <pin index = "[90]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "91">
+                <pin index = "[73]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "92">
+                <pin index = "[74]" type = "" />
+            </connector>
+
+            <connector name = "PWM1L1"  index = "93">
+                <pin index = "[5]" type = "" />
+            </connector>
+
+            <connector name = "PWM1H1"  index = "94">
+                <pin index = "[4]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "95">
+                <pin index = "[95]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "96">
+                <pin index = "[96]" type = "" />
+            </connector>
+
+            <connector name = "NC"  index = "97">
+                <pin index = "[97]" type = "" />
+            </connector>
+
+            <connector name = "PWM1L2"  index = "98">
+                <pin index = "[99]" type = "" />
+            </connector>
+
+            <connector name = "PWM1H2"  index = "99">
+                <pin index = "[98]" type = "" />
+            </connector>
+
+            <connector name = "PWM1L3"  index = "100">
+                <pin index = "[94]" type = "" />
+            </connector>
+        </connectors>
+    </pim>
+    <jumpers>
+        <jumper name = "JP1" combinations = "[Curr, Volt, Hall]"    value = "Curr" />
+        <jumper name = "JP2" combinations = "[Curr, Volt, Hall]"    value = "Curr" />
+        <jumper name = "JP3" combinations = "[Curr, Volt, Hall]"    value = "Curr" />
+        <jumper name = "JP4" combinations = "[USB, LIN, UART, CAN]" value = "UART" />
+        <jumper name = "JP5" combinations = "[USB, LIN, UART, CAN]" value = "UART" />
+    </jumpers>
+    <matrices>
+        <matrix name = "Internal">
+            <map from = "SHUNT_HIGH_SUM" to = "PIM_IBUS+"      />
+            <map from = "SHUNT_LOW_SUM"  to = "PIM_IBUS-"      />
+            <map from = "SHUNT_HIGH_1"   to = "PIM_IA+"        />
+            <map from = "SHUNT_HIGH_2"   to = "PIM_IB+"        />
+            <map from = "VBUS"           to = "PIM_VBUS"       />
+            <map from = "IMOTOR_SUM"     to = "PIM_IMOTOR_SUM" />
+            <map from = "IMOTOR1"        to = "PIM_IMOTOR1"    />
+            <map from = "IMOTOR2"        to = "PIM_IMOTOR2"    />
+            <map from = "POT"            to = "PIM_POT"        />
+        </matrix>
+        <matrix name = "External">
+            <map from = "REC_NEUTR"      to = "PIM_REC_NEUTR"  />
+            <map from = "MONITOR_1"      to = "PIM_MONITOR_1"  />
+            <map from = "MONITOR_1"      to = "PIM_V_M1"       />
+            <map from = "MONITOR_2"      to = "PIM_MONITOR_2"  />
+            <map from = "MONITOR_2"      to = "PIM_V_M2"       />
+            <map from = "MONITOR_3"      to = "PIM_MONITOR_3"  />
+            <map from = "MONITOR_3"      to = "PIM_V_M3"       />
+            <map from = "VBUS"           to = "PIM_VBUS"       />
+            <map from = "IMOTOR_SUM"     to = "PIM_IMOTOR_SUM" />
+            <map from = "IMOTOR1"        to = "PIM_IMOTOR1"    />
+            <map from = "IMOTOR2"        to = "PIM_IMOTOR2"    />
+            <map from = "POT"            to = "PIM_POT"        />
+        </matrix>
+    </matrices>
+    <boards>
+        <board name = "dsPICDEM MCLV-2">
+            <inverter>
+                <maximum_Voltage value = "24.0" />
+                <maximum_Current value = "4.40" />
+            </inverter>
+
+            <current>
+                <phase description = "Phase A current" id = "IA">
+                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.025" />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
+                    <connector description = "Connection"                id = "CONNECT" value = "25"    />
+                </phase>
+                <phase description = "Phase B current" id = "IB">
+                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
+                    <connector description = "Connection"                id = "CONNECT" value = "24"    />
+                </phase>
+                <!-- <phase description = "DC bus current"  id = "IDC">
+                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
+                    <connector description = "Connection"                id = "CONNECT" value = "23"    />
+                </phase> -->
+            </current>
+
+            <voltage>
+                <rail description = "DC Bus rail" id = "VDC" value = "24.0">
+                    <rtop description = "Top resistor"    id = "TOP"      value = "30.0" />
+                    <rbot description = "Bottom resistor" id = "BOTTOM"   value = "2.0"  />
+                    <connector description = "Connector"  id = "CONNECT"  value = "35"   />
+                </rail>    
+            </voltage>
+
+            <potentiometers>
+                <potentiometer description = "Potentiometer 01" id = "VPOT">
+                    <connector description = "Connector" id = "CONNECT" value = "32" />
+                </potentiometer>
+            </potentiometers>
+
+            <position>
+                <encoder>
+                    <connector description= "" id = "QEA" value = "80" />
+                    <connector description= "" id = "QEB" value = "47" />
+                </encoder>
+                <hall>
+                    <connector name = "Hall A" value = "80" />
+                    <connector name = "Hall B" value = "47" />
+                    <connector name = "Hall C" value = "48" />
+                </hall>
+            </position>
+
+            <pwm>
+                <connector description = "PWM channel AL"  id = "PWM_AL"  value = "93"  />
+                <connector description = "PWM channel AH"  id = "PWM_AH"  value = "94"  />
+                <connector description = "PWM channel BL"  id = "PWM_BL"  value = "98"  />
+                <connector description = "PWM channel BH"  id = "PWM_BH"  value = "99"  />
+                <connector description = "PWM channel CL"  id = "PWM_CL"  value = "100" />
+                <connector description = "PWM channel CH"  id = "PWM_CH"  value = "3"   />
+            </pwm>
+
+            <buttons>
+                <connector name = "Push button 1" id = "BUTTON_01" value = "83"  />
+                <connector name = "Push button 2" id = "BUTTON_02" value = "84"  /> 
+            </buttons>
+
+            <leds>
+                <connector name = "LED 1" id = "LED_01" value = "60"  />
+                <connector name = "LED 2" id = "LED_02" value = "1"  /> 
+            </leds>
+
+            <communication>
+                <peripheral name = "UART">
+                    <connector name = "UART Receive"  id = "RECEIVE" value = "49"  alternate = "70" />
+                    <connector name = "UART Transmit" id = "TRANSMIT" value = "50" />
+                </peripheral>
+                <peripheral name = "CAN">
+                    <connector name = "CAN Receive" value = "87" alternate = "78" />
+                    <connector name = "CAN Transmit" value = "88" />
+                </peripheral>
+                <peripheral name = "LIN">
+                    <connector name = "Chip Select"  value = "68" />
+                    <connector name = "LIN Receive" value = "49" />
+                    <connector name = "LIN Transmit" value = "50" />
+                </peripheral>
+            </communication>
+        </board>
+        <board name = "dsPICDEM MCHV-3">
+            <inverter>
+                <maximum_Voltage value = "24.0" />
+                <maximum_Current value = "4.40" />
+            </inverter>
+
+            <current>
+                <phase description = "Phase A current" id = "IA">
+                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
+                    <connector description = "Connection"                id = "CONNECT" value = "41"    />
+                </phase>
+                <phase description = "Phase B current" id = "IB">
+                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
+                    <connector description = "Connection"                id = "CONNECT" value = "42"    />
+                </phase>
+                <!-- <phase description = "DC bus current"  id = "IDC">
+                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
+                    <connector description = "Connection"                id = "CONNECT" value = "23"    />
+                </phase> -->
+            </current>
+
+            <voltage>
+                <rail description = "DC Bus rail" id = "VDC"  value = "230.0">
+                    <rtop description = "Top resistor"    id = "TOP"      value = "30.0" />
+                    <rbot description = "Bottom resistor" id = "BOTTOM"   value = "2.0"  />
+                    <connector description = "Connector"  id = "CONNECT"  value = "35"   />
+                </rail>    
+            </voltage>
+
+            <potentiometers>
+                <potentiometer description = "Potentiometer 01" id = "VPOT">
+                    <connector description = "Connector" id = "CONNECT" value = "32" />
+                </potentiometer>
+            </potentiometers>
+
+            <position>
+                <encoder>
+                    <connector description= "" id = "QEA" value = "80" />
+                    <connector description= "" id = "QEB" value = "47" />
+                </encoder>
+                <hall>
+                    <connector name = "Hall A" value = "80" />
+                    <connector name = "Hall B" value = "47" />
+                    <connector name = "Hall C" value = "48" />
+                </hall>
+            </position>
+
+            <pwm>
+                <connector description = "PWM channel AL"  id = "PWM_AL"  value = "93"  />
+                <connector description = "PWM channel AH"  id = "PWM_AH"  value = "94"  />
+                <connector description = "PWM channel BL"  id = "PWM_BL"  value = "98"  />
+                <connector description = "PWM channel BH"  id = "PWM_BH"  value = "99"  />
+                <connector description = "PWM channel CL"  id = "PWM_CL"  value = "100" />
+                <connector description = "PWM channel CH"  id = "PWM_CH"  value = "3"   />
+            </pwm>
+
+            <buttons>
+                <connector name = "Push button 1" id = "BUTTON_01" value = "83"  />
+                <connector name = "Push button 2" id = "BUTTON_02" value = "84"  /> 
+            </buttons>
+
+            <leds>
+                <connector name = "LED 1" id = "LED_01" value = "60"  />
+                <connector name = "LED 2" id = "LED_02" value = "1"  /> 
+            </leds>
+
+
+            <communication>
+                <peripheral name = "UART">
+                    <connector name = "UART Receive"  id = "RECEIVE" value = "49" />
+                    <connector name = "UART Transmit" id = "TRANSMIT" value = "50" />
+                </peripheral>
+                <peripheral name = "CAN">
+                    <connector name = "CAN Receive" value = "87" alternate = "78" />
+                    <connector name = "CAN Transmit" value = "88" />
+                </peripheral>
+                <peripheral name = "LIN">
+                    <connector name = "Chip Select"  value = "68" />
+                    <connector name = "LIN Receive" value = "49" />
+                    <connector name = "LIN Transmit" value = "50" />
+                </peripheral>
+            </communication>
+        </board>
+    </boards>
+</bsp>
