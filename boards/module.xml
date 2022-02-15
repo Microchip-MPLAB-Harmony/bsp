@@ -79,5 +79,6 @@
         <Board name="PL360G55CF Evaluation Kit" processor="ATSAMG55J19" config="pl360g55cf_ek"/>
         <Board name="LAN9255 Evaluation Board" processor="LAN9255ZMX020" config="lan9255_evb"/>
         <Board name="PIC32MK MCF PIM MC Board" processor="PIC32MK1024MCF100" config="pic32mk_mcf_pim_mc"/>
+        <Board name="SAM E54 PIM MC Board" processor="ATSAME54P20A" config="sam_e54_pim_mc"/>
     </Boards>
 </Module>
