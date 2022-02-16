@@ -77,6 +77,11 @@ reference information.
 | 51 | pl485_ek | [PL485 Evaluation Kit](https://www.microchip.com/en-us/development-tool/PL485-EK) | PL485 SOC |
 | 52 | pl360g55cb_ek | [PL360G55CB Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CB-EK) | SAMG55J19 |
 | 53 | sam_r34_xpro | [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/dm320111) | SAM R34 SiP |
+| 54 | lan9255_evb | [LAN9255 Evaluation Board](https://www.microchip.com/en-us/development-tool/EV25Y25A) | LAN9255ZMX020 |
+| 55 | pic32mk_mcf_pim_mc | [PIC32MK1024 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320024) | PIC32MK1024MCF100 |
+| 56 | sam_e54_pim_mc | [ATSAME54 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320207) | ATSAME54P20A |
+| 57 | sam_e70_pim_mc | [ATSAME70 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320203) | ATSAME70Q21B |
+| 58 | pic32mk_mcm_pim_mc | [PIC32MK MCM Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320211) | PIC32MK1024MCM100 |
 
 ____
 
