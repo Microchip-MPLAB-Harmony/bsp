@@ -69,6 +69,7 @@
         <Board name="SAM HA1 Xplained Pro" processor="ATSAMHA1G16AB" config="sam_ha1_xpro"/>
         <Board name="SAM L21 Xplained Pro" processor="ATSAML21J18B" config="sam_l21_xpro"/>
         <Board name="SAM L22 Xplained Pro" processor="ATSAML22N18A" config="sam_l22_xpro"/>
+        <Board name="SAM RH707 Evaluation Kit" processor="ATSAMRH707F18A" config="sam_rh707_ek"/>
         <Board name="SAM RH71 Evaluation Kit" processor="ATSAMRH71F20C" config="sam_rh71_ek"/>
         <Board name="SAM V71 Xplained Ultra" processor="ATSAMV71Q21B" config="sam_v71_xult"/>
         <Board name="SAM R34 Xplained Pro" processor="ATSAMR34J18B" config="sam_r34_xpro"/>
