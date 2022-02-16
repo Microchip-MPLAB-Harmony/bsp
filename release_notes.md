@@ -2,6 +2,19 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.11.0
+### New features
+
+Added support for the following development kits:
+1. [LAN9255 Evaluation Board](https://www.microchip.com/en-us/development-tool/EV25Y25A)
+2. [PIC32MK1024 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320024)
+3. [ATSAME54 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320207)
+4. [ATSAME70 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320203)
+5. [PIC32MK MCM Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320211)
+
+### Known issues
+
+There are no known issues
 
 ## BSP Release v3.10.0
 ### New features
