@@ -10,6 +10,8 @@
         <Board name="PIC32CX BZ2 Curiosity" processor="PIC32CX1012BZ25048" config="pic32cx_bz2_curiosity"/>
         <Board name="PIC32CX SG6X Curiosity Ultra" processor="PIC32CX1025SG60128" config="pic32cx_sg6x_curiosity_ultra"/>
         <Board name="WBZ451 Curiosity" processor="WBZ451" config="wbz451_curiosity"/>
+        <Board name="WBZ351 Curiosity" processor="WBZ351" config="wbz351_curiosity"/>
+        <Board name="WBZ351 Curiosity" processor="PIC32CX5109BZ31048" config="pic32cx_bz3_curiosity"/>
         <Board name="WBZ450 Curiosity" processor="WBZ450" config="wbz450_curiosity"/>
         <Board name="PIC32Z CA90 Curiosity Ultra" processor="PIC32CZ8110CA90208" config="pic32cz_ca90_curiosity_ultra"/>
         <Board name="PIC32MM Curiosity" processor="PIC32MM0064GPL036" config="pic32mm_curiosity"/>
