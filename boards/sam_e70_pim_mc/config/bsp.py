@@ -31,7 +31,7 @@ board_PararameterDict = {}
 #------------------------------------------------------------------------------------------------------------#
 #                                             LOCAL FUNCTIONS                                                #
 #------------------------------------------------------------------------------------------------------------#
-execfile(Module.getPath() + "/sam_e70_pim_mc/config/general_Functions.py"  )
+execfile(Module.getPath() + "/sam_e70_pim_mc/config/general_functions.py"  )
 execfile(Module.getPath() + "/sam_e70_pim_mc/config/board_data.py"         )
 execfile(Module.getPath() + "/sam_e70_pim_mc/config/voltage_source.py"     )
 execfile(Module.getPath() + "/sam_e70_pim_mc/config/analog_interface.py"   )
