@@ -31,7 +31,7 @@ board_PararameterDict = {}
 #------------------------------------------------------------------------------------------------------------#
 #                                             LOCAL FUNCTIONS                                                #
 #------------------------------------------------------------------------------------------------------------#
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/general_Functions.py"  )
+execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/general_functions.py"  )
 execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/board_data.py" )
 execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/voltage_source.py"  )
 execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/analog_interface.py"  )
@@ -115,36 +115,36 @@ def handleMessage(messageID, args):
         board_Information.updateSelectedBoard("MCPMSMFOC_SELECTED_BOARD", args)
         return
     
-    if (messageID == "MCPMSMFOC_READ_INITIAL_DATA"):
+    if (messageID == "MCPMSMFOC_INITIAL_DATA"):
         args["SELECTED_BOARD"] = selectedBoard
         return board_PararameterDict
 
-    if ( messageID == "MCPMSMFOC_READ_ANI_INFORMATION" ):
+    if ( messageID == "MCPMSMFOC_ANALOG_INTERFACE" ):
          result = analog_Interface.handleMessage(messageID, args)
          return result
 
-    if(  messageID ==  "MCPMSMFOC_READ_PWMI_INFORMATION" ):
+    if(  messageID ==  "MCPMSMFOC_PWM_INTERFACE" ):
         return pwm_Interface.handleMessage(messageID, args)
 
-    if( messageID ==  "MCPMSMFOC_READ_POSI_INFORMATION" ):
+    if( messageID ==  "MCPMSMFOC_POSITION_INTERFACE" ):
         return position_Interface.handleMessage(messageID, args)
 
-    if( messageID == "MCPMSMFOC_READ_AFE_INFORMATION"):
+    if( messageID == "MCPMSMFOC_ANALOG_FRONT_END"):
         return analog_Frontend.handleMessage(messageID, args)
 
-    if( messageID == "MCPMSMFOC_READ_DII_INFORMATION" ):
+    if( messageID == "MCPMSMFOC_DIGITAL_INTERFACE" ):
         message = digital_Interface.handleMessage(messageID, args)  
         return message
 
-    if( messageID == "MCPMSMFOC_READ_VSRC_INFORMATION" ):
+    if( messageID == "MCPMSMFOC_VOLTAGE_SOURCE" ):
         message = voltage_Source.handleMessage(messageID, args)  
         return message
 
-    if( messageID == "MCBSP_READ_BOARD_DATA" ):
+    if( messageID == "MCPMSMFOC_BOARD_INFORMATION" ):
         message = board_Information.handleMessage(messageID, args)  
         return message
 
-    if( messageID == "X2CSCOPE_READ_DAM_INFORMATION" ):
+    if( messageID == "X2CSCOPE_DATA_MONITORING" ):
         message = data_Monitor.handleMessage(messageID, args)  
         return message
 
