@@ -2,6 +2,19 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.11.1
+### New features
+None
+
+### Bug fixes
+- Corrected the module path name in SAM E70 PIM, SAM E54 PIM, PIC32MK MCM PIM and PIC32MK MCF PIM BSPs.
+- Corrected the message ID used for communicating between the PMSM FOC component and PIC32MK MCF PIM BSP.
+
+### Known issues
+
+There are no known issues
+
+# Microchip MPLAB® Harmony 3 Release Notes
 ## BSP Release v3.11.0
 ### New features
 
