@@ -82,5 +82,6 @@
         <Board name="SAM E54 PIM MC Board" processor="ATSAME54P20A" config="sam_e54_pim_mc"/>
         <Board name="SAM E70 PIM MC Board" processor="ATSAME70Q21B" config="sam_e70_pim_mc"/>
         <Board name="PIC32MK MCM PIM MC Board" processor="PIC32MK1024MCM100" config="pic32mk_mcm_pim_mc"/>
+        <Board name="CEC173X Evaluation Board" processor="CEC1736_S0_2ZW" config="cec1736_evb"/>
     </Boards>
 </Module>
