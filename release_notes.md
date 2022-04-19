@@ -2,6 +2,15 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.12.0
+### New features
+
+Added support for the [CEC1736 Evaluation Board](https://www.microchip.com/en-us/development-tool/) development kit
+
+### Known issues
+
+BSP LEDs related macros will not be generated if Pin Manager is launched before adding BSP to the project graph. As a workaround, add BSP to the project graph first before launching Pin manager.
+
 ## BSP Release v3.11.1
 ### New features
 None
@@ -14,7 +23,6 @@ None
 
 There are no known issues
 
-# Microchip MPLAB® Harmony 3 Release Notes
 ## BSP Release v3.11.0
 ### New features
 
