@@ -5,7 +5,7 @@
 ## BSP Release v3.12.0
 ### New features
 
-Added support for the [CEC1736 Evaluation Board](https://www.microchip.com/en-us/development-tool/) development kit
+Added support for the CEC1736 Evaluation Board
 
 ### Known issues
 
