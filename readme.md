@@ -82,6 +82,10 @@ reference information.
 | 56 | sam_e54_pim_mc | [ATSAME54 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320207) | ATSAME54P20A |
 | 57 | sam_e70_pim_mc | [ATSAME70 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320203) | ATSAME70Q21B |
 | 58 | pic32mk_mcm_pim_mc | [PIC32MK MCM Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320211) | PIC32MK1024MCM100 |
+| 59 | cec1736_evb | [CEC1736 Development Board](https://www.microchip.com/en-us/development-tool/EV19K07A) | CEC1736 |
+| 60 | sam_rh707_ek | [SAMRH707F18 Evaluation Kit](https://www.microchip.com/en-us/development-tool/SAMRH707F18-EK) | ATSAMRH707F18A |
+| 61 | sam_a7g5_ek | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A) | SAMA7G54 |
+| 62 | pic32cx_bz2_curiosity | [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A) | WBZ451 |
 
 ____
 
