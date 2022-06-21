@@ -2,6 +2,21 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+
+## BSP Release v3.13.0
+### New features
+
+Added support for the following development kits:
+1. PIC32CM JH01 Curiosity Pro Evaluation Kit
+2. PIC32MK MCA Curiosity Pro Board
+3. [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A)
+4. [SAMRH707F18 Evaluation Kit](https://www.microchip.com/en-us/development-tool/SAMRH707F18-EK)
+5. [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A)
+
+### Known issues
+
+BSP LEDs related macros will not be generated if Pin Manager is launched before adding BSP to the project graph. As a workaround, add BSP to the project graph first before launching Pin manager.
+
 ## BSP Release v3.12.0
 ### New features
 
