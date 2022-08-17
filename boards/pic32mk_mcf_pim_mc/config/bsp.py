@@ -31,15 +31,15 @@ board_PararameterDict = {}
 #------------------------------------------------------------------------------------------------------------#
 #                                             LOCAL FUNCTIONS                                                #
 #------------------------------------------------------------------------------------------------------------#
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/general_functions.py"  )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/board_data.py" )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/voltage_source.py"  )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/analog_interface.py"  )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/digital_interface.py" )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/pwm_interface.py" )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/position_interface.py"  )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/analog_frontend.py"  )
-execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/data_monitoring.py"    )
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "general_Functions.py"  ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "board_data.py"         ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "voltage_source.py"     ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "analog_interface.py"   ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "digital_interface.py"  ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "pwm_interface.py"      ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "position_interface.py" ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "analog_frontend.py"    ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "data_monitoring.py"    ))
 
 
 #------------------------------------------------------------------------------------------------------------#
@@ -48,7 +48,7 @@ execfile(Module.getPath() + "/pic32mk_mcf_pim_mc/config/data_monitoring.py"    )
 def instantiateComponent(bspComponent):
    
     # Read xml data from the path 
-    path = Module.getPath() + "pic32mk_mcf_pim_mc/config/board.xml"
+    path = os.path.join(Module.getPath(),"pic32mk_mcf_pim_mc", "config", "board.xml")
     bspContent = ET.fromstring((open(path, "r")).read())
 
     global board_Information
@@ -85,7 +85,7 @@ def instantiateComponent(bspComponent):
     data_Monitor()
    
 
-    BSP_NAME = "pic32mk_mcf_pim"
+    BSP_NAME = "pic32mk_mcf_pim_mc"
     
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
                      {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
@@ -115,7 +115,7 @@ def handleMessage(messageID, args):
         board_Information.updateSelectedBoard("MCPMSMFOC_SELECTED_BOARD", args)
         return
     
-    if (messageID == "MCPMSMFOC_INITIAL_DATA"):
+    if (messageID == "MCPMSMFOC_INITIAL_INFORMATION"):
         args["SELECTED_BOARD"] = selectedBoard
         return board_PararameterDict
 

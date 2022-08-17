@@ -38,6 +38,7 @@ class mcBspI_PwmConfiguration:
         self.component = component
         self.bspContent = bspContent
 
+        self.instances = set()
         self.function_Tuple = { "LOW": {}, "HIGH": {}}
 
         # currentPath = os.path.dirname(os.path.abspath(inspect.stack()[0][1]))
@@ -65,6 +66,8 @@ class mcBspI_PwmConfiguration:
                     except:
                         self.function_Tuple["LOW"][pad] = list()  
                         self.function_Tuple["LOW"][pad] = [( unit, channel )]
+                    
+                    self.instances.add(unit)
 
                 elif channel_Name.startswith("PWM") and channel_Name.endswith("H"):
                     unit = "MCPWM"
@@ -77,6 +80,8 @@ class mcBspI_PwmConfiguration:
                     except:
                         self.function_Tuple["HIGH"][pad] = list()  
                         self.function_Tuple["HIGH"][pad] = [( unit, channel )]
+
+                    self.instances.add(unit)
 
         self.readFromXml("dsPICDEM MCLV-2")
  
@@ -91,7 +96,7 @@ class mcBspI_PwmConfiguration:
                     id = connector.attrib["id"]
                     pin = global_CONNECTOR_TO_PIN_MAP[index][0]
                     pad = global_PIN_TO_PAD_MAP[pin]
-            
+                               
                     self.information[id] = dict()
                     self.information[id]["PIN"] = pin
                     self.information[id]["PAD"] = pad
@@ -109,28 +114,23 @@ class mcBspI_PwmConfiguration:
         numeric_filter = filter(str.isdigit, str(input_String))
         return "".join(numeric_filter)
 
-    def createSymbols(self, path):
-        
+    def createSymbols(self):
         self.sym_PWM = self.component.createMenuSymbol("MCBSP_PWM_MENU", None )
         self.sym_PWM.setLabel("PWM Interface")
         
         # PWM instance 
-        available = sorted(list(set([ str(self.function_Tuple["LOW"][pad][0][0]) for pad in self.function_Tuple["LOW"]])))
+        print(self.instances)
+        available = sorted(list(set(self.instances)))
         
         self.sym_INSTANCE = self.component.createComboSymbol("MCBSP_PWM_INSTANCE", self.sym_PWM, available )
         self.sym_INSTANCE.setLabel("Select Instance")
-        self.sym_INSTANCE.setReadOnly(True)
-
         
         # PWM Channel A
         self.sym_PWMAH_PIN = self.component.createIntegerSymbol("MCBSP_PWMAH_PIN", self.sym_PWM )
         self.sym_PWMAH_PIN.setLabel("PWMAH pin")
         self.sym_PWMAH_PIN.setDefaultValue(int( self.information["PWM_AH"]["PIN"] ))
         self.sym_PWMAH_PIN.setReadOnly(True)
-
-
- 
-        
+         
         self.sym_PWMAL_PIN = self.component.createIntegerSymbol("MCBSP_PWMAL_PIN", self.sym_PWM )
         self.sym_PWMAL_PIN.setLabel("PWMAL pin")
         self.sym_PWMAL_PIN.setDefaultValue(int(self.information["PWM_AL"]["PIN"]))
@@ -147,7 +147,6 @@ class mcBspI_PwmConfiguration:
         self.sym_PWMBL_PIN.setLabel("PWMBL pin")
         self.sym_PWMBL_PIN.setDefaultValue(int(self.information["PWM_BL"]["PIN"]))
         self.sym_PWMBL_PIN.setReadOnly(True)
-
 
         # PWM Channel C
         self.sym_PWMCH_PIN = self.component.createIntegerSymbol("MCBSP_PWMCH_PIN", self.sym_PWM )
@@ -186,7 +185,9 @@ class mcBspI_PwmConfiguration:
     def pinToPwmMapping(self, pin, ID ):
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
-            self.information[ID] =  tuple(list(self.function_Tuple[pad])  + [pin, pad] )
+            self.information[ID]["PIN"] =  pin
+            self.information[ID]["PAD"] =  pad
+            self.information[ID]["FUNCTION"] = self.function_Tuple[pad]
         except:
             pass
 
@@ -202,13 +203,14 @@ class mcBspI_PwmConfiguration:
         self.sendMessage()
 
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
-        self.sym_PWMAL_PIN.setValue(int(self.information["PWM_AL"][2]))
-        self.sym_PWMAH_PIN.setValue(int(self.information["PWM_AH"][2]))
-        self.sym_PWMBL_PIN.setValue(int(self.information["PWM_BL"][2]))
-        self.sym_PWMBH_PIN.setValue(int(self.information["PWM_BH"][2]))
-        self.sym_PWMCL_PIN.setValue(int(self.information["PWM_CL"][2]))
-        self.sym_PWMCH_PIN.setValue(int(self.information["PWM_CH"][2]))
+        self.sym_PWMAL_PIN.setValue(int(self.information["PWM_AL"]["PIN"]))
+        self.sym_PWMAH_PIN.setValue(int(self.information["PWM_AH"]["PIN"]))
+        self.sym_PWMBL_PIN.setValue(int(self.information["PWM_BL"]["PIN"]))
+        self.sym_PWMBH_PIN.setValue(int(self.information["PWM_BH"]["PIN"]))
+        self.sym_PWMCL_PIN.setValue(int(self.information["PWM_CL"]["PIN"]))
+        self.sym_PWMCH_PIN.setValue(int(self.information["PWM_CH"]["PIN"]))
 
                  
     def setSymbols(self):
@@ -225,15 +227,22 @@ class mcBspI_PwmConfiguration:
     def setPinManager(self):
         for pin, information in self.information.items():
 
-            number = information["PIN"]
+            number = str(information["PIN"])
             type = information["FUNCTION"][0][1]
           
             self.setDatabaseSymbol("core", "BSP_PIN_"+ number +"_FUNCTION_NAME", pin )         
             self.setDatabaseSymbol("core", "BSP_PIN_"+ number +"_FUNCTION_TYPE", type )
 
+    def resetPinManager(self):
+        for pin, information in self.information.items():
+
+            number = str(information["PIN"])
+          
+            self.setDatabaseSymbol("core", "BSP_PIN_"+ number +"_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "BSP_PIN_"+ number +"_FUNCTION_TYPE", "" )
+
     def __call__(self):
-        path = Module.getPath() + "/sam_e54_pim_mc/config/board.xml"
-        self.createSymbols(path)
+        self.createSymbols()
         self.setPinManager()
         self.sendMessage()
    

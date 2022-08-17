@@ -21,6 +21,13 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *****************************************************************************"""
+#---------------------------------------------------------------------------------------#
+#                                 GLOBAL VARIABLES                                      #
+#---------------------------------------------------------------------------------------#
+path = os.path.join(Module.getPath(), "pic32mk_mcf_pim_mc", "config", "board.xml")
+xml_path = path
+bspFile = open(path, "r")
+bspContent = ET.fromstring(bspFile.read())
 
 #---------------------------------------------------------------------------------------#
 #                                 GLOBAL VARIABLES                                      #
@@ -38,7 +45,7 @@ class mcBspI_ReadBoardInformation:
         # Read xml data to a element tree string for parsing 
         # Connector to MCU pin mapping 
         self.map_CONNECTOR_TO_PIN = dict()
-        for connector in self.bspContent.find("pim/connectors"):
+        for connector in bspContent.find("pim/connectors"):
             if( connector.attrib["name"] != "NC"):
                 pin = self.stringToListConvert((connector.find("pin")).attrib["index"])
                 self.map_CONNECTOR_TO_PIN[connector.attrib["index"]] = pin
@@ -46,7 +53,7 @@ class mcBspI_ReadBoardInformation:
         # Map the PIM connectors to MCU pin using the XML file 
         global global_CONNECTOR_TO_PIN_MAP
         global_CONNECTOR_TO_PIN_MAP = dict()
-        for connector in self.bspContent.find("pim/connectors"):
+        for connector in bspContent.find("pim/connectors"):
             if( connector.attrib["name"] != "NC"):
                 pin_List = self.stringToListConvert((connector.find("pin")).attrib["index"])
                 global_CONNECTOR_TO_PIN_MAP[connector.attrib["index"]] = pin_List
@@ -85,7 +92,7 @@ class mcBspI_ReadBoardInformation:
 
         # MHC Symbols 
         board_List = list()
-        for board in self.bspContent.findall("boards/board"):
+        for board in bspContent.findall("boards/board"):
             board_List.append(board.attrib["name"])
 
         global sym_SELECTED_BOARD
@@ -95,7 +102,7 @@ class mcBspI_ReadBoardInformation:
 
         sym_JUMPER_NODE = self.component.createMenuSymbol("BSP_JUMPER_SETTING", None )
         sym_JUMPER_NODE.setLabel("Jumper Settings")
-        for jumper in self.bspContent.find("jumpers"):
+        for jumper in bspContent.find("jumpers"):
             symbol_Id = "BSP_JUMPER_" + jumper.attrib["name"]
             symbol_List = self.stringToListConvert(jumper.attrib["combinations"])     
             sym_JUMPER = self.component.createComboSymbol(symbol_Id, sym_JUMPER_NODE, symbol_List)
@@ -106,7 +113,7 @@ class mcBspI_ReadBoardInformation:
         sym_MATRIX_NODE.setLabel("Matrix Board")
         
         symbol_List = list()
-        for matrix in self.bspContent.find("matrices"):
+        for matrix in bspContent.find("matrices"):
             symbol_List.append(matrix.attrib["name"])
         
         sym_MATRIX = self.component.createComboSymbol("BSP_MATRIX_BOARD_SELECT", sym_MATRIX_NODE, symbol_List)
@@ -119,6 +126,10 @@ class mcBspI_ReadBoardInformation:
         self.sym_DEPENDENCY.setDependencies( self.updateInformation, ["BSP_BOARD_SEL"] )
 
    
+    def updateSelectedBoard( self, ID, message ):
+        sym_SELECTED_BOARD.setValue(message["SELECTED_BOARD"])
+
+    
     def updateInformation(self, symbol, event):
         self.information["NAME"] = event["symbol"].getValue()
         self.sendMessage()

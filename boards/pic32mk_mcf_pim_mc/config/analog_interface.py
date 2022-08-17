@@ -23,7 +23,7 @@
 *****************************************************************************"""
 
 #---------------------------------------------------------------------------------------#
-#                                 GLOBAL VARIABLES                                      #
+#                                     IMPORTS                                           #
 #---------------------------------------------------------------------------------------#
 import xml.etree.ElementTree as ET
 import os
@@ -151,7 +151,8 @@ class mcBspI_AnalogInterfaceClass:
                     for parameter in phase.findall("connector"):
                         pin = global_CONNECTOR_TO_PIN_MAP[parameter.attrib["value"]][0]
                         pad = global_PIN_TO_PAD_MAP[pin]
-                        self.information[phase.attrib["id"]]["PIN"] =  pin
+ 
+                        self.information[phase.attrib["id"]]["PIN"] = pin
                         self.information[phase.attrib["id"]]["PAD"] = pad
                         self.information[phase.attrib["id"]]["FUNCTION"] = self.function_Tuple[pad]
 
@@ -160,7 +161,7 @@ class mcBspI_AnalogInterfaceClass:
                     for parameter in rail.findall("connector"):
                         pin = global_CONNECTOR_TO_PIN_MAP[parameter.attrib["value"]][0]
                         pad = global_PIN_TO_PAD_MAP[pin]
-                        self.information[rail.attrib["id"]]["PIN"] =  pin
+                        self.information[rail.attrib["id"]]["PIN"] = pin
                         self.information[rail.attrib["id"]]["PAD"] = pad
                         self.information[rail.attrib["id"]]["FUNCTION"] = self.function_Tuple[pad]
 
@@ -169,7 +170,7 @@ class mcBspI_AnalogInterfaceClass:
                     for parameter in potentiometer.findall("connector"):
                         pin = global_CONNECTOR_TO_PIN_MAP[parameter.attrib["value"]][0]
                         pad = global_PIN_TO_PAD_MAP[pin]
-                        self.information[potentiometer.attrib["id"]]["PIN"] =  pin
+                        self.information[potentiometer.attrib["id"]]["PIN"] = pin
                         self.information[potentiometer.attrib["id"]]["PAD"] = pad
                         self.information[potentiometer.attrib["id"]]["FUNCTION"] = self.function_Tuple[pad]
 
@@ -180,11 +181,12 @@ class mcBspI_AnalogInterfaceClass:
     def numericFilter( self, input_String ):
         numeric_filter = filter(str.isdigit, str(input_String))
         return "".join(numeric_filter)
-    
     def pinToAdcMapping(self, pin, ID ):
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
-            self.information[ID] =  tuple(list(self.map_PAD_TO_ADC[pad])  + [pin, pad] )
+            self.information[ID]["PIN"] =  pin
+            self.information[ID]["PAD"] =  pad
+            self.information[ID]["FUNCTION"] = self.function_Tuple[pad]
         except:
             pass
         
@@ -195,78 +197,76 @@ class mcBspI_AnalogInterfaceClass:
         self.sym_NODE.setLabel("Analog interface")
 
         # Phase A current 
-        self.sym_IA = self.component.createMenuSymbol("MCBSP_PHASE_CURRENT_IA_NODE", self.sym_NODE)
+        self.sym_IA = self.component.createMenuSymbol("BSP_IA_NODE", self.sym_NODE)
         self.sym_IA.setLabel("Phase A current")
 
-        self.sym_IA_PIN =  self.component.createIntegerSymbol("MCBSP_PHASE_CURRENT_IA_PIN", self.sym_IA )
+        self.sym_IA_PIN =  self.component.createIntegerSymbol("BSP_IA_PIN", self.sym_IA )
         self.sym_IA_PIN.setLabel("Pin Number")
         self.sym_IA_PIN.setDefaultValue(int(self.information["IA"]["PIN"]))
         self.sym_IA_PIN.setReadOnly(True)
 
         # Phase B current 
-        self.sym_IB = self.component.createMenuSymbol("MCBSP_PHASE_CURRENT_IB_NODE", self.sym_NODE)
+        self.sym_IB = self.component.createMenuSymbol("BSP_IB_NODE", self.sym_NODE)
         self.sym_IB.setLabel("Phase B current")
 
-        self.sym_IB_PIN =  self.component.createIntegerSymbol("MCBSP_PHASE_CURRENT_IB_PIN", self.sym_IB)
+        self.sym_IB_PIN =  self.component.createIntegerSymbol("BSP_IB_PIN", self.sym_IB)
         self.sym_IB_PIN.setLabel("Pin Number")
         self.sym_IB_PIN.setDefaultValue(int(self.information["IB"]["PIN"]))
         self.sym_IB_PIN.setReadOnly(True)
               
         # Phase C current 
-        # self.sym_IDC = self.component.createMenuSymbol("MCBSP_DC_BUS_CURRENT_IDC_NODE", self.sym_NODE)
+        # self.sym_IDC = self.component.createMenuSymbol("BSP_IDC_NODE", self.sym_NODE)
         # self.sym_IDC.setLabel("DC bus current")
           
-        # self.sym_IDC_PIN = self.component.createIntegerSymbol("MCBSP_DC_BUS_CURRENT_PIN", self.sym_IDC )
+        # self.sym_IDC_PIN = self.component.createIntegerSymbol("BSP_IDC_PIN", self.sym_IDC )
         # self.sym_IDC_PIN.setLabel("Pin Number")
         # self.sym_IDC_PIN.setDefaultValue(int(self.information["IDC"]["PIN"]))
 
         # Phase A current 
-        self.sym_VDC = self.component.createMenuSymbol("MCBSP_BUS_VOLTAGE_VDC_NODE", self.sym_NODE)
+        self.sym_VDC = self.component.createMenuSymbol("BSP_VDC_NODE", self.sym_NODE)
         self.sym_VDC.setLabel("DC Bus Voltage")
 
-        self.sym_VDC_PIN =  self.component.createIntegerSymbol("MCBSP_BUS_VOLTAGE_VDC_PIN", self.sym_VDC )
+        self.sym_VDC_PIN =  self.component.createIntegerSymbol("BSP_VDC_PIN", self.sym_VDC )
         self.sym_VDC_PIN.setLabel("Pin Number")
         self.sym_VDC_PIN.setDefaultValue(int(self.information["VDC"]["PIN"]))
         self.sym_VDC_PIN.setReadOnly(True)
-
               
         # Potentiometer
-        self.sym_VPOT = self.component.createMenuSymbol("MCBSP_POTENTIOMETER_VPOT_NODE", self.sym_NODE)
+        self.sym_VPOT = self.component.createMenuSymbol("BSP_VPOT_NODE", self.sym_NODE)
         self.sym_VPOT.setLabel("Potentiometer")
 
-        self.sym_VPOT_PIN =  self.component.createIntegerSymbol("MCBSP_POTENTIOMETER_VPOT_PIN", self.sym_VPOT)
+        self.sym_VPOT_PIN =  self.component.createIntegerSymbol("BSP_VPOT_PIN", self.sym_VPOT)
         self.sym_VPOT_PIN.setLabel("Pin Number")
         self.sym_VPOT_PIN.setDefaultValue(int(self.information["VPOT"]["PIN"]))
         self.sym_VPOT_PIN.setReadOnly(True)
-
+               
         # PLIB update symbol
         self.sym_DEPENDENCY = self.component.createMenuSymbol( None, None)
         self.sym_DEPENDENCY.setLabel("Dependency")
         self.sym_DEPENDENCY.setVisible(False)
-        self.sym_DEPENDENCY.setDependencies(self.updateInformation, ["MCBSP_PHASE_CURRENT_IA_PIN",
-                                                                    "MCBSP_PHASE_CURRENT_IB_PIN",
-                                                                    "MCBSP_DC_BUS_CURRENT_PIN",
-                                                                    "MCBSP_BUS_VOLTAGE_VDC_PIN",
-                                                                    "MCBSP_POTENTIOMETER_VPOT_PIN"
-                                                                    ])
+        self.sym_DEPENDENCY.setDependencies(self.updateInformation, ["BSP_IA_PIN", "BSP_IB_PIN", "BSP_IDC_PIN", "BSP_VDC_PIN", "BSP_VPOT_PIN" ])
 
         self.sym_BOARD = self.component.createFloatSymbol(None, None)
         self.sym_BOARD.setVisible(False)
         self.sym_BOARD.setDependencies(self.updateBoardParameters, ["BSP_BOARD_SEL"])
 
 
+    def setDatabaseSymbol(self, nameSpace, ID, value ):
+        status =  Database.setSymbolValue(nameSpace, ID, value)
+        if(status == False ):
+            print("BSP is unable to set {symbol} with {input}".format(symbol = ID, input = value))
+
 
     def updateInformation(self, symbol, event):
-        self.pinToAdcMapping( self.sym_IA_PIN.getValue(), "IA"    )
-        self.pinToAdcMapping( self.sym_IB_PIN.getValue(), "IB"    )
-        # self.pinToAdcMapping( self.sym_IDC_PIN.getValue(), "IDC"  )
-        self.pinToAdcMapping( self.sym_VDC_PIN.getValue(), "VDC"  )
-        self.pinToAdcMapping( self.sym_VPOT_PIN.getValue(), "POT" )
+        ID = event["id"].split("_")[1]
+        self.pinToAdcMapping( event["symbol"].getValue(), ID )
 
         self.setPinManager()
         self.sendMessage()
 
     def updateBoardParameters(self, symbol, event): 
+
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
         
         # Update Ia front end analog analog front end 
@@ -295,6 +295,13 @@ class mcBspI_AnalogInterfaceClass:
            
             self.setDatabaseSymbol("core", "BSP_PIN_" + number +"_FUNCTION_NAME", key )         
             self.setDatabaseSymbol("core", "BSP_PIN_" + number +"_FUNCTION_TYPE", type)
+
+    def resetPinManager(self):
+        for key in self.information.keys():
+            number = str(self.information[key]["PIN"])
+           
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number +"_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number +"_FUNCTION_TYPE", "")
        
 
     def __call__(self):

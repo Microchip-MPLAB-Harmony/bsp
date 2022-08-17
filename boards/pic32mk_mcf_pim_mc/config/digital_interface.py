@@ -81,11 +81,11 @@ class mcBspI_DigitalInterfaceClass:
         # Buttons 
         index = 0
         self.sym_BUTTON_PIN = OrderedDict()
-        for button in self.information["BUTTONS"].keys():
+        for value in self.information["BUTTONS"].values():
             symbol_List.append("MCPMSMFOC_BUTTON" + str(index) + "_NUMBER")
             self.sym_BUTTON_PIN[index] = self.component.createIntegerSymbol("MCPMSMFOC_BUTTON" + str(index) + "_NUMBER", self.sym_BUTTON_NODE )
             self.sym_BUTTON_PIN[index].setLabel("Button" +" "+ str(index) )
-            self.sym_BUTTON_PIN[index].setDefaultValue(int(self.information["BUTTONS"][button]["PIN"]))
+            self.sym_BUTTON_PIN[index].setDefaultValue(int(value["PIN"]))
             self.sym_BUTTON_PIN[index].setReadOnly(True)
             index = index + 1
 
@@ -95,11 +95,11 @@ class mcBspI_DigitalInterfaceClass:
         # LEDs 
         index = 0
         self.sym_LED_PIN = OrderedDict()
-        for led in self.information["LEDS"].keys():
+        for value in self.information["LEDS"].values():
             symbol_List.append("MCPMSMFOC_LED" + str(index) + "_NUMBER")
             self.sym_LED_PIN[index] = self.component.createIntegerSymbol("MCPMSMFOC_LED" + str(index) + "_NUMBER", self.sym_LED_NODE )
             self.sym_LED_PIN[index].setLabel("Led" + " " + str(index) )
-            self.sym_LED_PIN[index].setDefaultValue(int(self.information["LEDS"][led]["PIN"]))
+            self.sym_LED_PIN[index].setDefaultValue(int(value["PIN"]))
             self.sym_LED_PIN[index].setReadOnly(True)
             index = index + 1
 
@@ -116,16 +116,18 @@ class mcBspI_DigitalInterfaceClass:
               
 
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
-        
+
         index = 0
-        for button in self.information["BUTTONS"].keys():
-            self.sym_BUTTON_PIN[index].setValue(int(self.information["BUTTONS"][button]["PIN"]))
+        for value in self.information["BUTTONS"].values():
+            self.sym_BUTTON_PIN[index].setValue(int(value["PIN"]))
             index = index + 1
 
         index = 0
-        for led in self.information["LEDS"].keys():
-            self.sym_LED_PIN[index].setValue(int(self.information["LEDS"][led]["PIN"]))
+        for value in self.information["LEDS"].values():
+            print(value)
+            self.sym_LED_PIN[index].setValue(int(value["PIN"]))
             index = index + 1
     
    
@@ -136,7 +138,7 @@ class mcBspI_DigitalInterfaceClass:
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
             self.information["BUTTONS"][ID]["PIN"] = pin
-            self.information["BUTTONS"][ID]["PIN"] = pad
+            self.information["BUTTONS"][ID]["PAD"] = pad
         except:
             pass
 
@@ -144,7 +146,7 @@ class mcBspI_DigitalInterfaceClass:
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
             self.information["LEDS"][ID]["PIN"] = pin
-            self.information["LEDS"][ID]["PIN"] = pad 
+            self.information["LEDS"][ID]["PAD"] = pad 
         except:
             pass
         
@@ -193,6 +195,26 @@ class mcBspI_DigitalInterfaceClass:
             self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_MODE", "DIGITAL")
             self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_PU", "False"    )
             self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_DIR", ""        )
+
+    def resetPinManager(self):
+
+        # Leds
+        for led in self.information["LEDS"].keys():  
+            number = str(self.information["LEDS"][led]["PIN"])
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_FUNCTION_TYPE", "")
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_MODE", "")
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_LAT", "" )
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_DIR", "" )
+
+        # Buttons
+        for button in self.information["BUTTONS"].keys():
+            number = str(self.information["BUTTONS"][button]["PIN"])
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_FUNCTION_TYPE", "" )
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_MODE", ""  )
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_PU", ""    )
+            self.setDatabaseSymbol("core", "BSP_PIN_" + number + "_DIR", ""   )
 
     def __call__(self):
         self.createSymbols()
