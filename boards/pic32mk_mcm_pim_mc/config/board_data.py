@@ -21,9 +21,12 @@
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *****************************************************************************"""
-
 #---------------------------------------------------------------------------------------#
 #                                 GLOBAL VARIABLES                                      #
+#---------------------------------------------------------------------------------------#
+
+#---------------------------------------------------------------------------------------#
+#                                 IMPORTS                                               #
 #---------------------------------------------------------------------------------------#   
 import xml.etree.ElementTree as ET
 import os
@@ -119,6 +122,10 @@ class mcBspI_ReadBoardInformation:
         self.sym_DEPENDENCY.setDependencies( self.updateInformation, ["BSP_BOARD_SEL"] )
 
    
+    def updateSelectedBoard( self, ID, message ):
+        sym_SELECTED_BOARD.setValue(message["SELECTED_BOARD"])
+
+    
     def updateInformation(self, symbol, event):
         self.information["NAME"] = event["symbol"].getValue()
         self.sendMessage()

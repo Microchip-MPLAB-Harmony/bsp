@@ -153,6 +153,13 @@ class mcBspI_DataMonitorClass:
         if(status == False ):
             print("BSP is unable to set {symbol} with {input}".format(symbol = ID, input = value))
 
+    def resetPinManager(self):
+        for key, value in self.information.items():
+            number = str( value["PIN"] )
+
+            self.setDatabaseSymbol("core", "BSP_PIN_"+ number +"_FUNCTION_NAME", ""  )         
+            self.setDatabaseSymbol("core", "BSP_PIN_"+ number +"_FUNCTION_TYPE", "" )
+    
     def setPinManager(self):
         for key, value in self.information.items():
             number = str( value["PIN"] )
