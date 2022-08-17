@@ -65,10 +65,8 @@ class mcBspI_AnalogFrontEndClass:
                     for parameter in potentiometer:
                         self.information[potentiometer.attrib["id"]][parameter.attrib["id"]] = parameter.attrib["value"]
 
-    def createSymbols(self ):
-
-        
-         # Root Node 
+    def createSymbols(self ): 
+        # Root Node 
         self.sym_NODE = self.component.createMenuSymbol(None, None )
         self.sym_NODE.setLabel("Analog Front End")
 
@@ -118,30 +116,6 @@ class mcBspI_AnalogFrontEndClass:
         self.sym_NODE_IB_SHUNT.setLabel("Shunt resistance (in Ohms)")
         self.sym_NODE_IB_SHUNT.setDefaultValue(float(self.information["IB"]["SHUNT"])) 
         self.sym_NODE_IB_SHUNT.setDependencies(self.updateInformation, ["BSP_IB_SHUNT"])
-
-
-        # Current measurement
-        # self.sym_NODE_IDC = self.component.createMenuSymbol("BSP_IDC", self.sym_NODE)
-        # self.sym_NODE_IDC.setLabel("DC bus current")
-        
-        # available = [ "External op-amp", "Internal op-amp"]
-        # self.sym_NODE_IDC_OPAMP = self.component.createComboSymbol("BSP_IDC_OPAMP", self.sym_NODE_IDC, available)
-        # self.sym_NODE_IDC_OPAMP.setLabel("Op-amp")
-
-        # self.sym_NODE_IDC_GAIN = self.component.createFloatSymbol("BSP_IDC_GAIN", self.sym_NODE_IDC)
-        # self.sym_NODE_IDC_GAIN.setLabel("Gain")
-        # self.sym_NODE_IDC_GAIN.setDefaultValue(float(self.information["IDC"]["GAIN"]))
-        # self.sym_NODE_IDC_GAIN.setDependencies(self.updateInformation, ["BSP_IDC_GAIN"])
-       
-        # self.sym_NODE_IDC_OFFSET = self.component.createFloatSymbol("BSP_IDC_OFFSET", self.sym_NODE_IDC)
-        # self.sym_NODE_IDC_OFFSET.setLabel("Offset")
-        # self.sym_NODE_IDC_OFFSET.setDefaultValue(float(self.information["IDC"]["OFFSET"]))
-        # self.sym_NODE_IDC_OFFSET.setDependencies(self.updateInformation, ["BSP_IDC_OFFSET"])
-       
-        # self.sym_NODE_IDC_SHUNT = self.component.createFloatSymbol("BSP_IDC_SHUNT", self.sym_NODE_IDC)
-        # self.sym_NODE_IDC_SHUNT.setLabel("Shunt resistance (ohm)")
-        # self.sym_NODE_IDC_SHUNT.setDefaultValue(float(self.information["IDC"]["SHUNT"]))
-        # self.sym_NODE_IDC_SHUNT.setDependencies(self.updateInformation, ["BSP_IDC_SHUNT"])
   
         # Voltage measurement
         self.sym_NODE_VDC = self.component.createMenuSymbol("BSP_VDC", self.sym_NODE)
@@ -180,11 +154,6 @@ class mcBspI_AnalogFrontEndClass:
         self.sym_NODE_IB_GAIN.setValue( float(self.information["IB"]["GAIN"  ] ))
         self.sym_NODE_IB_OFFSET.setValue( float(self.information["IB"]["OFFSET"] ))
         self.sym_NODE_IB_SHUNT.setValue( float(self.information["IB"]["SHUNT" ] ))
-
-        # Update dc bus current analog front end 
-        self.sym_NODE_IDC_GAIN.setValue( float(self.information["IDC"]["GAIN"  ] ))
-        self.sym_NODE_IDC_OFFSET.setValue( float(self.information["IDC"]["OFFSET"] ))
-        self.sym_NODE_IDC_SHUNT.setValue( float(self.information["IDC"]["SHUNT" ] ))
 
         # Update dc bus voltage analog front end
         self.sym_NODE_VDC_TOP.setValue( float(self.information["VDC"]["TOP"   ] ))

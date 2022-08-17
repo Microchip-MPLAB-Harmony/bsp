@@ -149,6 +149,7 @@ class mcBspI_PositionConfiguration:
         self.sendMessage()
     
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
         self.sym_QEA.setValue(int(self.information["QEA"]["PIN"]))
         self.sym_QEB.setValue(int(self.information["QEB"]["PIN"]))
@@ -179,6 +180,14 @@ class mcBspI_PositionConfiguration:
 
             self.setDatabaseSymbol("core", "PIN_" + number + "_FUNCTION_NAME", key )         
             self.setDatabaseSymbol("core", "PIN_" + number + "_FUNCTION_TYPE", type )
+    
+    def resetPinManager(self):
+        for key in self.information.keys():
+            
+            number = str(self.information[key]["PIN"])
+
+            self.setDatabaseSymbol("core", "PIN_" + number + "_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "PIN_" + number + "_FUNCTION_TYPE", "" )
 
     def sendMessage( self ):
         Database.sendMessage("pmsm_foc","BSP_POSITION_INTERFACE", self.information )

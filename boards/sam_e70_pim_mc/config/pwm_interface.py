@@ -167,6 +167,7 @@ class mcBspI_PwmConfiguration:
         self.sendMessage()
 
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
         self.sym_PWMAL_PIN.setValue(int(self.information["PWM_AL"]["PIN"]))
         self.sym_PWMAH_PIN.setValue(int(self.information["PWM_AH"]["PIN"]))
@@ -198,6 +199,13 @@ class mcBspI_PwmConfiguration:
 
             self.setDatabaseSymbol("core", "PIN_"+ number +"_FUNCTION_NAME", pin  )         
             self.setDatabaseSymbol("core", "PIN_"+ number +"_FUNCTION_TYPE", type )
+   
+    def resetPinManager(self):
+        for pin in self.information.keys():
+            number = str( self.information[pin]["PIN"] )
+
+            self.setDatabaseSymbol("core", "PIN_"+ number +"_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "PIN_"+ number +"_FUNCTION_TYPE", "" )
 
     def __call__(self):
         self.createSymbols()

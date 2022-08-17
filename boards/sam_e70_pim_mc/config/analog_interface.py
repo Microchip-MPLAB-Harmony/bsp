@@ -176,6 +176,7 @@ class mcBspI_AnalogInterfaceClass:
         self.sendMessage()
 
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
         
         # Update Ia front end analog analog front end 
@@ -199,6 +200,13 @@ class mcBspI_AnalogInterfaceClass:
 
             self.setDatabaseSymbol("core", "PIN_" + number +"_FUNCTION_NAME", key )         
             self.setDatabaseSymbol("core", "PIN_" + number +"_FUNCTION_TYPE", type)       
+
+    def resetPinManager(self):
+        for key in self.information.keys():
+            number = str(self.information[key]["PIN"])
+
+            self.setDatabaseSymbol("core", "PIN_" + number +"_FUNCTION_NAME", "" )         
+            self.setDatabaseSymbol("core", "PIN_" + number +"_FUNCTION_TYPE", "" )       
 
     def __call__(self):
         self.createSymbols()
