@@ -270,7 +270,7 @@
             </connector>
 
             <connector name = "LIN_CS"  index = "68">
-                <pin index = "[7]" type = "" />
+                <pin index = "[47]" type = "" />
             </connector>
 
             <connector name = "LIN_FAULT"  index = "69">
@@ -456,12 +456,6 @@
                     <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
                     <connector description = "Connection"                id = "CONNECT" value = "42"    />
                 </phase>
-                <phase description = "DC bus current"  id = "IDC">
-                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
-                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
-                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
-                    <connector description = "Connection"                id = "CONNECT" value = "23"    />
-                </phase>
             </current>
 
             <voltage>
@@ -527,35 +521,29 @@
         </board>
         <board name = "dsPICDEM MCHV-3">
             <inverter>
-                <maximum_Voltage value = "24.0" />
-                <maximum_Current value = "4.40" />
+                <maximum_Voltage value = "400.0" />
+                <maximum_Current value = "16.40" />
             </inverter>
 
             <current>
                 <phase description = "Phase A current" id = "IA">
                     <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
-                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "10.06"  />
                     <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
                     <connector description = "Connection"                id = "CONNECT" value = "41"    />
                 </phase>
                 <phase description = "Phase B current" id = "IB">
                     <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
-                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
+                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "10.06"  />
                     <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
                     <connector description = "Connection"                id = "CONNECT" value = "42"    />
-                </phase>
-                <phase description = "DC bus current"  id = "IDC">
-                    <shunt     description = "Shunt resistance in Ohm"   id = "SHUNT"   value = "0.010" />
-                    <gain      description = "Current amplifier gain"    id = "GAIN"    value = "15.0"  />
-                    <offset    description = "Current amplifier offset"  id = "OFFSET"  value = "1.65"  />
-                    <connector description = "Connection"                id = "CONNECT" value = "23"    />
                 </phase>
             </current>
 
             <voltage>
-                <rail description = "DC Bus rail" id = "VDC"  value = "230.0">
-                    <rtop description = "Top resistor"    id = "TOP"      value = "30.0" />
-                    <rbot description = "Bottom resistor" id = "BOTTOM"   value = "2.0"  />
+                <rail description = "DC Bus rail" id = "VDC"  value = "325.0">
+                    <rtop description = "Top resistor"    id = "TOP"      value = "300.0" />
+                    <rbot description = "Bottom resistor" id = "BOTTOM"   value = "2.20"  />
                     <connector description = "Connector"  id = "CONNECT"  value = "35"   />
                 </rail>    
             </voltage>
@@ -588,8 +576,7 @@
             </pwm>
 
             <buttons>
-                <connector name = "Push button 1" id = "BUTTON_01" value = "83"  />
-                <connector name = "Push button 2" id = "BUTTON_02" value = "84"  /> 
+                <connector name = "Push button 1" id = "BUTTON_01" value = "68"  />
             </buttons>
 
             <leds>
@@ -597,20 +584,10 @@
                 <connector name = "LED 2" id = "LED_02" value = "1"  /> 
             </leds>
 
-
             <communication>
                 <peripheral name = "UART">
-                    <connector name = "UART Receive"  id = "RECEIVE"  value = "49" />
+                    <connector name = "UART Receive"  id = "RECEIVE" value = "49" />
                     <connector name = "UART Transmit" id = "TRANSMIT" value = "50" />
-                </peripheral>
-                <peripheral name = "CAN">
-                    <connector name = "CAN Receive" value = "87" alternate = "78" />
-                    <connector name = "CAN Transmit" value = "88" />
-                </peripheral>
-                <peripheral name = "LIN">
-                    <connector name = "Chip Select"  value = "68" />
-                    <connector name = "LIN Receive" value = "49" />
-                    <connector name = "LIN Transmit" value = "50" />
                 </peripheral>
             </communication>
         </board>

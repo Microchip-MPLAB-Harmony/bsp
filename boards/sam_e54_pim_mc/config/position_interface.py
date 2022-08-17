@@ -105,6 +105,7 @@ class mcBspI_PositionConfiguration:
         # Peripheral selection
         self.sym_PERIPHERAL = self.component.createComboSymbol("MCBSP_ENCODER_PERIPHERAL", self.sym_NODE, self.instance_List)
         self.sym_PERIPHERAL.setLabel("Select instance")
+        self.sym_PERIPHERAL.setReadOnly(True)
 
         # QEA                 
         self.sym_QEA = self.component.createIntegerSymbol("MCBSP_ENCODER_QEA_PIN", self.sym_NODE )
@@ -148,6 +149,7 @@ class mcBspI_PositionConfiguration:
         self.sendMessage()
     
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
         self.sym_QEA.setValue(int(self.information["QEA"]["PIN"]))
         self.sym_QEB.setValue(int(self.information["QEB"]["PIN"]))
@@ -161,14 +163,25 @@ class mcBspI_PositionConfiguration:
     def setSymbols(self):
         pass
 
+    def setDatabaseSymbol(self, nameSpace, ID, value ):
+        status =  Database.setSymbolValue(nameSpace, ID, value)
+
     def setPinManager(self):
         for key in self.information.keys():
             
-            number = self.information[key]["PIN"]
+            number = str(self.information[key]["PIN"])
             type = self.information[key]["FUNCTION"][0][0] + "_QDI" + self.information[key]["FUNCTION"][0][1]
             
             Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_NAME", key )         
             Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_TYPE", type )
+
+    def resetPinManager(self):
+        for key in self.information.keys():
+            
+            number = str(self.information[key]["PIN"])
+            
+            Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_NAME", "" )         
+            Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_TYPE", "" )
 
     def sendMessage( self ):
         Database.sendMessage("pmsm_foc","BSP_POSITION_INTERFACE", self.information )

@@ -23,16 +23,17 @@
 *****************************************************************************"""
 
 #---------------------------------------------------------------------------------------#
-#                                    IMPORTS                                            #
+#                                   Imports                                             #
 #---------------------------------------------------------------------------------------#
-
+import imp
+import xml.etree.ElementTree as ET
+from collections import OrderedDict
 
 #---------------------------------------------------------------------------------------#
 #                                 GLOBAL VARIABLES                                      #
 #---------------------------------------------------------------------------------------#
 
-import xml.etree.ElementTree as ET
-from collections import OrderedDict
+
 
 
 class mcBspI_DigitalInterfaceClass:
@@ -44,29 +45,29 @@ class mcBspI_DigitalInterfaceClass:
         self.readFromXml("dsPICDEM MCLV-2")
 
     def readFromXml(self, selected):
-        self.information = dict()
+        self.information = OrderedDict()
+        self.information["BUTTONS"] = OrderedDict()
         for board in self.bspContent.findall("boards/board"):
             if board.attrib["name"] == selected:
-                self.information["BUTTONS"] = OrderedDict()
                 for connector in board.findall("buttons/connector"):
-                    key = connector.attrib["id"]
+                    button_Name = connector.attrib["id"]
                     pin = global_CONNECTOR_TO_PIN_MAP[connector.attrib["value"]][0]
                     pad = global_PIN_TO_PAD_MAP[pin]
 
-                    self.information["BUTTONS"][key] = dict()
-                    self.information["BUTTONS"][key]["PIN"] =  pin
-                    self.information["BUTTONS"][key]["PAD"] =  pad
+                    self.information["BUTTONS"][button_Name] = OrderedDict()
+                    self.information["BUTTONS"][button_Name]["PIN"] = pin
+                    self.information["BUTTONS"][button_Name]["PAD"] = pad
+                    
                 
                 self.information["LEDS"] = OrderedDict()
                 for connector in board.findall("leds/connector"):
-                    key = connector.attrib["id"]
+                    button_Name = connector.attrib["id"]
                     pin = global_CONNECTOR_TO_PIN_MAP[connector.attrib["value"]][0]
                     pad = global_PIN_TO_PAD_MAP[pin]
 
-                    self.information["LEDS"][key] = dict()
-                    self.information["LEDS"][key]["PIN"] =  pin
-                    self.information["LEDS"][key]["PAD"] =  pad
-
+                    self.information["LEDS"][button_Name] = OrderedDict()
+                    self.information["LEDS"][button_Name]["PIN"] = pin
+                    self.information["LEDS"][button_Name]["PAD"] = pad
                   
     def createSymbols( self ):
         self.sym_NODE = self.component.createMenuSymbol(None, None)
@@ -79,12 +80,12 @@ class mcBspI_DigitalInterfaceClass:
 
         # Buttons 
         index = 0
-        self.sym_BUTTON_PIN = dict()
-        for button in self.information["BUTTONS"].keys():
+        self.sym_BUTTON_PIN = OrderedDict()
+        for value in self.information["BUTTONS"].values():
             symbol_List.append("MCPMSMFOC_BUTTON" + str(index) + "_NUMBER")
             self.sym_BUTTON_PIN[index] = self.component.createIntegerSymbol("MCPMSMFOC_BUTTON" + str(index) + "_NUMBER", self.sym_BUTTON_NODE )
             self.sym_BUTTON_PIN[index].setLabel("Button" +" "+ str(index) )
-            self.sym_BUTTON_PIN[index].setDefaultValue(int(self.information["BUTTONS"][button]["PIN"]))
+            self.sym_BUTTON_PIN[index].setDefaultValue(int(value["PIN"]))
             self.sym_BUTTON_PIN[index].setReadOnly(True)
             index = index + 1
 
@@ -93,12 +94,12 @@ class mcBspI_DigitalInterfaceClass:
 
         # LEDs 
         index = 0
-        self.sym_LED_PIN = dict()
-        for led in self.information["LEDS"].keys():
+        self.sym_LED_PIN = OrderedDict()
+        for value in self.information["LEDS"].values():
             symbol_List.append("MCPMSMFOC_LED" + str(index) + "_NUMBER")
             self.sym_LED_PIN[index] = self.component.createIntegerSymbol("MCPMSMFOC_LED" + str(index) + "_NUMBER", self.sym_LED_NODE )
             self.sym_LED_PIN[index].setLabel("Led" + " " + str(index) )
-            self.sym_LED_PIN[index].setDefaultValue(int(self.information["LEDS"][led]["PIN"]))
+            self.sym_LED_PIN[index].setDefaultValue(int(value["PIN"]))
             self.sym_LED_PIN[index].setReadOnly(True)
             index = index + 1
 
@@ -115,16 +116,17 @@ class mcBspI_DigitalInterfaceClass:
               
 
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
-        
+
         index = 0
-        for button in self.information["BUTTONS"].keys():
-            self.sym_BUTTON_PIN[index].setValue(int(self.information["BUTTONS"][button][0]))
+        for value in self.information["BUTTONS"].values():
+            self.sym_BUTTON_PIN[index].setValue(int(value["PIN"]))
             index = index + 1
 
         index = 0
-        for led in self.information["LEDS"].keys():
-            self.sym_LED_PIN[index].setValue(int(self.information["LEDS"][led][0]))
+        for value in self.information["LEDS"].values():
+            self.sym_LED_PIN[index].setValue(int(value["PIN"]))
             index = index + 1
     
    
@@ -134,16 +136,16 @@ class mcBspI_DigitalInterfaceClass:
     def pinToButtonMapping(self, pin, ID ):
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
-            self.information["BUTTONS"][ID]["PIN"] =  pin
-            self.information["BUTTONS"][ID]["PAD"] =  pad
+            self.information["BUTTONS"][ID]["PIN"] = pin
+            self.information["BUTTONS"][ID]["PAD"] = pad
         except:
             pass
 
     def pinToLedMapping(self, pin, ID ):
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
-            self.information["LEDS"][ID]["PIN"] =  pin
-            self.information["LEDS"][ID]["PAD"] =  pad
+            self.information["LEDS"][ID]["PIN"] = pin
+            self.information["LEDS"][ID]["PAD"] = pad 
         except:
             pass
         
@@ -168,6 +170,11 @@ class mcBspI_DigitalInterfaceClass:
         if "MCPMSMFOC_DIGITAL_INTERFACE" == id:
             return self.information
 
+    def setDatabaseSymbol(self, nameSpace, ID, value ):
+        status =  Database.setSymbolValue(nameSpace, ID, value)
+        if(status == False ):
+            print("BSP is unable to set {symbol} with {input}".format(symbol = ID, input = value))
+
     def setPinManager(self):
 
         # Leds
@@ -184,6 +191,23 @@ class mcBspI_DigitalInterfaceClass:
             Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_NAME", button )         
             Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_TYPE", "GPIO")
             Database.setSymbolValue("core", "PIN_" + number + "_INEN", "True")
+
+    def resetPinManager(self):
+
+        # Leds
+        for led in self.information["LEDS"].keys():  
+            number = str(self.information["LEDS"][led]["PIN"])
+            Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_NAME", "" )         
+            Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_TYPE", "")
+            Database.setSymbolValue("core", "PIN_" + number + "_LAT", "")
+            Database.setSymbolValue("core", "PIN_" + number + "_DIR", "")
+
+        # Buttons
+        for button in self.information["BUTTONS"].keys():
+            number = str(self.information["BUTTONS"][button]["PIN"])
+            Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_NAME", "" )         
+            Database.setSymbolValue("core", "PIN_" + number + "_FUNCTION_TYPE", "")
+            Database.setSymbolValue("core", "PIN_" + number + "_INEN", "")
 
       
 

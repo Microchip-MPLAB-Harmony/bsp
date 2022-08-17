@@ -31,15 +31,16 @@ board_PararameterDict = {}
 #------------------------------------------------------------------------------------------------------------#
 #                                             LOCAL FUNCTIONS                                                #
 #------------------------------------------------------------------------------------------------------------#
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/general_functions.py"  )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/board_data.py" )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/voltage_source.py"  )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/analog_interface.py"  )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/digital_interface.py" )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/pwm_interface.py" )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/position_interface.py"  )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/analog_frontend.py"  )
-execfile(Module.getPath() + "/sam_e54_pim_mc/config/data_monitoring.py"  )
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "general_Functions.py"  ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "board_data.py"         ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "voltage_source.py"     ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "analog_interface.py"   ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "digital_interface.py"  ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "pwm_interface.py"      ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "position_interface.py" ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "analog_frontend.py"    ))
+execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "data_monitoring.py"    ))
+
 
 #------------------------------------------------------------------------------------------------------------#
 #                                              INSTANTIATION                                                 #
@@ -47,7 +48,7 @@ execfile(Module.getPath() + "/sam_e54_pim_mc/config/data_monitoring.py"  )
 def instantiateComponent(bspComponent):
    
     # Read xml data from the path 
-    path = Module.getPath() + "sam_e54_pim_mc/config/board.xml"
+    path = os.path.join(Module.getPath(),"sam_e54_pim_mc", "config", "board.xml")
     bspContent = ET.fromstring((open(path, "r")).read())
 
     global board_Information
@@ -79,9 +80,9 @@ def instantiateComponent(bspComponent):
     digital_Interface = mcBspI_DigitalInterfaceClass(bspContent, bspComponent)
     digital_Interface()
 
-    global data_monitoring
-    data_monitoring = mcBspI_DataMonitorClass(bspContent, bspComponent)
-    data_monitoring()
+    global data_Monitor
+    data_Monitor = mcBspI_DataMonitorClass(bspContent, bspComponent)
+    data_Monitor()
    
 
 
@@ -108,9 +109,13 @@ def instantiateComponent(bspComponent):
 #                                             MESSAGE HANDLING                                               #
 #------------------------------------------------------------------------------------------------------------#
 def handleMessage(messageID, args):
-
+    
     if (messageID == "MCPMSMFOC_SELECTED_BOARD"):
-        args["SELECTED_BOARD"] = selectedBoard
+        board_Information.updateSelectedBoard("MCPMSMFOC_SELECTED_BOARD", args)
+        return
+    
+    if (messageID == "MCPMSMFOC_INITIAL_INFORMATION"):
+        args["SELECTED_BOARD"] = sym_SELECTED_BOARD.getValue()
         return board_PararameterDict
 
     if ( messageID == "MCPMSMFOC_ANALOG_INTERFACE" ):
@@ -136,6 +141,10 @@ def handleMessage(messageID, args):
 
     if( messageID == "MCPMSMFOC_BOARD_INFORMATION" ):
         message = board_Information.handleMessage(messageID, args)  
+        return message
+
+    if( messageID == "X2CSCOPE_DATA_MONITORING" ):
+        message = data_Monitor.handleMessage(messageID, args)  
         return message
 
    

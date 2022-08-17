@@ -157,7 +157,7 @@ class mcBspI_PwmConfiguration:
         try:
             pad = global_PIN_TO_PAD_MAP[str(pin)]
             self.information[ID]["PIN"] =  pin
-            self.information[ID]["PIN"] =  pad
+            self.information[ID]["PAD"] =  pad
             self.information[ID]["FUNCTION"] = self.function_Tuple[pad]
         except:
             pass
@@ -174,6 +174,7 @@ class mcBspI_PwmConfiguration:
         self.sendMessage()
 
     def updateBoardParameters(self, symbol, event): 
+        self.resetPinManager()
         self.readFromXml(event["symbol"].getValue())
         self.sym_PWMAL_PIN.setValue(int(self.information["PWM_AL"]["PIN"]))
         self.sym_PWMAH_PIN.setValue(int(self.information["PWM_AH"]["PIN"]))
@@ -191,11 +192,18 @@ class mcBspI_PwmConfiguration:
 
     def setPinManager(self):
         for pin in self.information.keys():
-            number = self.information[pin]["PIN"]
+            number = str(self.information[pin]["PIN"])
             type = str(self.information[pin]["FUNCTION"][0][0]) + "_" + "WO" +  str(self.information[pin]["FUNCTION"][0][1])
            
             Database.setSymbolValue("core", "PIN_"+ number +"_FUNCTION_NAME", pin )         
             Database.setSymbolValue("core", "PIN_"+ number +"_FUNCTION_TYPE", type )
+
+    def resetPinManager(self):
+        for pin in self.information.keys():
+            number = str(self.information[pin]["PIN"])
+           
+            Database.setSymbolValue("core", "PIN_"+ number +"_FUNCTION_NAME", "" )         
+            Database.setSymbolValue("core", "PIN_"+ number +"_FUNCTION_TYPE", "" )
 
     def __call__(self):
         self.createSymbols()
