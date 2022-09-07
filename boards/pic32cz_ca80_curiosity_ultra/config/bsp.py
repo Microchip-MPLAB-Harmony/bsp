@@ -36,17 +36,19 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "PIN_68_LAT", "High")
     Database.setSymbolValue("core", "PIN_68_DIR", "Out")
 
-    #Switch
+    #Switch0
     Database.setSymbolValue("core", "PIN_93_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_93_FUNCTION_NAME", "SWITCH0")
     Database.setSymbolValue("core", "PIN_93_PULLEN", "True")
     Database.setSymbolValue("core", "PIN_93_LAT", "High")
+
+    #Switch1
     Database.setSymbolValue("core", "PIN_119_FUNCTION_TYPE", "SWITCH_AL")
     Database.setSymbolValue("core", "PIN_119_FUNCTION_NAME", "SWITCH1")
     Database.setSymbolValue("core", "PIN_119_PULLEN", "True")
     Database.setSymbolValue("core", "PIN_119_LAT", "High")
 
-    BSP_NAME = "pic32cz_ca90_curiosity_ultra"
+    BSP_NAME = "pic32cz_ca80_curiosity_ultra"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
@@ -59,9 +61,7 @@ def instantiateComponent(bspComponent):
             {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
             {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
             {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"},
-            {"type":"VBUS_0_AH", "mode":"DIGITAL", "dir":"OUT"},
-            {"type":"VBUS_0_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
-            {"type":"VBUS_1_AH", "mode":"DIGITAL", "dir":"OUT"},
-            {"type":"VBUS_1_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
+            {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+            {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
 
     execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
