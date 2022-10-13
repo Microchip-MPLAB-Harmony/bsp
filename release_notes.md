@@ -3,6 +3,21 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.14.0
+### New features
+
+Added support for the following development kits:
+1. PIC32MK MCA Motor Control Plug In Module
+2. DSPICDEM™ MCHV-3 Development Board for [PIC32MK1024 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320024)
+3. DSPICDEM™ MCHV-3 Development Board for [ATSAME54 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320207)
+4. DSPICDEM™ MCHV-3 Development Board for [ATSAME70 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320203)
+5. DSPICDEM™ MCHV-3 Development Board for [PIC32MK MCM Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320211)
+6. [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A)
+
+### Known issues
+
+BSP LEDs related macros will not be generated if Pin Manager is launched before adding BSP to the project graph. As a workaround, add BSP to the project graph first before launching Pin manager.
+
 ## BSP Release v3.13.0
 ### New features
 
