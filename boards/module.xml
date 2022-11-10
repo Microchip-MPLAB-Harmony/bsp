@@ -94,5 +94,6 @@
         <Board name="CEC173X Evaluation Board" processor="CEC1736_S0_2ZW" config="cec1736_evb"/>
         <Board name="PIC32CXMTSH Development Board" processor="PIC32CX2051MTSH128" config="pic32cxmtsh_db"/>
         <Board name="PIC32MK MCA Plugin In Module" processor="PIC32MK0128MCA048" config="pic32mk_mca_pim_mc"/>
+        <Board name="PIC32CXMTC Development Board" processor="PIC32CX2051MTC128" config="pic32cxmtc_db"/>
     </Boards>
 </Module>
