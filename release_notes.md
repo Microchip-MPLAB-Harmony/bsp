@@ -3,7 +3,7 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
-## BSP Release v3.15.0-eng.1
+## BSP Release v3.15.0-E1
 ### New features
 
 Added support for the PIC32CZ-C80 Curiosity Ultra Board
