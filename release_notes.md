@@ -3,6 +3,17 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.15.0-E2
+### New features
+
+This engineering release adds support for the following development kits:
+1. PIC32CK-GC01 Curiosity Ultra Board
+2. PIC32CK-SG01 Curiosity Ultra Board
+
+### Known issues
+
+Same as v3.14.0
+
 ## BSP Release v3.15.0-E1
 ### New features
 
