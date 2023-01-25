@@ -3,6 +3,18 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.15.0
+### New features
+
+This release adds support for the following development kits:
+1. [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/EV84M21A)
+2. [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A)
+3. [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A)
+
+### Known issues
+
+None
+
 ## BSP Release v3.15.0-E2
 ### New features
 
