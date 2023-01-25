@@ -7,7 +7,7 @@
 ### New features
 
 This release adds support for the following development kits:
-1. [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/EV84M21A)
+1. [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB)
 2. [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A)
 3. [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A)
 
