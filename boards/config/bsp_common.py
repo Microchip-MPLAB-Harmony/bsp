@@ -22,12 +22,15 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *****************************************************************************"""
 
-
+bspBoardName = bspComponent.createStringSymbol("BSP_BOARD_NAME", None)
+bspBoardName.setLabel("BSP Name")
+bspBoardName.setDefaultValue(BSP_NAME)
+bspBoardName.setVisible(True)
+bspBoardName.setReadOnly(True)
+    
 bspMenu = bspComponent.createMenuSymbol("BSP_MENU", None)
 bspMenu.setLabel("BSP Pin Types")
 bspMenu.setDescription("Type of PIO Pins")
-
-
 
 enumeratedPinTypes = enumerate(pinTypes)
 
@@ -111,3 +114,5 @@ if Variables.get("__TRUSTZONE_ENABLED") != None and Variables.get("__TRUSTZONE_E
     bspSecureHeaderFile.setProjectPath("config/" + configName + "/bsp/")
     bspSecureHeaderFile.setType("HEADER")
     bspSecureHeaderFile.setSecurity("SECURE")
+    
+    
