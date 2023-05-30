@@ -3,6 +3,15 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.16.0
+### New features
+
+Added board specific name to allow code customizations based on BSP
+
+### Known issues
+
+None
+
 ## BSP Release v3.15.0
 ### New features
 
