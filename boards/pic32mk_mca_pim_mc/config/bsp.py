@@ -31,7 +31,7 @@ board_PararameterDict = {}
 #------------------------------------------------------------------------------------------------------------#
 #                                             LOCAL FUNCTIONS                                                #
 #------------------------------------------------------------------------------------------------------------#
-execfile(os.path.join(Module.getPath(), "pic32mk_mca_pim_mc", "config", "general_Functions.py"  ))
+execfile(os.path.join(Module.getPath(), "pic32mk_mca_pim_mc", "config", "general_functions.py"  ))
 execfile(os.path.join(Module.getPath(), "pic32mk_mca_pim_mc", "config", "board_data.py"         ))
 execfile(os.path.join(Module.getPath(), "pic32mk_mca_pim_mc", "config", "voltage_source.py"     ))
 execfile(os.path.join(Module.getPath(), "pic32mk_mca_pim_mc", "config", "analog_interface.py"   ))
