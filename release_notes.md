@@ -3,6 +3,17 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.16.1
+### New features
+None
+
+### Bug fixes
+- Corrected file names from upper case to lower case for Linux compatibility in pic32mk_mca_pim_mc, pic32mk_mcf_pim_mc, pic32mk_mcm_pim_mc, sam_e54_pim_mc and sam_e70_pim_mc BSP.
+
+### Known issues
+
+None
+
 ## BSP Release v3.16.0
 ### New features
 
