@@ -48,6 +48,9 @@
         <Board name="PIC32MZ EF Curiosity 2.0" processor="PIC32MZ2048EFM144" config="pic32mz_ef_curiosity_v2"/>
         <Board name="PIC32MZ W1 Curiosity" processor="PIC32MZ1025W104132" config="pic32mz_w1_curiosity"/>
         <Board name="PIC32MZ W1 Curiosity" processor="WFI32E01" config="wfi32e_curiosity"/>
+        <Board name="PIC32MZ W1 Curiosity" processor="WFI32E02" config="pic32mz_w1_ff_curiosity"/>
+        <Board name="PIC32MZ W1 Curiosity" processor="PIC32MZ2051W104132" config="pic32mz_w1_curiosity"/>
+        <Board name="PIC32MZ W1 Curiosity" processor="WFI32E03" config="wfi32e_curiosity"/>
         <Board name="PIC32MZ W1 WFI32IoT" processor="PIC32MZ1025W104132" config="pic32mz_w1_wfiiot"/>
         <Board name="PIC32MZ W1 WFI32IoT" processor="WFI32E01" config="wfi32e_iot"/>
         <Board name="SAM 9X60 Evaluation Kit" processor="SAM9X60" config="sam_9x60_ek"/>
