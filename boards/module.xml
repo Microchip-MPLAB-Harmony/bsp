@@ -18,6 +18,7 @@
         <Board name="PIC32CX SG41 Curiosity Ultra" processor="PIC32CX1025SG41128" config="pic32cx_sg41_curiosity_ultra"/>
         <Board name="PIC32CZ CA90 Curiosity Ultra" processor="PIC32CZ8110CA90208" config="pic32cz_ca90_curiosity_ultra"/>
         <Board name="PIC32CZ CA80 Curiosity Ultra" processor="PIC32CZ8110CA80208" config="pic32cz_ca80_curiosity_ultra"/>
+        <Board name="PIC32CZ CA70 Curiosity Ultra" processor="PIC32CZ2051CA70144" config="pic32cz_ca70_curiosity_ultra"/>
         <Board name="PIC32MM Curiosity" processor="PIC32MM0064GPL036" config="pic32mm_curiosity"/>
         <Board name="PIC32MM USB Curiosity" processor="PIC32MM0256GPM064" config="pic32mm_usb_curiosity"/>
         <Board name="PIC32MX274 XLP Starter Kit" processor="PIC32MX274F256D" config="pic32mx_xlp_sk"/>
