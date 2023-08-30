@@ -3,6 +3,20 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.17.0
+### New features
+
+This release adds support for the following development kits: 
+1. [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a)
+2. [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a)
+
+### Bug fixes
+- None
+
+### Known issues
+
+None
+
 ## BSP Release v3.16.1
 ### New features
 None
