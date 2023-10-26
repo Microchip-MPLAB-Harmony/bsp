@@ -24,7 +24,7 @@
 
 def instantiateComponent(bspComponent):
 
-    BSP_NAME = "default"
+    BSP_NAME = "defaultBSP"
     peripheralNode = ATDF.getNode("/avr-tools-device-file/devices/device/peripherals")
 
     if ("PIC32M" in Variables.get("__PROCESSOR")) or (("PIC32CX" in Variables.get("__PROCESSOR")) and ("BZ" in Variables.get("__PROCESSOR"))):
