@@ -61,6 +61,7 @@
         <Board name="SAM A5D2 Xplained Ultra" processor="ATSAMA5D27" config="sam_a5d2_xult"/>
         <Board name="SAM A5D27 SOM1 Kit1" processor="ATSAMA5D27CD1G" config="sam_a5d27_som1_ek"/>
         <Board name="SAM A5D27 WLSOM1 Kit1" processor="ATSAMA5D27CLD2G" config="sam_a5d27_wlsom1_ek1"/>
+		<Board name="SAM A5D29 Curiosity" processor="ATSAMA5D29" config="sam_a5d29_curiosity"/>
         <Board name="SAM A7G5 Evaluation Kit" processor="SAMA7G54" config="sam_a7g5_ek"/>
         <Board name="SAM C21 Xplained Pro" processor="ATSAMC21J18A" config="sam_c21_xpro"/>
         <Board name="SAM C21N Xplained Pro" processor="ATSAMC21N18A" config="sam_c21n_xpro"/>
