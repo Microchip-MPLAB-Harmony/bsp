@@ -25,7 +25,7 @@
 def loadModule():
 	print("Load Module: BSP")
 
-	configName = "Default"
+	configName = "Custom"
 
 	bspDefault = Module.CreateComponent("BSP_default", configName + " Board (BSP)", "/Board Support Packages (BSPs)/", "default/config/bsp.py")
 
