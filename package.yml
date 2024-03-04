@@ -3,10 +3,10 @@ package:
   name: "bsp"
   type: "api"
   status: "production"
-  required: true
-  version: "3.17.0"
+  required: false
+  version: "3.18.0"
 
   dependencies:
     - name: "csp"
       type: "package"
-      version: "3.18.0"
+      version: "3.18.3"

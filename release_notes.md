@@ -3,6 +3,15 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.18.0
+### New features
+
+This release adds support for the following development kits: 
+1. [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/ev07r15a)
+
+### Known issues
+- None
+
 ## BSP Release v3.17.0
 ### New features
 

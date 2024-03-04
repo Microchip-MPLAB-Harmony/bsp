@@ -47,51 +47,52 @@ reference information.
 | 21 | pic32mz_w1_curiosity | [PIC32 WFI32E CURIOSITY BOARD](https://www.microchip.com/en-us/development-tool/EV12F11A) | PIC32MZ1025W104 |
 | 22 | sam_9x60_ek | [SAM9X60-EK Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/DT100126) | SAM9X60 |
 | 23 | sam_a5d2_xult | [ATSAMA5D2C-XULT ](https://www.microchip.com/DevelopmentTools/ProductDetails/ATSAMA5D2C-XULT)| SAMA5D27C |
-| 24 | sam_a5d27_som1_ek | [SAMA5D27-SOM1-EK1](https://www.microchip.com/developmenttools/ProductDetails/atsama5d27-som1-ek1) | SAMA5D27C |
-| 25 | sam_a5d27_wlsom1_ek1 | [ATSAMA5D27-WLSOM1 EVALUATION KIT](https://www.microchip.com/en-us/development-tool/DM320117) | SAMA5D27C |
-| 26 | sam_c21_xpro | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21-xpro) | ATSAMC21J18A |
-| 27 | sam_c21n_xpro | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/ATSAMC21N-XPRO) | ATSAMC21N18A |
-| 28 | sam_d10_xmini | [SAM D10 Xplained Mini](https://www.microchip.com/developmenttools/ProductDetails/ATSAMD10-Xmini) | ATSAMD10D14A |
-| 29 | sam_d11_xpro | [SAM D11 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd11-xpro) | ATSAMD11D14A |
-| 30 | sam_d20_xpro | [SAM D20 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/ATSAMD20-XPRO) | SAMD20J18A |
-| 31 | sam_d21_cnano | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/DM320119) | ATSAMD21G17D |
-| 32 | sam_d21_iot | [SAM-IoT WG Development Board](https://www.microchip.com/Developmenttools/ProductDetails/EV75S95A) | ATSAMD21G18A |
-| 33 | sam_d21_xpro | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro) | SAMD21J18A |
-| 34 | sam_da1_xpro | [SAM DA1 Xplained Pro](https://www.microchip.com/developmenttools/ProductDetails/ATSAMDA1-XPRO) | SAMDA1J16A |
-| 35 | sam_e51_cnano | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/EV76S68A) | ATSAME51J20A |
-| 36 | sam_e54_cult | [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210) | ATSAME54P20A |
-| 37 | sam_e54_xpro | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/productdetails/atsame54-xpro) | ATSAME54P20A |
-| 38 | sam_e70_xpld | [SAM E70 Xplained Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATSAME70-XPLD) | ATSAME70Q21 |
-| 39 | sam_e70_xult | [SAM E70 Xplained Ultra Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320113) | ATSAME70Q21 |
-| 40 | sam_g55_xpro | [SAM G55 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamg55-xpro) | ATSAMG55J19A |
-| 41 | sam_ha1_xpro | [SAM HA1E16A Xplained Pro](https://www.microchip.com/Developmenttools/ProductDetails/ATSAMHA1E16A-XPRO) | ATSAMHA1E16A |
-| 42 | sam_l10_xpro | [SAML10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204) | ATSAML10E16A |
-| 43 | sam_l11_xpro | [SAML11 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320205) | ATSAML11E16A |
-| 44 | sam_l21_xpro | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b) | SAML21J18A |
-| 45 | sam_l22_xpro | [SAM L22 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/atsaml22-xpro-b) | SAML22N18A |
-| 46 | sam_r34_xpro | [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320111) | SAMR34J18B |
-| 47 | sam_rh71_ek | [SAMRH71F20-EK Evaluation Kit](https://ww1.microchip.com/downloads/en/DeviceDoc/SAMRH71F20-EK-Evaluation-Kit-User-Guide-DS50002910A.pdf) | SAMRH71F20 |
-| 48 | sam_v71_xult | [SAM V71 Xplained Ultra Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamv71-xult) | ATSAMV71Q21B |
-| 49 | wlr089_xpro | [WLR089 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/EV23M25A) | WLR089U0 |
-| 50 | pl360g55cf_ek | [PL360G55CF Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CF-EK) | SAMG55J19 |
-| 51 | pl485_ek | [PL485 Evaluation Kit](https://www.microchip.com/en-us/development-tool/PL485-EK) | PL485 SOC |
-| 52 | pl360g55cb_ek | [PL360G55CB Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CB-EK) | SAMG55J19 |
-| 53 | sam_r34_xpro | [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/dm320111) | SAM R34 SiP |
-| 54 | lan9255_evb | [LAN9255 Evaluation Board](https://www.microchip.com/en-us/development-tool/EV25Y25A) | LAN9255ZMX020 |
-| 55 | pic32mk_mcf_pim_mc | [PIC32MK1024 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320024) | PIC32MK1024MCF100 |
-| 56 | sam_e54_pim_mc | [ATSAME54 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320207) | ATSAME54P20A |
-| 57 | sam_e70_pim_mc | [ATSAME70 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320203) | ATSAME70Q21B |
-| 58 | pic32mk_mcm_pim_mc | [PIC32MK MCM Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320211) | PIC32MK1024MCM100 |
-| 59 | cec1736_evb | [CEC1736 Development Board](https://www.microchip.com/en-us/development-tool/EV19K07A) | CEC1736 |
-| 60 | sam_rh707_ek | [SAMRH707F18 Evaluation Kit](https://www.microchip.com/en-us/development-tool/SAMRH707F18-EK) | ATSAMRH707F18A |
-| 61 | sam_a7g5_ek | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A) | SAMA7G54 |
-| 62 | pic32cx_bz2_curiosity | [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A) | WBZ451 |
-| 63 | sam_9x60_curiosity | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A) | SAM9X60D1G SiP |
-| 64 | pic32cxmtsh_db | [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB) | PIC32CX2051MTSH128 |
-| 65 | pic32cxmtc_db | [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A) | PIC32CX2051MTC128 |
-| 66 | pic32cxmtg_ek | [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A) | PIC32CX2051MTG128 |
-| 67 | pic32cx_sg6x_curiosity_ultra | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a) | PIC32CX1025SG60128 |
-| 68 | pic32cx_sg41_curiosity_ultra | [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a) | PIC32CX1025SG41128 |
+| 24 | sam_a5d2_curiosity | [ATSAMA5D29-CURIOSITY ](https://www.microchip.com/en-us/development-tool/ev07r15a)| SAMA5D29 |
+| 25 | sam_a5d27_som1_ek | [SAMA5D27-SOM1-EK1](https://www.microchip.com/developmenttools/ProductDetails/atsama5d27-som1-ek1) | SAMA5D27C |
+| 26 | sam_a5d27_wlsom1_ek1 | [ATSAMA5D27-WLSOM1 EVALUATION KIT](https://www.microchip.com/en-us/development-tool/DM320117) | SAMA5D27C |
+| 27 | sam_c21_xpro | [SAM C21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamc21-xpro) | ATSAMC21J18A |
+| 28 | sam_c21n_xpro | [SAMC21N Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/ATSAMC21N-XPRO) | ATSAMC21N18A |
+| 29 | sam_d10_xmini | [SAM D10 Xplained Mini](https://www.microchip.com/developmenttools/ProductDetails/ATSAMD10-Xmini) | ATSAMD10D14A |
+| 30 | sam_d11_xpro | [SAM D11 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd11-xpro) | ATSAMD11D14A |
+| 31 | sam_d20_xpro | [SAM D20 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/ATSAMD20-XPRO) | SAMD20J18A |
+| 32 | sam_d21_cnano | [SAM D21 Curiosity Nano Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/DM320119) | ATSAMD21G17D |
+| 33 | sam_d21_iot | [SAM-IoT WG Development Board](https://www.microchip.com/Developmenttools/ProductDetails/EV75S95A) | ATSAMD21G18A |
+| 34 | sam_d21_xpro | [SAM D21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamd21-xpro) | SAMD21J18A |
+| 35 | sam_da1_xpro | [SAM DA1 Xplained Pro](https://www.microchip.com/developmenttools/ProductDetails/ATSAMDA1-XPRO) | SAMDA1J16A |
+| 36 | sam_e51_cnano | [SAM E51 Curiosity Nano Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/EV76S68A) | ATSAME51J20A |
+| 37 | sam_e54_cult | [SAM E54 Curiosity Ultra Development Board](https://www.microchip.com/Developmenttools/ProductDetails/DM320210) | ATSAME54P20A |
+| 38 | sam_e54_xpro | [SAM E54 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/productdetails/atsame54-xpro) | ATSAME54P20A |
+| 39 | sam_e70_xpld | [SAM E70 Xplained Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATSAME70-XPLD) | ATSAME70Q21 |
+| 40 | sam_e70_xult | [SAM E70 Xplained Ultra Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320113) | ATSAME70Q21 |
+| 41 | sam_g55_xpro | [SAM G55 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamg55-xpro) | ATSAMG55J19A |
+| 42 | sam_ha1_xpro | [SAM HA1E16A Xplained Pro](https://www.microchip.com/Developmenttools/ProductDetails/ATSAMHA1E16A-XPRO) | ATSAMHA1E16A |
+| 43 | sam_l10_xpro | [SAML10 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320204) | ATSAML10E16A |
+| 44 | sam_l11_xpro | [SAML11 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/DM320205) | ATSAML11E16A |
+| 45 | sam_l21_xpro | [SAM L21 Xplained Pro Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsaml21-xpro-b) | SAML21J18A |
+| 46 | sam_l22_xpro | [SAM L22 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/atsaml22-xpro-b) | SAML22N18A |
+| 47 | sam_r34_xpro | [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320111) | SAMR34J18B |
+| 48 | sam_rh71_ek | [SAMRH71F20-EK Evaluation Kit](https://ww1.microchip.com/downloads/en/DeviceDoc/SAMRH71F20-EK-Evaluation-Kit-User-Guide-DS50002910A.pdf) | SAMRH71F20 |
+| 49 | sam_v71_xult | [SAM V71 Xplained Ultra Evaluation Kit](https://www.microchip.com/developmenttools/ProductDetails/atsamv71-xult) | ATSAMV71Q21B |
+| 50 | wlr089_xpro | [WLR089 Xplained Pro Evaluation Kit](https://www.microchip.com/Developmenttools/ProductDetails/EV23M25A) | WLR089U0 |
+| 51 | pl360g55cf_ek | [PL360G55CF Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CF-EK) | SAMG55J19 |
+| 52 | pl485_ek | [PL485 Evaluation Kit](https://www.microchip.com/en-us/development-tool/PL485-EK) | PL485 SOC |
+| 53 | pl360g55cb_ek | [PL360G55CB Evaluation Board](https://www.microchip.com/en-us/development-tool/PL360G55CB-EK) | SAMG55J19 |
+| 54 | sam_r34_xpro | [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/en-us/development-tool/dm320111) | SAM R34 SiP |
+| 55 | lan9255_evb | [LAN9255 Evaluation Board](https://www.microchip.com/en-us/development-tool/EV25Y25A) | LAN9255ZMX020 |
+| 56 | pic32mk_mcf_pim_mc | [PIC32MK1024 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320024) | PIC32MK1024MCF100 |
+| 57 | sam_e54_pim_mc | [ATSAME54 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320207) | ATSAME54P20A |
+| 58 | sam_e70_pim_mc | [ATSAME70 Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320203) | ATSAME70Q21B |
+| 59 | pic32mk_mcm_pim_mc | [PIC32MK MCM Motor Control Plug In Module](https://www.microchip.com/en-us/development-tool/MA320211) | PIC32MK1024MCM100 |
+| 60 | cec1736_evb | [CEC1736 Development Board](https://www.microchip.com/en-us/development-tool/EV19K07A) | CEC1736 |
+| 61 | sam_rh707_ek | [SAMRH707F18 Evaluation Kit](https://www.microchip.com/en-us/development-tool/SAMRH707F18-EK) | ATSAMRH707F18A |
+| 62 | sam_a7g5_ek | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A) | SAMA7G54 |
+| 63 | pic32cx_bz2_curiosity | [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A) | WBZ451 |
+| 64 | sam_9x60_curiosity | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A) | SAM9X60D1G SiP |
+| 65 | pic32cxmtsh_db | [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB) | PIC32CX2051MTSH128 |
+| 66 | pic32cxmtc_db | [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A) | PIC32CX2051MTC128 |
+| 67 | pic32cxmtg_ek | [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A) | PIC32CX2051MTG128 |
+| 68 | pic32cx_sg6x_curiosity_ultra | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a) | PIC32CX1025SG60128 |
+| 69 | pic32cx_sg41_curiosity_ultra | [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a) | PIC32CX1025SG41128 |
 
 ____
 
