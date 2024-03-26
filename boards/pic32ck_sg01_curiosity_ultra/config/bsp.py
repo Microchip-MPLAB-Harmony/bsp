@@ -71,9 +71,7 @@ def instantiateComponent(bspComponent):
             {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
             {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
             {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"},
-            {"type":"VBUS_0_AH", "mode":"DIGITAL", "dir":"OUT"},
-            {"type":"VBUS_0_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
-            {"type":"VBUS_1_AH", "mode":"DIGITAL", "dir":"OUT"},
-            {"type":"VBUS_1_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
+            {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
+            {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
 
     execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
