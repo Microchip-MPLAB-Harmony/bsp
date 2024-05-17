@@ -3,6 +3,20 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.19.0
+### New features
+
+This release adds support for the following development kits: 
+1. [SAM9x75 Curiosity Development Board]()
+2. [PIC32MZ W1 WFI32IOT Board](https://www.microchip.com/en-us/development-tool/ev36w50a)
+3. [WBZ451HPE Curiosity Developement board ()
+
+### Bug fixes
+- Fixed Vbus issue for PIC32CK_SG01 Curiosity Board
+
+### Known issues
+- None
+
 ## BSP Release v3.18.0
 ### New features
 

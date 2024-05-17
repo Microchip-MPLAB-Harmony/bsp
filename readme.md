@@ -88,12 +88,14 @@ reference information.
 | 62 | sam_a7g5_ek | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A) | SAMA7G54 |
 | 63 | pic32cx_bz2_curiosity | [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A) | WBZ451 |
 | 64 | sam_9x60_curiosity | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A) | SAM9X60D1G SiP |
-| 65 | pic32cxmtsh_db | [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB) | PIC32CX2051MTSH128 |
-| 66 | pic32cxmtc_db | [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A) | PIC32CX2051MTC128 |
-| 67 | pic32cxmtg_ek | [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A) | PIC32CX2051MTG128 |
-| 68 | pic32cx_sg6x_curiosity_ultra | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a) | PIC32CX1025SG60128 |
-| 69 | pic32cx_sg41_curiosity_ultra | [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a) | PIC32CX1025SG41128 |
-
+| 65 | sam_9x75_curiosity | [SAM9X75 Curiosity Development Board]() | SAM9X75D2G SiP |
+| 66 | pic32mz_w1_wfi32iot_db | [PIC32MZ W1 WFI32IOT Board](https://www.microchip.com/en-us/development-tool/ev36w50a) | WFI32E01PC | 
+| 67 | pic32cxmtsh_db | [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB) | PIC32CX2051MTSH128 |
+| 68 | pic32cxmtc_db | [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A) | PIC32CX2051MTC128 |
+| 69 | pic32cxmtg_ek | [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A) | PIC32CX2051MTG128 |
+| 70 | pic32cx_sg6x_curiosity_ultra | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a) | PIC32CX1025SG60128 |
+| 71 | pic32cx_sg41_curiosity_ultra | [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a) | PIC32CX1025SG41128 |
+| 72 | wbz451hpe_curiosity | [WBZ451HPE Curiosity Developement board]() | PIC32CX1012BZ25048 |
 ____
 
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/mplab_harmony_license.md)
