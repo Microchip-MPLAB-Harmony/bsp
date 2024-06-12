@@ -96,6 +96,7 @@ reference information.
 | 70 | pic32cx_sg6x_curiosity_ultra | [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a) | PIC32CX1025SG60128 |
 | 71 | pic32cx_sg41_curiosity_ultra | [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a) | PIC32CX1025SG41128 |
 | 72 | wbz451hpe_curiosity | [WBZ451HPE Curiosity Developement board]() | PIC32CX1012BZ25048 |
+| 73 | sam_a7d65_curiosity | [SAMA7D65 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA89C15A) | SAMA7D65 |
 ____
 
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/mplab_harmony_license.md)
