@@ -22,11 +22,11 @@
 *****************************************************************************"""
 
 def instantiateComponent(bspComponent):
-    # LED_RED: PC19
-    Database.setSymbolValue("core", "PIN_94_FUNCTION_TYPE", "LED_AH")
-    Database.setSymbolValue("core", "PIN_94_FUNCTION_NAME", "LED_RED")
-    Database.setSymbolValue("core", "PIN_94_DIR", "Out")
-    Database.setSymbolValue("core", "PIN_94_LAT", "Low")
+    # LED_RED: PC14
+    Database.setSymbolValue("core", "PIN_79_FUNCTION_TYPE", "LED_AH")
+    Database.setSymbolValue("core", "PIN_79_FUNCTION_NAME", "LED_RED")
+    Database.setSymbolValue("core", "PIN_79_DIR", "Out")
+    Database.setSymbolValue("core", "PIN_79_LAT", "Low")
 
     # LED_GREEN: PC21
     Database.setSymbolValue("core", "PIN_50_FUNCTION_TYPE", "LED_AH")
