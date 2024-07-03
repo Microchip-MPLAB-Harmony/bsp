@@ -108,5 +108,7 @@
         <Board name="PIC32MK MCA Plugin In Module" processor="PIC32MK0128MCA048" config="pic32mk_mca_pim_mc"/>
         <Board name="PIC32CXMTC Development Board" processor="PIC32CX2051MTC128" config="pic32cxmtc_db"/>
         <Board name="PIC32CXMTG Evaluation Kit" processor="PIC32CX2051MTG128" config="pic32cxmtg_ek"/>
+        <Board name="PIC32CM GC00 Curiosity Pro" processor="PIC32CM5112GC00100" config="pic32cm_gc00_curiosity_pro"/>
+        <Board name="PIC32CM SG00 Curiosity Pro" processor="PIC32CM5112SG00100" config="pic32cm_sg00_curiosity_pro"/>
     </Boards>
 </Module>
