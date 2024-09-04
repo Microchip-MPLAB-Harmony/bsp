@@ -107,7 +107,7 @@ class AdapterService:
 
         pad_found = False
         function = 'Not Found'
-        for items in self.uart_data['uart_interface'][str(instance)]["transmit"]["channel"]:
+        for items in self.uart_data['uart_interface'][str(instance)][str(channel)]["transmit"]:
             if pad == items['pad']:
                 pad_found = True
                 function = items['function']
@@ -128,7 +128,7 @@ class AdapterService:
 
         pad_found = False
         function = 'Not Found'
-        for items in self.uart_data['uart_interface'][str(instance)]["receive"]["channel"]:
+        for items in self.uart_data['uart_interface'][str(instance)][str(channel)]["receive"]:
             if pad == items['pad']:
                 pad_found = True
                 function = items['function']

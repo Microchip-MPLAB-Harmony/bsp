@@ -121,18 +121,19 @@ class AdapterService:
             self.pwm_data['pwm_interface']['output'] = pwm_channels
             self.pwm_data['pwm_interface']['faults'] = fault_channels
 
-        print('PWM data', self.pwm_data['pwm_interface'] )
-
     def numeric_filter(self, input_String):
         digits = filter(str.isdigit, str(input_String))
         return "".join(digits)
 
     def fault_channel_get(self, instance, pad):
+
         fault_dict = self.pwm_data['pwm_interface']['faults'][instance]['external']
 
-        for channel, pad_list in fault_dict.items():
-            if pad in pad_list:
-                return "FAULT_PWM_ID" + str(self.numeric_filter(channel))
+        for channel, pad_dict_list in fault_dict.items():
+            for dict_entry in pad_dict_list:
+                if pad == dict_entry['pad']:
+                   return "FAULT_PWM_ID" + str(self.numeric_filter(channel))
+
         return ''
 
     def set_high_side_pwm_pin(self, name, instance, channel, pad):
