@@ -160,9 +160,10 @@ class AdapterService:
 
         fault_dict = self.pwm_data['pwm_interface'][instance]['fault_sources']['external']
 
-        for channel, pad_list in fault_dict.items():
-            if pad in pad_list:
-                return 'EIC_CHANNEL_' + str(self.numeric_filter(channel))
+        for channel, pad_dict_list in fault_dict.items():
+            for dict_entry in pad_dict_list:
+                if pad == dict_entry['pad']:
+                    return 'EIC_CHANNEL_' + str(self.numeric_filter(channel))
 
         return ''
 
@@ -213,17 +214,18 @@ class AdapterService:
 
 
     def set_fault_source(self, name, instance, channel, pad):
-        for eic_channel, pad_list in (self.pwm_data['pwm_interface'][instance]['fault_sources']['external']).items():
-           if pad in pad_list:
-                mode = 'EIC_EXTINT' + self.numeric_filter(eic_channel)
-                pin_manager_module = pin_manager.PinManager(self.object_wrapper)
+        function = 'Not Found'
+        mode = 'Not Found'
+        for eic_channel, pad_dict_list in (self.pwm_data['pwm_interface'][instance]['fault_sources']['external']).items():
+           for dict_entry in pad_dict_list:
+               if pad == dict_entry['pad']:
+                    mode = 'EIC_EXTINT' + self.numeric_filter(eic_channel)
+                    function = dict_entry['function']
+                    break
 
-                function = 'Not Found'
-                for items in self.pwm_data['pwm_interface'][str(instance)]['fault_sources']['external'][eic_channel]:
-                    if pad == items['pad']:
-                        function = items['function']
 
-                if function == 'Not Found':
-                    return
+        if function == 'Not Found':
+            return
 
-                pin_manager_module.configurePin(pad, 'FAULT', mode, function )
+        pin_manager_module = pin_manager.PinManager(self.object_wrapper)
+        pin_manager_module.configurePin(pad, 'FAULT', mode, function )

@@ -110,5 +110,6 @@
         <Board name="PIC32CXMTG Evaluation Kit" processor="PIC32CX2051MTG128" config="pic32cxmtg_ek"/>
         <Board name="PIC32CM GC00 Curiosity Pro" processor="PIC32CM5112GC00100" config="pic32cm_gc00_curiosity_pro"/>
         <Board name="PIC32CM SG00 Curiosity Pro" processor="PIC32CM5112SG00100" config="pic32cm_sg00_curiosity_pro"/>
+        <Board name="SAM C21 PIM MC Board" processor="ATSAMC21J18A" config="sam_c21_pim_mc"/>
     </Boards>
 </Module>
