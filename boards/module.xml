@@ -115,5 +115,6 @@
         <Board name="SAM RH707 PIM MC Board" processor="ATSAMRH707F18A" config="sam_rh707_pim_mc"/>
         <Board name="PIC32CM MC00 DIM MC Board" processor="PIC32CM1216MC00048" config="pic32cm_mc00_dim_mc"/>
         <Board name="PIC32MK MCM DIM MC Board" processor="PIC32MK1024MCM100" config="pic32mk_mcm_dim_mc"/>
+        <Board name="PIC32MK MCA DIM MC Board" processor="PIC32MK0128MCA048" config="pic32mk_mca_dim_mc"/>
     </Boards>
 </Module>
