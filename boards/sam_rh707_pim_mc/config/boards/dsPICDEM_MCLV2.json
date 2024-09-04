@@ -1,0 +1,201 @@
+{
+    "dsPICDEM MCLV2": {
+      "Buttons": {
+        "BUTTON_01": {
+          "debouncing": {
+            "enabled": true,
+            "delay_ms": 50
+          },
+          "gpio_config": {
+            "pin_number": "PB0",
+            "pull_up": true,
+            "active_low": false
+          }
+        },
+        "BUTTON_02": {
+          "debouncing": {
+            "enabled": true,
+            "delay_ms": 50
+          },
+          "gpio_config": {
+            "pin_number": "PB2",
+            "pull_up": true,
+            "active_low": false
+          }
+        }
+      },
+      "Leds": {
+        "LED_01": {
+          "gpio_config": {
+            "pin_number": "PD11",
+            "active_low": false
+          }
+        },
+        "LED_02": {
+          "gpio_config": {
+            "pin_number": "PA27",
+            "active_low": false
+          }
+        }
+      },
+      "Analog_Circuits": {
+        "IA": {
+          "type": "shunt_with_opamp",
+          "circuit_param": {
+            "shunt_resistor": 0.025,
+            "opamp_gain": 15.0,
+            "opamp_bias": 1.65
+          },
+          "peripheral": {
+            "instance": "ADC",
+            "channel": 0
+          },
+          "gpio_config": {
+            "pin_number": "PA0"
+          }
+        },
+        "IB": {
+          "type": "shunt_with_opamp",
+          "circuit_param": {
+            "shunt_resistor": 0.025,
+            "opamp_gain": 15.0,
+            "opamp_bias": 1.65
+          },
+          "peripheral": {
+            "instance": "ADC",
+            "channel": 2
+          },
+          "gpio_config": {
+            "pin_number": "PA2"
+          }
+        },
+        "VPOT": {
+          "type": "buffer",
+          "circuit_param": {},
+          "peripheral": {
+            "instance": "ADC",
+            "channel": 10
+          },
+          "gpio_config": {
+            "pin_number": "PA10"
+          }
+        },
+        "VDC": {
+          "type": "voltage_divider",
+          "circuit_param": {
+            "top_resistor": 30.0,
+            "bottom_resistor": 2.0
+          },
+          "peripheral": {
+            "instance": "ADC",
+            "channel": 12
+          },
+          "gpio_config": {
+            "pin_number": "PA12"
+          }
+        }
+      },
+      "Position_Interface": {
+        "QDEC": {
+            "type": "optical_encoder",
+            "peripheral": {
+                "instance": "TC0",
+                "channel": "0"
+            },
+            "gpio_pins": {
+                "qea": {
+                    "gpio_config": {
+                        "pin_number": "PA29"
+                    }
+                },
+                "qeb": {
+                    "gpio_config": {
+                        "pin_number": "PA30"
+                    }
+                }
+            }
+        }
+      },
+      "Inverter": {
+        "INVERTER": {
+          "peripheral": {
+            "instance": "PWM0",
+            "channels": {
+              "phase_a": 0,
+              "phase_b": 1,
+              "phase_c": 2
+            }
+          },
+          "gpio_pins": {
+            "phase_a": {
+              "low_side": {
+                "gpio_config": {
+                  "pin_number": "PB12"
+                }
+              },
+              "high_side": {
+                "gpio_config": {
+                  "pin_number": "PB11"
+                }
+              }
+            },
+            "phase_b": {
+              "low_side": {
+                "gpio_config": {
+                  "pin_number": "PB14"
+                }
+              },
+              "high_side": {
+                "gpio_config": {
+                  "pin_number": "PB13"
+                }
+              }
+            },
+            "phase_c": {
+              "low_side": {
+                "gpio_config": {
+                  "pin_number": "PB16"
+                }
+              },
+              "high_side": {
+                "gpio_config": {
+                  "pin_number": "PB15"
+                }
+              }
+            },
+            "fault": {
+              "gpio_config": {
+                "pin_number": "PA16"
+              }
+            }
+          },
+          "voltage_rating": 24,
+          "current_rating": 5,
+          "control_mode": "PWM",
+          "max_pwm_frequency": 20000
+        }
+      },
+      "Communication": {
+        "X2C_PORT": {
+          "type": "two_wired_uart",
+          "peripheral": {
+            "instance": "FLEXCOM1",
+            "transmit_channel":"",
+            "receive_channel": ""
+          },
+          "gpio_pins": {
+            "transmit": {
+              "gpio_config": {
+                "pin_number": "PB4"
+              }
+            },
+            "receive": {
+              "gpio_config": {
+                "pin_number": "PB5"
+              }
+            }
+          }
+        }
+      }
+    }
+}

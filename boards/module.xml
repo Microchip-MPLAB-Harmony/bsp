@@ -112,5 +112,6 @@
         <Board name="PIC32CM SG00 Curiosity Pro" processor="PIC32CM5112SG00100" config="pic32cm_sg00_curiosity_pro"/>
         <Board name="SAM C21 PIM MC Board" processor="ATSAMC21J18A" config="sam_c21_pim_mc"/>
         <Board name="PIC32CM MC00 PIM MC Board" processor="PIC32CM1216MC00048" config="pic32cm_mc00_pim_mc"/>
+        <Board name="SAM RH707 PIM MC Board" processor="ATSAMRH707F18A" config="sam_rh707_pim_mc"/>
     </Boards>
 </Module>
