@@ -116,5 +116,6 @@
         <Board name="PIC32CM MC00 DIM MC Board" processor="PIC32CM1216MC00048" config="pic32cm_mc00_dim_mc"/>
         <Board name="PIC32MK MCM DIM MC Board" processor="PIC32MK1024MCM100" config="pic32mk_mcm_dim_mc"/>
         <Board name="PIC32MK MCA DIM MC Board" processor="PIC32MK0128MCA048" config="pic32mk_mca_dim_mc"/>
+        <Board name="SAM E70 DIM MC Board" processor="ATSAME70Q21B" config="sam_e70_dim_mc"/>
     </Boards>
 </Module>
