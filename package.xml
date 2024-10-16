@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Package name="bsp">
     <Dependencies>
-        <Dependency name="csp" version="v3.19.1"/>
+        <Dependency name="csp" version="v3.20.0-E1"/>
     </Dependencies>
 </Package>

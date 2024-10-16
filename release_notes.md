@@ -3,6 +3,17 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.21.0-E1
+### New features
+
+This Engineering Release adds support for [WBZ653 Curiosity Board]() development kit.
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
 ## BSP Release v3.20.1
 ### New features
 
