@@ -133,7 +133,7 @@ class BspManager:
     def update_board( self, symbol, event ):
         selected_board = symbol.getValue()
 
-        from mc_device.gpio.pin_manager import PinManager
+        from mc_device.gpio.pin_manager_pic32mk import PinManager
         PinManager(self.object_wrapper).reset_all_pins()
 
         self.object_wrapper.update_board_parameters(selected_board)
@@ -216,28 +216,6 @@ def instantiateComponent(bsp_component):
     global bsp
     bsp = BspManager(object_wrapper)
     bsp(bsp_component)
-
-    BSP_NAME = "pic32mk_mca_dim"
-
-    pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
-                     {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
-                     {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
-                     {"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
-                     {"attrib":"od", "symbol":"BSP_CUSTOM_OD", "label":"Open Drain"},
-                     {"attrib":"cn", "symbol":"BSP_CUSTOM_CN", "label":"Change Notice"},
-                     {"attrib":"pu", "symbol":"BSP_CUSTOM_PU", "label":"Pull Up"},
-                     {"attrib":"pd", "symbol":"BSP_CUSTOM_PD", "label":"Pull Down"},
-                     {"attrib":"int", "symbol":"BSP_CUSTOM_PIO_INTERRUPT", "label":"PIO Interrupt"}]
-
-    pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"SWITCH_AH", "mode":"DIGITAL"},
-                {"type":"SWITCH_AL", "mode":"DIGITAL"},
-                {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT"}]
-
-    bspComponent = bsp_component
-    execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
 
 #--------------------------------------------------------------------------------------------#
 #                             MESSAGE HANDLING                                               #
