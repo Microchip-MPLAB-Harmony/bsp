@@ -128,8 +128,8 @@ class BspManager:
     def update_board( self, symbol, event ):
         selected_board = symbol.getValue()
 
-        from mc_device.gpio.pin_manager import pin_manager
-        pin_manager(self.object_wrapper).reset_all_pins()
+        from mc_device.gpio.pin_manager import PinManager
+        PinManager(self.object_wrapper).reset_all_pins()
 
         self.object_wrapper.update_board_parameters(selected_board)
         self.voltage_source.update_information()
@@ -205,25 +205,11 @@ def instantiateComponent(bsp_component):
     bsp = BspManager(object_wrapper)
     bsp(bsp_component)
 
-    # ToDO: Remove later after adding the class.
-    BSP_NAME = "sam_e54_mc_pim"
+   # Note: This symbol is needed by the pin manager plugin. Otherwise, the pin manager would crash
+    bsp_type_size = bsp_component.createIntegerSymbol("BSP_TYPE_SIZE", None )
+    bsp_type_size.setVisible( False )
+    bsp_type_size.setDefaultValue(0)
 
-    pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
-                     {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
-                     {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
-                     {"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
-                     {"attrib":"pe", "symbol":"BSP_CUSTOM_PE", "label":"Pull Enable"},
-                     {"attrib":"ie", "symbol":"BSP_CUSTOM_IE", "label":"Input Enable"}]
-
-    pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
-                {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
-                {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"},
-                {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
-
-    bspComponent = bsp_component
-    execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
 
 #--------------------------------------------------------------------------------------------#
 #                             MESSAGE HANDLING                                               #

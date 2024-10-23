@@ -99,8 +99,8 @@
             "QDEC": {
                 "type": "optical_encoder",
                 "peripheral": {
-                    "instance": "QEI1",
-                    "channel": "0"
+                    "instance": "PDEC",
+                    "channel": ""
                 },
                 "gpio_pins": {
                     "qea": {
