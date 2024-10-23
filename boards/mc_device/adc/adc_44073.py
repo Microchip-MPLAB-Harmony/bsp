@@ -102,19 +102,24 @@ class AdapterService:
                         self.adc_data['analog_interfaces'][instance][channel] = [{ 'pad': pad, 'function': function }]
 
     def set_adc_pin( self, name, instance, channel, pad):
+        print('ADC pin setting', name, instance, channel, pad )
         channel_str = str(channel)
         if instance not in self.adc_data['analog_interfaces'].keys():
             return
+
         if channel_str not in self.adc_data['analog_interfaces'][instance].keys():
-            return
-        if pad not in self.adc_data['analog_interfaces'][instance][channel_str]:
             return
 
         mode = instance + "_AD" + channel_str
         pin_manager_module = pin_manager.PinManager(self.object_wrapper)
 
+        function = 'Not Found'
         for items in self.adc_data['analog_interfaces'][str(instance)][str(channel)]:
             if pad == items['pad']:
                 function = items['function']
+
+        if function == 'Not Found':
+            return
+
         pin_manager_module.configurePin(pad, name, mode, function )
 

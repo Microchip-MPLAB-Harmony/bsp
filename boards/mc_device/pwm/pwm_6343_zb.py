@@ -130,9 +130,11 @@ class AdapterService:
     def fault_channel_get(self, instance, pad):
         fault_dict = self.pwm_data['pwm_interface']['faults'][instance]['external']
 
-        for channel, pad_list in fault_dict.items():
-            if pad in pad_list:
-                return "FAULT_PWM_ID" + str(self.numeric_filter(channel))
+        for channel, pad_dict_list in fault_dict.items():
+            for dict_entry in pad_dict_list:
+                if pad == dict_entry['pad']:
+                   return "FAULT_PWM_ID" + str(self.numeric_filter(channel))
+
         return ''
 
     def set_high_side_pwm_pin(self, name, instance, channel, pad):
@@ -185,22 +187,20 @@ class AdapterService:
             return
 
         # Get PWM fault channel from pad
-        for channel, pad_list in self.pwm_data['pwm_interface']['faults'][instance]["external"].items():
-            if pad in pad_list:
-                mode = instance + "_" + "PWMC" + self.numeric_filter(instance) + "_PWMFI" + str(channel)
+        function = 'Not Found'
+        for channel, pad_dict_list in self.pwm_data['pwm_interface']['faults'][instance]["external"].items():
+            for entry in pad_dict_list:
+                if pad == entry['pad']:
+                    mode = instance + "_" + "PWMC" + self.numeric_filter(instance) + "_PWMFI" + str(channel)
+                    function = entry['function']
+                    break
 
-                pin_manager_module = pin_manager.PinManager(self.object_wrapper)
 
-                function = 'Not Found'
-                for items in self.pwm_data['pwm_interface']['faults'][instance]['external']:
-                    if pad == items['pad']:
-                        function = items['function']
+        if function == 'Not Found':
+            return
 
-                    if function == 'Not Found':
-                        return
-
-                pin_manager_module.configurePin(pad, name, mode, function )
-                break
+        pin_manager_module = pin_manager.PinManager(self.object_wrapper)
+        pin_manager_module.configurePin(pad, name, mode, function )
 
 
 

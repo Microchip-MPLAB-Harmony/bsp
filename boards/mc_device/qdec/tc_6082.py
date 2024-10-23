@@ -119,12 +119,6 @@ class AdapterService:
         if channel_str not in (self.qdec_data['qdec_interface'][instance]).keys():
             return
 
-        if qea_pad not in (self.qdec_data['qdec_interface'][instance][channel]['qea']):
-            return
-
-        if qeb_pad not in (self.qdec_data['qdec_interface'][instance][channel]['qeb']):
-            return
-
         pin_manager_module = pin_manager.PinManager(self.object_wrapper)
 
         mode = instance + "_TIOA" + channel
