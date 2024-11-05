@@ -134,7 +134,7 @@ class BspManager:
         selected_board = symbol.getValue()
 
         from mc_device.gpio.pin_manager_pic32mk import PinManager
-        pin_manager(self.object_wrapper).reset_all_pins()
+        PinManager(self.object_wrapper).reset_all_pins()
 
         self.object_wrapper.update_board_parameters(selected_board)
         self.voltage_source.update_information()
