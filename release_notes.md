@@ -2,6 +2,28 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.21.0
+### New features
+
+Added support for the following development kits:
+
+- MCS MCLV-48V-300W Development Board for PIC32MK MCM Motor Control DIM
+- MCS MCLV-48V-300W Development Board for PIC32MK MCA Motor Control DIM
+- MCS MCLV-48V-300W Development Board for PIC32CM MC00 Motor Control DIM
+- MCS MCLV-48V-300W Development Board for ATSAME54 Motor Control DIM
+- MCS MCLV-48V-300W Development Board for ATSAMC21 Motor Control DIM
+- MCS MCLV-48V-300W Development Board for ATSAME70 Motor Control DIM
+- PIC32CM GC Curiosity Board
+- PIC32CM SG Curiosity Board
+
+### Bug fixes
+- Fixed the encoder pins for dsPICDEM MCLV2 for PIC32MK MCM and PIC32MK MCF in their respective PIM bsp 
+- Updated motor control plug-in modules for the following MC devices: PIC32MK MCM, PIC32MK MCA, PIC32CM MC00, ATSAME54, ATSAMC21, and ATSAME70
+- BSP pin_manager class typo fix
+
+### Known issues
+
+- None
 
 ## BSP Release v3.21.0-E1
 ### New features
