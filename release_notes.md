@@ -2,6 +2,20 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+## BSP Release v3.21.1
+### New features
+
+- None
+
+### Bug fixes
+- Updated BSP for PIC32CZ CA80 Curiosity Ultra Board
+- Updated BSP for PIC32CZ CA90 Curiosity Ultra Board
+- Updated BSP for WBZ653 Curiosity Board
+
+### Known issues
+
+- None
+
 ## BSP Release v3.21.0
 ### New features
 
