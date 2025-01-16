@@ -65,7 +65,7 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_19_PU", "False")
     Database.setSymbolValue("core", "BSP_PIN_19_DIR", "")
 
-    BSP_NAME = "wbz653_curiosity"
+    BSP_NAME = "pic32wm_bz6_curiosity"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
