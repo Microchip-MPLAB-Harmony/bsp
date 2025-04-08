@@ -1,5 +1,5 @@
 """*****************************************************************************
-* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -58,7 +58,7 @@ def instantiateComponent(bspComponent):
     Database.setSymbolValue("core", "BSP_PIN_22_PU", "True")
     Database.setSymbolValue("core", "BSP_PIN_22_DIR", "")
 
-    BSP_NAME = "pic32wm_tf1_curiosity"
+    BSP_NAME = "pic32wm_bw1_curiosity"
 
     pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
         {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
