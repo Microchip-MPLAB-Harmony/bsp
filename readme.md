@@ -17,8 +17,8 @@ This repository contains the MPLAB® Harmony 3 Board Support Package (BSP).
 Refer to the following links for release notes, training materials, and interface
 reference information.
 
-- [Release Notes](./release_notes.md)
-- [Microchip SLA](Microchip_SLA001.md)
+- [Release Notes](release_notes.md)
+- [License](License.md)
 
 # Contents Summary
 
@@ -115,9 +115,10 @@ reference information.
 | 89 | pic32cx_bz350_curiosity | [WBZ350 Curiosity Board](https://www.microchip.com/en-us/development-tool/ev19j06a) | PIC32CX5109BZ31032 |
 | 90 | pic32_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32WM_BZ3602 |
 | 91 | pic32cx_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32CX5109BZ36048 |
+| 92 | pic32wm_bw1_curiosity | [PIC32WM-BW1 Curiosity Board]() | PIC32WM_BW1 |
 ____
 
-[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/mplab_harmony_license.md)
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/License.md)
 [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/bsp.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/latest)
 [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/bsp.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/latest)
 [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/bsp.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/graphs/commit-activity)

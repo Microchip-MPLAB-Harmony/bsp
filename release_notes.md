@@ -2,6 +2,19 @@
 ![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
 # Microchip MPLAB® Harmony 3 Release Notes
+
+## BSP Release v3.23.0
+### New features
+
+This release adds support for the following development kits:
+1. PIC32WM-BW1 Curiosity Board
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
 ## BSP Release v3.22.0
 ### New features
 
