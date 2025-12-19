@@ -116,6 +116,7 @@ reference information.
 | 90 | pic32_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32WM_BZ3602 |
 | 91 | pic32cx_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32CX5109BZ36048 |
 | 92 | pic32wm_bw1_curiosity | [PIC32WM-BW1 Curiosity Board]() | PIC32WM_BW1 |
+| 93 | pic32wm_bz6602_curiosity  | [PIC32WM-BZ6602 Curiosity Board]() | PIC32WM_BZ6602 |
 ____
 
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/License.md)

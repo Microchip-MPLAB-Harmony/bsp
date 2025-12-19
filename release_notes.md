@@ -3,6 +3,18 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.24.0
+### New features
+
+This release adds support for the following development kits:
+1. PIC32WM-BZ6602 Curiosity Board
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
 ## BSP Release v3.23.0
 ### New features
 
