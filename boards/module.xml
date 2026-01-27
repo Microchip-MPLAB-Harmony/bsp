@@ -76,6 +76,7 @@
         <Board name="SAM A7G5 Evaluation Kit" processor="SAMA7G54" config="sam_a7g5_ek"/>
         <Board name="SAM A7G54 Curiosity" processor="SAMA7G54D2G" config="sam_a7g54_curiosity"/>
         <Board name="SAM A7D65 Curiosity" processor="SAMA7D65" config="sam_a7d65_curiosity"/>
+		<Board name="SAM A7D65 Curiosity Pro" processor="SAMA7D65" config="sam_a7d65_curiosity_pro"/>
         <Board name="SAM C21 Xplained Pro" processor="ATSAMC21J18A" config="sam_c21_xpro"/>
         <Board name="SAM C21N Xplained Pro" processor="ATSAMC21N18A" config="sam_c21n_xpro"/>
         <Board name="SAM D10 Xplained Mini" processor="ATSAMD10D14AM" config="sam_d10_xmini"/>
