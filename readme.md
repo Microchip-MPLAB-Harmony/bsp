@@ -88,7 +88,7 @@ reference information.
 | 62 | sam_a7g5_ek | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A) | SAMA7G54 |
 | 63 | pic32cx_bz2_curiosity | [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A) | WBZ451 |
 | 64 | sam_9x60_curiosity | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A) | SAM9X60D1G SiP |
-| 65 | sam_9x75_curiosity | [SAM9X75 Curiosity Development Board]() | SAM9X75D2G SiP |
+| 65 | sam_9x75_curiosity | [SAM9X75 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/ev31h43a) | SAM9X75D2G SiP |
 | 66 | pic32mz_w1_wfi32iot_db | [PIC32MZ W1 WFI32IOT Board](https://www.microchip.com/en-us/development-tool/ev36w50a) | WFI32E01PC |
 | 67 | pic32cxmtsh_db | [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB) | PIC32CX2051MTSH128 |
 | 68 | pic32cxmtc_db | [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A) | PIC32CX2051MTC128 |
@@ -117,6 +117,8 @@ reference information.
 | 91 | pic32cx_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32CX5109BZ36048 |
 | 92 | pic32wm_bw1_curiosity | [PIC32WM-BW1 Curiosity Board]() | PIC32WM_BW1 |
 | 93 | pic32wm_bz6602_curiosity  | [PIC32WM-BZ6602 Curiosity Board]() | PIC32WM_BZ6602 |
+| 94 | sam_9x75_curiosity_pro | [SAM9X75 Curiosity Pro Development Board]() | SAM9X75D2G SiP |
+| 95 | sam_a7d65_curiosity_pro | [SAMA7D65 Curiosity Pro Development Board]() | SAMA7D65 |
 ____
 
 [![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/License.md)
