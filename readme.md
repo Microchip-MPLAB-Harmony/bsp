@@ -17,8 +17,8 @@ This repository contains the MPLAB® Harmony 3 Board Support Package (BSP).
 Refer to the following links for release notes, training materials, and interface
 reference information.
 
-- [Release Notes](./release_notes.md)
-- [MPLAB® Harmony License](mplab_harmony_license.md)
+- [Release Notes](release_notes.md)
+- [License](License.md)
 
 # Contents Summary
 
@@ -88,8 +88,8 @@ reference information.
 | 62 | sam_a7g5_ek | [SAMA7G54 Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV21H18A) | SAMA7G54 |
 | 63 | pic32cx_bz2_curiosity | [PIC32CX BZ2 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA71C53A) | WBZ451 |
 | 64 | sam_9x60_curiosity | [SAM9X60 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/EV40E67A) | SAM9X60D1G SiP |
-| 65 | sam_9x75_curiosity | [SAM9X75 Curiosity Development Board]() | SAM9X75D2G SiP |
-| 66 | pic32mz_w1_wfi32iot_db | [PIC32MZ W1 WFI32IOT Board](https://www.microchip.com/en-us/development-tool/ev36w50a) | WFI32E01PC | 
+| 65 | sam_9x75_curiosity | [SAM9X75 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/ev31h43a) | SAM9X75D2G SiP |
+| 66 | pic32mz_w1_wfi32iot_db | [PIC32MZ W1 WFI32IOT Board](https://www.microchip.com/en-us/development-tool/ev36w50a) | WFI32E01PC |
 | 67 | pic32cxmtsh_db | [PIC32CXMTSH Development Board](https://www.microchip.com/en-us/development-tool/PIC32CXMTSH-DB) | PIC32CX2051MTSH128 |
 | 68 | pic32cxmtc_db | [PIC32CXMTC Development Board](https://www.microchip.com/en-us/development-tool/EV58E84A) | PIC32CX2051MTC128 |
 | 69 | pic32cxmtg_ek | [PIC32CXMTG Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV11K09A) | PIC32CX2051MTG128 |
@@ -97,9 +97,31 @@ reference information.
 | 71 | pic32cx_sg41_curiosity_ultra | [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a) | PIC32CX1025SG41128 |
 | 72 | wbz451hpe_curiosity | [WBZ451HPE Curiosity Developement board]() | PIC32CX1012BZ25048 |
 | 73 | sam_a7d65_curiosity | [SAMA7D65 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA89C15A) | SAMA7D65 |
+| 74 | pic32wm_bz6_curiosity | [PIC32WM BZ6 Curiosity]() | PIC32WM_BZ6204 |
+| 75 | pic32mk_mcm_dim_mc | [PIC32MK MCM Motor Control DIM](https://www.microchip.com/en-us/development-tool/EV49S83A) | PIC32MK1024MCM100 |
+| 76 | pic32mk_mca_dim_mc | [PIC32MK MCA Motor Control DIM](https://www.microchip.com/en-us/development-tool/EV10R52A) | PIC32MK0128MCA048 |
+| 77 | sam_c21_dim_mc | [SAMC21 Motor Control DIM](https://www.microchip.com/en-us/development-tool/EV74G56A) | ATSAMC21J18A |
+| 78 | sam_e54_dim_mc | [ATSAME54 Motor Control DIM](https://www.microchip.com/en-us/development-tool/EV24X01A) | ATSAME54P20A |
+| 79 | sam_e70_dim_mc | [ATSAME70 Motor Control DIM](https://www.microchip.com/en-us/development-tool/EV87E90A) | ATSAME70Q21B |
+| 80 | pic32cm_mc00_dim_mc | [PIC32CM MC00 Motor Control DIM](https://www.microchip.com/en-us/development-tool/MA320211) | PIC32CM1216MC00048 |
+| 81 | pic32cz_ca70_curiosity_ultra | [PIC32CZ CA70 Curiosity Ultra](https://www.microchip.com/en-us/development-tool/ea60e74a) | PIC32CZ2051CA70144 |
+| 82 | pic32cz_ca80_curiosity_ultra | [PIC32CZ CA80 Curiosity Ultra](https://www.microchip.com/en-us/development-tool/ev51s73a) | PIC32CZ8110CA80208 |
+| 83 | pic32cz_ca90_curiosity_ultra | [PIC32CZ CA90 Curiosity Ultra](https://www.microchip.com/en-us/development-tool/ev16w43a) | PIC32CZ8110CA90208 |
+| 84 | pic32ck_gc01_curiosity_ultra | [PIC32CK GC01 Curiosity Ultra](https://www.microchip.com/en-us/development-tool/ev44p93a) | PIC32CK2051GC01144 |
+| 85 | pic32ck_sg01_curiosity_ultra | [PIC32CK SG01 Curiosity Ultra](https://www.microchip.com/en-us/development-tool/ev33a17a) | PIC32CK2051SG01144 |
+| 86 | pic32cm_gc00_curiosity_pro | [PIC32CM GC00 Curiosity Pro]() | PIC32CM5112GC00100 |
+| 87 | pic32cm_sg00_curiosity_pro | [PIC32CM GC00 Curiosity Pro]() | PIC32CM5112SG00100 |
+| 88 | wbz350_curiosity | [WBZ350 Curiosity Board](https://www.microchip.com/en-us/development-tool/ev19j06a) | WBZ350 |
+| 89 | pic32cx_bz350_curiosity | [WBZ350 Curiosity Board](https://www.microchip.com/en-us/development-tool/ev19j06a) | PIC32CX5109BZ31032 |
+| 90 | pic32_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32WM_BZ3602 |
+| 91 | pic32cx_bz36_curiosity | [PIC32WM BZ36 Curiosity]() | PIC32CX5109BZ36048 |
+| 92 | pic32wm_bw1_curiosity | [PIC32WM-BW1 Curiosity Board]() | PIC32WM_BW1 |
+| 93 | pic32wm_bz6602_curiosity  | [PIC32WM-BZ6602 Curiosity Board]() | PIC32WM_BZ6602 |
+| 94 | sam_9x75_curiosity_pro | [SAM9X75 Curiosity Pro Development Board]() | SAM9X75D2G SiP |
+| 95 | sam_a7d65_curiosity_pro | [SAMA7D65 Curiosity Pro Development Board]() | SAMA7D65 |
 ____
 
-[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/mplab_harmony_license.md)
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/blob/master/License.md)
 [![Latest release](https://img.shields.io/github/release/Microchip-MPLAB-Harmony/bsp.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/latest)
 [![Latest release date](https://img.shields.io/github/release-date/Microchip-MPLAB-Harmony/bsp.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/releases/latest)
 [![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/bsp.svg)](https://github.com/Microchip-MPLAB-Harmony/bsp/graphs/commit-activity)

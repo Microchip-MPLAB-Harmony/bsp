@@ -3,6 +3,105 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.25.0
+### New features
+
+This release adds support for the following development kits:
+1. [SAM9X75 Curiosity Pro Board]()
+2. [SAMA7D65 Curiosity Pro Board]()
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
+## BSP Release v3.24.0
+### New features
+
+This release adds support for the following development kits:
+1. PIC32WM-BZ6602 Curiosity Board
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
+## BSP Release v3.23.0
+### New features
+
+This release adds support for the following development kits:
+1. PIC32WM-BW1 Curiosity Board
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
+## BSP Release v3.22.0
+### New features
+
+This release adds support for the following development kits:
+1. [WBZ350 Curiosity Board](https://www.microchip.com/en-us/development-tool/ev19j06a)
+2. PIC32WM BZ36 Curiosity
+3. PIC32WM BZ6 Curiosity
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
+## BSP Release v3.21.1
+### New features
+
+- None
+
+### Bug fixes
+- Updated BSP for PIC32CZ CA80 Curiosity Ultra Board
+- Updated BSP for PIC32CZ CA90 Curiosity Ultra Board
+- Updated BSP for WBZ653 Curiosity Board
+
+### Known issues
+
+- None
+
+## BSP Release v3.21.0
+### New features
+
+Added support for the following development kits:
+
+- MCS MCLV-48V-300W Development Board for PIC32MK MCM Motor Control DIM
+- MCS MCLV-48V-300W Development Board for PIC32MK MCA Motor Control DIM
+- MCS MCLV-48V-300W Development Board for PIC32CM MC00 Motor Control DIM
+- MCS MCLV-48V-300W Development Board for ATSAME54 Motor Control DIM
+- MCS MCLV-48V-300W Development Board for ATSAMC21 Motor Control DIM
+- MCS MCLV-48V-300W Development Board for ATSAME70 Motor Control DIM
+- PIC32CM GC Curiosity Board
+- PIC32CM SG Curiosity Board
+
+### Bug fixes
+- Fixed the encoder pins for dsPICDEM MCLV2 for PIC32MK MCM and PIC32MK MCF in their respective PIM bsp
+- Updated motor control plug-in modules for the following MC devices: PIC32MK MCM, PIC32MK MCA, PIC32CM MC00, ATSAME54, ATSAMC21, and ATSAME70
+- BSP pin_manager class typo fix
+
+### Known issues
+
+- None
+
+## BSP Release v3.21.0-E1
+### New features
+
+This Engineering Release adds support for [WBZ653 Curiosity Board]() development kit.
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
 ## BSP Release v3.20.1
 ### New features
 
@@ -18,7 +117,7 @@
 ## BSP Release v3.20.0
 ### New features
 
-This release adds support for the following development kits: 
+This release adds support for the following development kits:
 1. [SAMA7D65 Curiosity Board](https://www.microchip.com/en-us/development-tool/EA89C15A)
 
 ### Bug fixes
@@ -30,7 +129,7 @@ This release adds support for the following development kits:
 ## BSP Release v3.19.0
 ### New features
 
-This release adds support for the following development kits: 
+This release adds support for the following development kits:
 1. [SAM9x75 Curiosity Development Board]()
 2. [PIC32MZ W1 WFI32IOT Board](https://www.microchip.com/en-us/development-tool/ev36w50a)
 3. [WBZ451HPE Curiosity Developement board ()
@@ -44,7 +143,7 @@ This release adds support for the following development kits:
 ## BSP Release v3.18.0
 ### New features
 
-This release adds support for the following development kits: 
+This release adds support for the following development kits:
 1. [SAMA5D29 Curiosity Development Board](https://www.microchip.com/en-us/development-tool/ev07r15a)
 
 ### Known issues
@@ -53,7 +152,7 @@ This release adds support for the following development kits:
 ## BSP Release v3.17.0
 ### New features
 
-This release adds support for the following development kits: 
+This release adds support for the following development kits:
 1. [PIC32CX SG41 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev06x38a)
 2. [PIC32CX SG61 Curiosity Ultra Evaluation Board](https://www.microchip.com/en-us/development-tool/ev09h35a)
 
@@ -218,15 +317,15 @@ There are no known issues
 
 ### Known Issues
 
-There are no known issues 
+There are no known issues
 
 ## BSP Release v3.8.1
 ### New Features
-- Updated supported product families 
+- Updated supported product families
 
 ### Known Issues
 
-There are no known issues 
+There are no known issues
 
 ## BSP Release v3.8.0
 ### New features
@@ -254,11 +353,11 @@ There are no known issues
 
 ## BSP Release v3.6.1
 ### New Features
-- Updated PIC32MK MCJ BSP 
+- Updated PIC32MK MCJ BSP
 
 ### Known Issues
 
-There are no known issues 
+There are no known issues
 
 ## BSP Release v3.6.0
 ### New features

@@ -1,0 +1,190 @@
+{
+    "dsPICDEM MCHV3": {
+        "Buttons": {
+            "BUTTON_01": {
+                "debouncing": {
+                    "enabled": true,
+                    "delay_ms": 50
+                },
+                "gpio_config": {
+                    "pin_number": "PD08",
+                    "pull_up": true,
+                    "active_low": false
+                }
+            }
+        },
+        "Leds": {
+            "LED_01": {
+                "gpio_config": {
+                    "pin_number": "PB27",
+                    "active_low": false
+                }
+            },
+            "LED_02": {
+                "gpio_config": {
+                    "pin_number": "PB26",
+                    "active_low": false
+                }
+            }
+        },
+        "Analog_Circuits": {
+            "IA": {
+                "type": "shunt_with_opamp",
+                "circuit_param": {
+                    "shunt_resistor": 0.010,
+                    "opamp_gain": 10.06,
+                    "opamp_bias": 1.65
+                },
+                "peripheral": {
+                    "instance": "ADC0",
+                    "channel": 0
+                },
+                "gpio_config": {
+                    "pin_number": "PA02"
+                }
+            },
+            "IB": {
+                "type": "shunt_with_opamp",
+                "circuit_param": {
+                    "shunt_resistor": 0.010,
+                    "opamp_gain": 10.06,
+                    "opamp_bias": 1.65
+                },
+                "peripheral": {
+                    "instance": "ADC1",
+                    "channel": 0
+                },
+                "gpio_config": {
+                    "pin_number": "PB08"
+                }
+            },
+            "VPOT": {
+                "type": "buffer",
+                "circuit_param": {},
+                "peripheral": {
+                    "instance": "ADC0",
+                    "channel": 6
+                },
+                "gpio_config": {
+                    "pin_number": "PA06"
+                }
+            },
+            "VDC": {
+                "type": "voltage_divider",
+                "circuit_param": {
+                    "top_resistor": 300.0,
+                    "bottom_resistor": 2.20
+                },
+                "peripheral": {
+                    "instance": "ADC1",
+                    "channel": 14
+                },
+                "gpio_config": {
+                    "pin_number": "PD00"
+                }
+            }
+        },
+        "Position_Interface": {
+            "QDEC": {
+                "type": "optical_encoder",
+                "peripheral": {
+                    "instance": "PDEC",
+                    "channel": ""
+                },
+                "gpio_pins": {
+                    "qea": {
+                        "gpio_config": {
+                            "pin_number": "PC16"
+                        }
+                    },
+                    "qeb": {
+                        "gpio_config": {
+                            "pin_number": "PC17"
+                        }
+                    }
+                }
+            }
+        },
+        "Inverter": {
+            "INVERTER": {
+                "peripheral": {
+                    "instance": "TCC0",
+                    "channels": {
+                        "phase_a": 0,
+                        "phase_b": 1,
+                        "phase_c": 2
+                    }
+                },
+                "gpio_pins": {
+                    "phase_a": {
+                        "low_side": {
+                            "gpio_config": {
+                                "pin_number": "PA16"
+                            }
+                        },
+                        "high_side": {
+                            "gpio_config": {
+                                "pin_number": "PA08"
+                            }
+                        }
+                    },
+                    "phase_b": {
+                        "low_side": {
+                            "gpio_config": {
+                                "pin_number": "PA17"
+                            }
+                        },
+                        "high_side": {
+                            "gpio_config": {
+                                "pin_number": "PA09"
+                            }
+                        }
+                    },
+                    "phase_c": {
+                        "low_side": {
+                            "gpio_config": {
+                                "pin_number": "PA18"
+                            }
+                        },
+                        "high_side": {
+                            "gpio_config": {
+                                "pin_number": "PA10"
+                            }
+                        }
+                    },
+                    "fault": {
+                        "gpio_config": {
+                            "pin_number": "PA16"
+                        }
+                    }
+                },
+                "voltage_rating": 24,
+                "current_rating": 5,
+                "control_mode": "PWM",
+                "max_pwm_frequency": 20000
+            }
+        },
+        "Communication": {
+            "X2C_PORT": {
+                "type": "two_wired_uart",
+                "peripheral": {
+                    "instance": "SERCOM2",
+                    "transmit_channel": "",
+                    "receive_channel": ""
+                },
+                "gpio_pins": {
+                    "transmit": {
+                        "gpio_config": {
+                            "pin_number": "PA12"
+                        }
+                    },
+                    "receive": {
+                        "gpio_config": {
+                            "pin_number": "PA13"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

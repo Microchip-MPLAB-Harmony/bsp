@@ -24,29 +24,29 @@
 
 def instantiateComponent(bspComponent):
 
-    #LED0
-    Database.setSymbolValue("core", "PIN_66_FUNCTION_TYPE", "LED_AL")
-    Database.setSymbolValue("core", "PIN_66_FUNCTION_NAME", "LED0")
-    Database.setSymbolValue("core", "PIN_66_LAT", "High")
-    Database.setSymbolValue("core", "PIN_66_DIR", "Out")
+    #LED0 PB21
+    Database.setSymbolValue("core", "PIN_197_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_197_FUNCTION_NAME", "LED0")
+    Database.setSymbolValue("core", "PIN_197_LAT", "High")
+    Database.setSymbolValue("core", "PIN_197_DIR", "Out")
     
-    #LED1
-    Database.setSymbolValue("core", "PIN_68_FUNCTION_TYPE", "LED_AL")
-    Database.setSymbolValue("core", "PIN_68_FUNCTION_NAME", "LED1")
-    Database.setSymbolValue("core", "PIN_68_LAT", "High")
-    Database.setSymbolValue("core", "PIN_68_DIR", "Out")
+    #LED1 PB22
+    Database.setSymbolValue("core", "PIN_199_FUNCTION_TYPE", "LED_AL")
+    Database.setSymbolValue("core", "PIN_199_FUNCTION_NAME", "LED1")
+    Database.setSymbolValue("core", "PIN_199_LAT", "High")
+    Database.setSymbolValue("core", "PIN_199_DIR", "Out")
 
-    #Switch0
-    Database.setSymbolValue("core", "PIN_93_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "PIN_93_FUNCTION_NAME", "SWITCH0")
-    Database.setSymbolValue("core", "PIN_93_PULLEN", "True")
-    Database.setSymbolValue("core", "PIN_93_LAT", "High")
+    #Switch0 PB24
+    Database.setSymbolValue("core", "PIN_189_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_189_FUNCTION_NAME", "SWITCH0")
+    Database.setSymbolValue("core", "PIN_189_PULLEN", "True")
+    Database.setSymbolValue("core", "PIN_189_LAT", "High")
 
-    #Switch1
-    Database.setSymbolValue("core", "PIN_119_FUNCTION_TYPE", "SWITCH_AL")
-    Database.setSymbolValue("core", "PIN_119_FUNCTION_NAME", "SWITCH1")
-    Database.setSymbolValue("core", "PIN_119_PULLEN", "True")
-    Database.setSymbolValue("core", "PIN_119_LAT", "High")
+    #Switch1 PC23
+    Database.setSymbolValue("core", "PIN_140_FUNCTION_TYPE", "SWITCH_AL")
+    Database.setSymbolValue("core", "PIN_140_FUNCTION_NAME", "SWITCH1")
+    Database.setSymbolValue("core", "PIN_140_PULLEN", "True")
+    Database.setSymbolValue("core", "PIN_140_LAT", "High")
 
     BSP_NAME = "pic32cz_ca80_curiosity_ultra"
 

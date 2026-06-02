@@ -1,0 +1,180 @@
+{
+    "EV92R69A": {
+        "Buttons": {
+            "RUN": {
+                "debouncing": {
+                    "enabled": true,
+                    "delay_ms": 50
+                },
+                "gpio_config": {
+                    "pin_number": "PB16",
+                    "pull_up": true,
+                    "active_low": false
+                }
+            },
+            "PB1": {
+                "debouncing": {
+                    "enabled": true,
+                    "delay_ms": 50
+                },
+                "gpio_config": {
+                    "pin_number": "PB31",
+                    "pull_up": true,
+                    "active_low": false
+                }
+            }
+        },
+        "Leds": {
+            "LED_01": {
+                "gpio_config": {
+                    "pin_number": "PB12",
+                    "active_low": false
+                }
+            },
+            "LED_02": {
+                "gpio_config": {
+                    "pin_number": "PB13",
+                    "active_low": false
+                }
+            }
+        },
+        "Analog_Circuits": {
+            "IA": {
+                "type": "shunt_with_opamp",
+                "circuit_param": {
+                    "shunt_resistor": 0.003,
+                    "opamp_gain": 25.0,
+                    "opamp_bias": 1.65
+                },
+                "peripheral": {
+                    "instance": "ADC0",
+                    "channel": 2
+                },
+                "gpio_config": {
+                    "pin_number": "PB08"
+                }
+            },
+            "IB": {
+                "type": "shunt_with_opamp",
+                "circuit_param": {
+                    "shunt_resistor": 0.003,
+                    "opamp_gain": 15.0,
+                    "opamp_bias": 1.65
+                },
+                "peripheral": {
+                    "instance": "ADC1",
+                    "channel": 5
+                },
+                "gpio_config": {
+                    "pin_number": "PB09"
+                }
+            },
+            "VPOT": {
+                "type": "buffer",
+                "circuit_param": {},
+                "peripheral": {
+                    "instance": "ADC1",
+                    "channel": 0
+                },
+                "gpio_config": {
+                    "pin_number": "PB00"
+                }
+            },
+            "VDC": {
+                "type": "voltage_divider",
+                "circuit_param": {
+                    "top_resistor": 66.0,
+                    "bottom_resistor": 3.0
+                },
+                "peripheral": {
+                    "instance": "ADC0",
+                    "channel": 9
+                },
+                "gpio_config": {
+                    "pin_number": "PA09"
+                }
+            }
+        },
+        "Inverter": {
+            "INVERTER": {
+                "peripheral": {
+                    "instance": "TCC0",
+                    "channels": {
+                        "phase_a": 0,
+                        "phase_b": 1,
+                        "phase_c": 2
+                    }
+                },
+                "gpio_pins": {
+                    "phase_a": {
+                        "low_side": {
+                            "gpio_config": {
+                                "pin_number": "PA14"
+                            }
+                        },
+                        "high_side": {
+                            "gpio_config": {
+                                "pin_number": "PB30"
+                            }
+                        }
+                    },
+                    "phase_b": {
+                        "low_side": {
+                            "gpio_config": {
+                                "pin_number": "PA15"
+                            }
+                        },
+                        "high_side": {
+                            "gpio_config": {
+                                "pin_number": "PA05"
+                            }
+                        }
+                    },
+                    "phase_c": {
+                        "low_side": {
+                            "gpio_config": {
+                                "pin_number": "PA16"
+                            }
+                        },
+                        "high_side": {
+                            "gpio_config": {
+                                "pin_number": "PA10"
+                            }
+                        }
+                    },
+                    "fault": {
+                        "gpio_config": {
+                            "pin_number": "PA18"
+                        }
+                    }
+                },
+                "voltage_rating": 24,
+                "current_rating": 5,
+                "control_mode": "PWM",
+                "max_pwm_frequency": 20000
+            }
+        },
+        "Communication": {
+            "X2C_PORT": {
+                "type": "two_wired_uart",
+                "peripheral": {
+                    "instance": "SERCOM3",
+                    "transmit_channel": "",
+                    "receive_channel": ""
+                },
+                "gpio_pins": {
+                    "transmit": {
+                        "gpio_config": {
+                            "pin_number": "PA22"
+                        }
+                    },
+                    "receive": {
+                        "gpio_config": {
+                            "pin_number": "PA23"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

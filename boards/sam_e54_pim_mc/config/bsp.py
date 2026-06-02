@@ -22,131 +22,207 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *****************************************************************************"""
 
-import xml.etree.ElementTree as ET
+#--------------------------------------------------------------------------------------------#
+#                             Import                                                         #
+#--------------------------------------------------------------------------------------------#
+import sys
 import os
+import json
+import xml.etree.ElementTree as ET
 
-#Board parameters
-board_PararameterDict = {}
+# Add the folder path to the system path
+sys.path.append(Module.getPath())
 
-#------------------------------------------------------------------------------------------------------------#
-#                                             LOCAL FUNCTIONS                                                #
-#------------------------------------------------------------------------------------------------------------#
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "general_functions.py"  ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "board_data.py"         ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "voltage_source.py"     ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "analog_interface.py"   ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "digital_interface.py"  ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "pwm_interface.py"      ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "position_interface.py" ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "analog_frontend.py"    ))
-execfile(os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "data_monitoring.py"    ))
+from mc_board.board_data import BoardAdapter
+from mc_board.board_data import BoardParameters
 
+#--------------------------------------------------------------------------------------------#
+#                             CLASSES                                                        #
+#--------------------------------------------------------------------------------------------#
 
-#------------------------------------------------------------------------------------------------------------#
-#                                              INSTANTIATION                                                 #
-#------------------------------------------------------------------------------------------------------------#
-def instantiateComponent(bspComponent):
-   
-    # Read xml data from the path 
-    path = os.path.join(Module.getPath(),"sam_e54_pim_mc", "config", "board.xml")
-    bspContent = ET.fromstring((open(path, "r")).read())
+class HarmonyObjectWrapper(BoardAdapter):
+    def __init__(self, component):
+        # Update component object handler
+        self.component = component
 
-    global board_Information
-    board_Information = mcBspI_ReadBoardInformation(bspContent, bspComponent)
-    board_Information()
+        # Get supported board parameters
+        self.board_params = self.get_board_params_from_files()
 
-   
-    global voltage_Source 
-    voltage_Source = mcBspI_VoltageSourceClass(bspContent, bspComponent)
-    voltage_Source()
+        # Initialize board adapter superclass
+        BoardAdapter.__init__(self, self.board_params)
 
-    global analog_Interface 
-    analog_Interface = mcBspI_AnalogInterfaceClass(bspContent, bspComponent)
-    analog_Interface()
+        # Set the default board parameters
+        self.update_board_parameters('dsPICDEM MCLV2')
 
-    global pwm_Interface
-    pwm_Interface = mcBspI_PwmConfiguration(bspContent, bspComponent)
-    pwm_Interface()
+    def get_atdf_object(self):
+        return ATDF
 
-    global position_Interface
-    position_Interface = mcBspI_PositionConfiguration(bspContent, bspComponent)
-    position_Interface()
-    
-    global analog_Frontend
-    analog_Frontend = mcBspI_AnalogFrontEndClass(bspContent, bspComponent)
-    analog_Frontend()
+    def get_database_object(self):
+        return Database
 
-    global digital_Interface
-    digital_Interface = mcBspI_DigitalInterfaceClass(bspContent, bspComponent)
-    digital_Interface()
+    def get_module_object(self):
+        return Module
 
-    global data_Monitor
-    data_Monitor = mcBspI_DataMonitorClass(bspContent, bspComponent)
-    data_Monitor()
-   
+    def get_component(self):
+        return self.component
+
+    def get_board_params_from_files(self):
+        supported_boards = {}
+        directory_path = os.path.join(Module.getPath(), "sam_e54_pim_mc", "config", "boards")
+
+        # Traverse through the configuration folder
+        for file_name in os.listdir(directory_path):
+            print('Supported Boards', file_name, os.listdir(directory_path))
+            if file_name.endswith('.json'):
+                file_path = os.path.join(directory_path, file_name)
+                try:
+                    with open(file_path, 'r') as json_file:
+                        data = json.load(json_file)
+                        if data:  # Check if JSON data is not empty
+                            root_key = next(iter(data.keys()))  # Get the first key
+                            supported_boards.update(data)
+                except ValueError as e:
+                    print("Error parsing JSON file {}: {}".format(file_path, e))
+        return supported_boards
 
 
-    BSP_NAME = "sam_e54_mc_pim"
+class BspManager:
+    def __init__(self, object_wrapper):
+        # Update object_wrapper interface handler
+        self.object_wrapper = object_wrapper
 
-    pinAttributes = [{"attrib":"type", "symbol":"BSP_CUSTOM_TYPE", "label":"Type Name"},
-                     {"attrib":"mode", "symbol":"BSP_CUSTOM_MODE", "label":"Mode"},
-                     {"attrib":"dir", "symbol":"BSP_CUSTOM_DIR", "label":"Direction"},
-                     {"attrib":"lat", "symbol":"BSP_CUSTOM_LAT", "label":"Initial Latch Value"},
-                     {"attrib":"pe", "symbol":"BSP_CUSTOM_PE", "label":"Pull Enable"},
-                     {"attrib":"ie", "symbol":"BSP_CUSTOM_IE", "label":"Input Enable"}]
+        # Create board information object
+        from mc_board.voltage_source import VoltageSourceClass
+        self.voltage_source = VoltageSourceClass(object_wrapper)
 
-    pinTypes = [{"type":"LED_AH", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"LED_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"},
-                {"type":"SWITCH_AH", "mode":"DIGITAL", "ie":"True"},
-                {"type":"SWITCH_AL", "mode":"DIGITAL", "ie":"True"},
-                {"type":"VBUS_AH", "mode":"DIGITAL", "dir":"OUT"},
-                {"type":"VBUS_AL", "mode":"DIGITAL", "dir":"OUT", "lat":"High"}]
+        # Create board information object
+        from mc_board.analog_interface import AnalogInterfaceClass
+        self.analog_interface = AnalogInterfaceClass(object_wrapper)
 
-    execfile(Variables.get("__BSP_DIR") + "/boards/config/bsp_common.py")
+        # Create position interface class
+        from mc_board.position_interface import PositionInterfaceClass
+        self.position_interface = PositionInterfaceClass(object_wrapper)
+
+        # Create board information object
+        from mc_board.pwm_interface import PwmConfiguration
+        self.pwm_interface = PwmConfiguration(object_wrapper)
+
+        # Create board information object
+        from mc_board.analog_frontend import AnalogFrontEndClass
+        self.analog_frontend = AnalogFrontEndClass(object_wrapper)
+
+        # Create board information object
+        from mc_board.digital_interface import DigitalInterfaceClass
+        self.digital_interface = DigitalInterfaceClass(object_wrapper)
+
+        # Create board information object
+        from mc_board.data_monitoring import DataMonitorClass
+        self.data_monitor = DataMonitorClass(object_wrapper)
+
+    def create_symbols(self):
+        # MHC Symbols
+        board_List =  self.object_wrapper.board_params.keys()
+
+        component = self.object_wrapper.get_component()
+        self.selected_board = component.createComboSymbol("BSP_BOARD_SEL", None, board_List )
+        self.selected_board.setLabel("Development Board")
+        self.selected_board.setDefaultValue('dsPICDEM MCLV2')
+        self.selected_board.setDependencies( self.update_board, ["BSP_BOARD_SEL"] )
+
+    def update_board( self, symbol, event ):
+        selected_board = symbol.getValue()
+
+        from mc_device.gpio.pin_manager import PinManager
+        PinManager(self.object_wrapper).reset_all_pins()
+
+        self.object_wrapper.update_board_parameters(selected_board)
+        self.voltage_source.update_information()
+        self.analog_interface.update_information()
+        self.position_interface.update_information()
+        self.pwm_interface.update_information()
+        self.analog_frontend.update_information()
+        self.digital_interface.update_information()
+        self.data_monitor.update_information()
+
+    def handle_message(self, id, args):
+        if (id == "MCPMSMFOC_SELECTED_BOARD"):
+            self.selected_board.setValue(args["SELECTED_BOARD"])
+            return
+
+        if (id == "MCPMSMFOC_INITIAL_INFORMATION"):
+            args["SELECTED_BOARD"] = self.selected_board.getValue()
+            return {}
+
+        if ( id == "MCPMSMFOC_ANALOG_INTERFACE" ):
+            result = self.analog_interface.handle_message(id, args)
+            return result
+
+        if( id ==  "MCPMSMFOC_PWM_INTERFACE" ):
+            return self.pwm_interface.handle_message(id, args)
+
+        if( id ==  "MCPMSMFOC_POSITION_INTERFACE" ):
+            return self.position_interface.handle_message(id, args)
+
+        if( id == "MCPMSMFOC_ANALOG_FRONT_END"):
+            return self.analog_frontend.handle_message(id, args)
+
+        if( id == "MCPMSMFOC_DIGITAL_INTERFACE" ):
+            message = self.digital_interface.handle_message(id, args)
+            return message
+
+        if( id == "MCPMSMFOC_VOLTAGE_SOURCE" ):
+            message = self.voltage_source.handle_message(id, args)
+            return message
+
+        if( id == "X2CSCOPE_DATA_MONITORING" ):
+            message = self.data_monitor.handle_message(id, args)
+            return message
 
 
-#------------------------------------------------------------------------------------------------------------#
-#                                             MESSAGE HANDLING                                               #
-#------------------------------------------------------------------------------------------------------------#
-def handleMessage(messageID, args):
-    
-    if (messageID == "MCPMSMFOC_SELECTED_BOARD"):
-        board_Information.updateSelectedBoard("MCPMSMFOC_SELECTED_BOARD", args)
-        return
-    
-    if (messageID == "MCPMSMFOC_INITIAL_INFORMATION"):
-        args["SELECTED_BOARD"] = sym_SELECTED_BOARD.getValue()
-        return board_PararameterDict
+    def __call__(self, bspComponent):
+        # Voltage source information
+        self.voltage_source()
 
-    if ( messageID == "MCPMSMFOC_ANALOG_INTERFACE" ):
-         result = analog_Interface.handleMessage(messageID, args)
-         return result
+        # Analog interface information
+        self.analog_interface()
 
-    if(  messageID ==  "MCPMSMFOC_PWM_INTERFACE" ):
-        return pwm_Interface.handleMessage(messageID, args)
+        # Position interface information
+        self.position_interface()
 
-    if( messageID ==  "MCPMSMFOC_POSITION_INTERFACE" ):
-        return position_Interface.handleMessage(messageID, args)
+        # PWM interface information
+        self.pwm_interface()
 
-    if( messageID == "MCPMSMFOC_ANALOG_FRONT_END"):
-        return analog_Frontend.handleMessage(messageID, args)
+        # Analog front-end information
+        self.analog_frontend()
 
-    if( messageID == "MCPMSMFOC_DIGITAL_INTERFACE" ):
-        message = digital_Interface.handleMessage(messageID, args)  
-        return message
+        # Digital information
+        self.digital_interface()
 
-    if( messageID == "MCPMSMFOC_VOLTAGE_SOURCE" ):
-        message = voltage_Source.handleMessage(messageID, args)  
-        return message
+        # Data monitoring interface
+        self.data_monitor()
 
-    if( messageID == "MCPMSMFOC_BOARD_INFORMATION" ):
-        message = board_Information.handleMessage(messageID, args)  
-        return message
+        # Create BSP symbols
+        self.create_symbols()
 
-    if( messageID == "X2CSCOPE_DATA_MONITORING" ):
-        message = data_Monitor.handleMessage(messageID, args)  
-        return message
 
-   
-    
-        
+#--------------------------------------------------------------------------------------------#
+#                             INSTANTIATION                                                  #
+#--------------------------------------------------------------------------------------------#
+def instantiateComponent(bsp_component):
+    # Create object_wrapper class object
+    object_wrapper = HarmonyObjectWrapper(bsp_component)
+
+    global bsp
+    bsp = BspManager(object_wrapper)
+    bsp(bsp_component)
+
+   # Note: This symbol is needed by the pin manager plugin. Otherwise, the pin manager would crash
+    bsp_type_size = bsp_component.createIntegerSymbol("BSP_TYPE_SIZE", None )
+    bsp_type_size.setVisible( False )
+    bsp_type_size.setDefaultValue(0)
+
+#--------------------------------------------------------------------------------------------#
+#                             MESSAGE HANDLING                                               #
+#--------------------------------------------------------------------------------------------#
+def handleMessage(id, args):
+    bsp.handle_message(id, args)

@@ -11,9 +11,16 @@
         <Board name="PIC32CX SG6X Curiosity Ultra" processor="PIC32CX1025SG60128" config="pic32cx_sg6x_curiosity_ultra"/>
         <Board name="WBZ451 Curiosity" processor="WBZ451" config="wbz451_curiosity"/>
         <Board name="WBZ451HPE Curiosity" processor="WBZ451H" config="wbz451hpe_curiosity"/>
+        <Board name="WBZ350 Curiosity" processor="WBZ350" config="wbz350_curiosity"/>
+        <Board name="WBZ350 Curiosity" processor="PIC32CX5109BZ31032" config="pic32cx_bz350_curiosity"/>
         <Board name="WBZ351 Curiosity" processor="WBZ351" config="wbz351_curiosity"/>
         <Board name="WBZ351 Curiosity" processor="PIC32CX5109BZ31048" config="pic32cx_bz3_curiosity"/>
+		<Board name="PIC32WM BZ36 Curiosity" processor="PIC32WM_BZ3602" config="pic32_bz36_curiosity"/>
+        <Board name="PIC32WM BZ36 Curiosity" processor="PIC32CX5109BZ36048" config="pic32cx_bz36_curiosity"/>
         <Board name="WBZ450 Curiosity" processor="WBZ450" config="wbz450_curiosity"/>
+        <Board name="PIC32WM BZ6 Curiosity" processor="PIC32WM_BZ6204" config="pic32wm_bz6_curiosity"/>
+        <Board name="PIC32WM BZ6602 Curiosity" processor="PIC32WM_BZ6602" config="pic32wm_bz6602_curiosity"/>
+		<Board name="PIC32WM-BW1 Curiosity" processor="PIC32WM_BW1" config="pic32wm_bw1_curiosity"/>
         <Board name="PIC32CK GC01 Curiosity Ultra" processor="PIC32CK2051GC01144" config="pic32ck_gc01_curiosity_ultra"/>
         <Board name="PIC32CK SG01 Curiosity Ultra" processor="PIC32CK2051SG01144" config="pic32ck_sg01_curiosity_ultra"/>
         <Board name="PIC32CX SG41 Curiosity Ultra" processor="PIC32CX1025SG41128" config="pic32cx_sg41_curiosity_ultra"/>
@@ -61,12 +68,15 @@
         <Board name="SAM 9X60 Curiosity" processor="SAM9X60D1G" config="sam_9x60_curiosity"/>
         <Board name="SAM 9X75 Evaluation Board" processor="SAM9X75" config="sam_9x75_eb"/>
         <Board name="SAM 9X75 Curiosity" processor="SAM9X75D2G" config="sam_9x75_curiosity"/>
+		<Board name="SAM 9X75 Curiosity_pro" processor="SAM9X75D2G" config="sam_9x75_curiosity_pro"/>
         <Board name="SAM A5D2 Xplained Ultra" processor="ATSAMA5D27" config="sam_a5d2_xult"/>
         <Board name="SAM A5D27 SOM1 Kit1" processor="ATSAMA5D27CD1G" config="sam_a5d27_som1_ek"/>
         <Board name="SAM A5D27 WLSOM1 Kit1" processor="ATSAMA5D27CLD2G" config="sam_a5d27_wlsom1_ek1"/>
         <Board name="SAM A5D29 Curiosity" processor="ATSAMA5D29" config="sam_a5d29_curiosity"/>
         <Board name="SAM A7G5 Evaluation Kit" processor="SAMA7G54" config="sam_a7g5_ek"/>
+        <Board name="SAM A7G54 Curiosity" processor="SAMA7G54D2G" config="sam_a7g54_curiosity"/>
         <Board name="SAM A7D65 Curiosity" processor="SAMA7D65" config="sam_a7d65_curiosity"/>
+		<Board name="SAM A7D65 Curiosity Pro" processor="SAMA7D65" config="sam_a7d65_curiosity_pro"/>
         <Board name="SAM C21 Xplained Pro" processor="ATSAMC21J18A" config="sam_c21_xpro"/>
         <Board name="SAM C21N Xplained Pro" processor="ATSAMC21N18A" config="sam_c21n_xpro"/>
         <Board name="SAM D10 Xplained Mini" processor="ATSAMD10D14AM" config="sam_d10_xmini"/>
@@ -103,8 +113,19 @@
         <Board name="PIC32MK MCM PIM MC Board" processor="PIC32MK1024MCM100" config="pic32mk_mcm_pim_mc"/>
         <Board name="CEC173X Evaluation Board" processor="CEC1736_S0_2ZW" config="cec1736_evb"/>
         <Board name="PIC32CXMTSH Development Board" processor="PIC32CX2051MTSH128" config="pic32cxmtsh_db"/>
-        <Board name="PIC32MK MCA Plugin In Module" processor="PIC32MK0128MCA048" config="pic32mk_mca_pim_mc"/>
+        <Board name="PIC32MK MCA PIM MC Board" processor="PIC32MK0128MCA048" config="pic32mk_mca_pim_mc"/>
         <Board name="PIC32CXMTC Development Board" processor="PIC32CX2051MTC128" config="pic32cxmtc_db"/>
         <Board name="PIC32CXMTG Evaluation Kit" processor="PIC32CX2051MTG128" config="pic32cxmtg_ek"/>
+        <Board name="PIC32CM GC00 Curiosity Pro" processor="PIC32CM5112GC00100" config="pic32cm_gc00_curiosity_pro"/>
+        <Board name="PIC32CM SG00 Curiosity Pro" processor="PIC32CM5112SG00100" config="pic32cm_sg00_curiosity_pro"/>
+        <Board name="SAM C21 PIM MC Board" processor="ATSAMC21J18A" config="sam_c21_pim_mc"/>
+        <Board name="PIC32CM MC00 PIM MC Board" processor="PIC32CM1216MC00048" config="pic32cm_mc00_pim_mc"/>
+        <Board name="SAM RH707 PIM MC Board" processor="ATSAMRH707F18A" config="sam_rh707_pim_mc"/>
+        <Board name="PIC32CM MC00 DIM MC Board" processor="PIC32CM1216MC00048" config="pic32cm_mc00_dim_mc"/>
+        <Board name="PIC32MK MCM DIM MC Board" processor="PIC32MK1024MCM100" config="pic32mk_mcm_dim_mc"/>
+        <Board name="PIC32MK MCA DIM MC Board" processor="PIC32MK0128MCA048" config="pic32mk_mca_dim_mc"/>
+        <Board name="SAM E70 DIM MC Board" processor="ATSAME70Q21B" config="sam_e70_dim_mc"/>
+        <Board name="SAM E54 DIM MC Board" processor="ATSAME54P20A" config="sam_e54_dim_mc"/>
+        <Board name="SAM C21 DIM MC Board" processor="ATSAMC21J18A" config="sam_c21_dim_mc"/>
     </Boards>
 </Module>
