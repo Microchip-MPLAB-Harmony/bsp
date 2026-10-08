@@ -66,6 +66,7 @@
         <Board name="PIC32MZ W1 WFI32IoT" processor="WFI32E01" config="wfi32e_iot"/>
         <Board name="SAM 9X60 Evaluation Kit" processor="SAM9X60" config="sam_9x60_ek"/>
         <Board name="SAM 9X60 Curiosity" processor="SAM9X60D1G" config="sam_9x60_curiosity"/>
+        <Board name="SAM 9X60 Curiosity Hybrid" processor="SAM9X60D6K" config="sam_9x60_curiosity_hybrid"/>
         <Board name="SAM 9X75 Evaluation Board" processor="SAM9X75" config="sam_9x75_eb"/>
         <Board name="SAM 9X75 Curiosity" processor="SAM9X75D2G" config="sam_9x75_curiosity"/>
 		<Board name="SAM 9X75 Curiosity_pro" processor="SAM9X75D2G" config="sam_9x75_curiosity_pro"/>
