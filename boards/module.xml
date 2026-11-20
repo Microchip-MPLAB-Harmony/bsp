@@ -65,6 +65,7 @@
         <Board name="PIC32MZ W1 WFI32IoT" processor="PIC32MZ2051W104132" config="pic32mz_w1_wfiiot"/>
         <Board name="PIC32MZ W1 WFI32IoT" processor="WFI32E01" config="wfi32e_iot"/>
         <Board name="SAM 9X60 Evaluation Kit" processor="SAM9X60" config="sam_9x60_ek"/>
+		<Board name="SAM 9X60 Curiosity Pro" processor="SAM9X60" config="sam_9x60_ek"/>
         <Board name="SAM 9X60 Curiosity" processor="SAM9X60D1G" config="sam_9x60_curiosity"/>
         <Board name="SAM 9X60 Curiosity Hybrid" processor="SAM9X60D6K" config="sam_9x60_curiosity_hybrid"/>
         <Board name="SAM 9X75 Evaluation Board" processor="SAM9X75" config="sam_9x75_eb"/>
@@ -75,6 +76,7 @@
         <Board name="SAM A5D27 WLSOM1 Kit1" processor="ATSAMA5D27CLD2G" config="sam_a5d27_wlsom1_ek1"/>
         <Board name="SAM A5D29 Curiosity" processor="ATSAMA5D29" config="sam_a5d29_curiosity"/>
         <Board name="SAM A7G5 Evaluation Kit" processor="SAMA7G54" config="sam_a7g5_ek"/>
+		<Board name="SAM A7G5 Curiosity Pro" processor="SAMA7G54" config="sam_a7g54_curiosity_pro"/>
         <Board name="SAM A7G54 Curiosity" processor="SAMA7G54D2G" config="sam_a7g54_curiosity"/>
         <Board name="SAM A7D65 Curiosity" processor="SAMA7D65" config="sam_a7d65_curiosity"/>
 		<Board name="SAM A7D65 Curiosity Pro" processor="SAMA7D65" config="sam_a7d65_curiosity_pro"/>
