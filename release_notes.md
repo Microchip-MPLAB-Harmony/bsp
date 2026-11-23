@@ -3,6 +3,20 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## BSP Release v3.26.0
+### New features
+
+This release adds support for the following development kits:
+1. [SAM9X60 Curiosity Pro Board]()
+2. [SAM9X60 Curiosity Hybrid Board]()
+3. [SAMA7G5 Curiosity Pro Board]()
+
+### Bug fixes
+- None
+
+### Known issues
+- None
+
 ## BSP Release v3.25.0
 ### New features
 
